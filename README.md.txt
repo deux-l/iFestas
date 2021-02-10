@@ -1,1 +1,0 @@
-oi kadu teste
