@@ -5,11 +5,13 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { CadusuarioComponent } from './cadusuario/cadusuario.component';
 import { PaginanaoencontradaComponent } from './paginanaoencontrada/paginanaoencontrada.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
 
   { path: 'usuarioarea',
     loadChildren: () => import ('src/app/usuarioarea/usuarioarea.module').then(m => m.UsuarioareaModule),
+    canActivate: [LoginGuard]
   },
 
   { path: 'feed',
