@@ -14,11 +14,10 @@ const routes: Routes = [
 
           { path: 'editproduto', component: EditprodutoComponent},
 
-          { path: 'editusuario', component: EditusuarioComponent},
+          { path: 'editusuario/:id', component: EditusuarioComponent},
 
-          { path: ':id', component: EditprodutoComponent},
+          { path: ':email', component: EditusuarioComponent},
 
-          { path: ':id', component: EditusuarioComponent}
         ]}
 ];
 

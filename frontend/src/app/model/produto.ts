@@ -1,17 +1,17 @@
 export class Produto{
 
-  idProduto: number;
-  produto: String;
-  valor: number;
-  descricao: String;
-  disponibilidade: String;
-  imagem1: String;
-  imagem2: String;
-  imagem3: String;
-  idUsuario: number;
+  idProduto: number | undefined;
+  produto: String | undefined;
+  valor: number | undefined;
+  descricao: String | undefined;
+  disponibilidade: String | undefined;
+  imagem1: String | undefined;
+  imagem2: String | undefined;
+  imagem3: String | undefined;
+  idUsuario: number | undefined;
 
   constructor( idProduto ?: number, produto ?: String, valor ?: number,
-               descricao ?: String, disponibilidade ?: String, imagem1 ?: number,
+               descricao ?: String, disponibilidade ?: String, imagem1 ?: String,
                imagem2 ?: String, imagem3 ?: String, idUsuario ?: number) {
 
                 this.idProduto = idProduto;
@@ -24,5 +24,5 @@ export class Produto{
                 this.imagem3 = imagem3;
                 this.idUsuario = idUsuario;
   }
-  
+
 }

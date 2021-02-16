@@ -1,9 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
 import { Usuario } from '../model/usuario';
 import { CadusuarioService } from './cadusuario.service';
-
-const URL = 'http://localhost:3007/cadusuario';
 
 @Component({
   selector: 'app-cadusuario',
@@ -12,17 +10,33 @@ const URL = 'http://localhost:3007/cadusuario';
 })
 export class CadusuarioComponent implements OnInit {
 
-  constructor(private cadusuarioService: CadusuarioService) { }
+  usuario: Usuario;
+  senha: String = '';
 
-  usuario: Usuario = new Usuario();
-
-  constructor(private cadusuarioService: CadusuarioService,
-    private http: HttpClient
-    ) 
+  constructor(private cadusuarioService: CadusuarioService) {
+    this.usuario = new Usuario();
+   }
 
 
   ngOnInit(): void {
   }
 
+  public gravarUsuario(){
 
+    if (this.usuario.senha == this.senha && this.usuario.senha.length > 5) {
+
+      this.cadusuarioService.gravarUsuario(this.usuario).subscribe(res =>{
+        console.log('Aluno gravado com sucesso');
+
+        console.log(res)
+        this.usuario = new Usuario();
+
+      })
+
+    } else {
+
+      alert('Senha não confere ou senha não tem 6 dígitos')
+    }
+
+  }
 }

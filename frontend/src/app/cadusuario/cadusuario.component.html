@@ -8,67 +8,99 @@
     <form #f="ngForm" class="row g-3">
       <div class="col-md-6">
         <label class="form-group"> Nome Completo</label>
-        <input type="text" class="form-control">
+        <input [(ngModel)]="usuario.nome" name="nome" type="text" class="form-control"  required >
       </div>
 
       <div class="col-md-6">
         <label class="form-group"> CPF </label>
-        <input type="text" class="form-control" mask="000.000.000-00" placeholder="Ex.: 000.000.000-00">
+        <input [(ngModel)]="usuario.cpf" name="cpf" type="text" class="form-control" mask="000.000.000-00"
+        placeholder="Ex.: 000.000.000-00"  required >
       </div>
 
       <div class="col-md-6">
         <label class="form-group">Data de Nascimento</label>
-        <input type="date" class="form-control">
+        <input [(ngModel)]="usuario.nascimento" name="nascimento" type="text" class="form-control"
+        required >
       </div>
 
       <div class="col-md-6">
         <label class="form-group">Celular</label>
-        <input type="tel" class="form-control" mask="(00)00000-0000" placeholder="Ex.:(00)00000-0000">
+        <input [(ngModel)]="usuario.celular" name="celular" type="tel" class="form-control"
+        mask="(00)00000-0000" placeholder="Ex.:(00)00000-0000">
       </div>
 
       <div class="col-md-8">
         <label class="form-group"> Rua </label>
-        <input type="text" class="form-control">
+        <input [(ngModel)]="usuario.rua" name="rua" type="text" class="form-control" required>
       </div>
 
       <div class="col-md-4">
         <label class="form-group">Número</label>
-        <input type="number" class="form-control">
+        <input [(ngModel)]="usuario.numero" name="numero" type="number" class="form-control">
       </div>
 
       <div class="col-md-6">
         <label class="form-group">Bairro</label>
-        <input type="text" class="form-control">
+        <input [(ngModel)]="usuario.bairro" name="bairro" type="text" class="form-control" required >
       </div>
 
 
       <div class="col-md-6">
         <label for="cep" class="form-group">Cep</label>
-        <input type="Text" id="cep" name="cep" class="form-control" mask="00000-000" placeholder="Ex.:00000-000">
+        <input [(ngModel)]="usuario.cep" name="cep" type="Text" id="cep" class="form-control" mask="00000-000"
+        placeholder="Ex.:00000-000">
       </div>
       <div class="col-md-6">
         <label for="cidade" class="form-group">Cidade</label>
-        <input type="text" id="cidade" name="cidade" class="form-control"
-        [(ngModel)]="usuario.cidade" ngModel required #cidade="ngModel">
+        <input [(ngModel)]="usuario.cidade" name="cidade" type="text" id="cidade" class="form-control"
+        required >
       </div>
 
       <div class="col-md-6">
         <label class="form-group">Email</label>
-        <input type="Text" class="form-control">
-      </div>
-
-      <div class="col-md-6 col-12">
-        <label class="form-group">Senha</label>
-        <input type="password" class="form-control">
+        <input [(ngModel)]="usuario.email" name="email" type="Text" class="form-control">
       </div>
 
       <div class="col-6">
+        <label for="">O que deseja fazer no site:</label>
+        <div class="form-check">
+
+          <input class="form-check-input"  [(ngModel)]="usuario.nivelAcesso" type="radio" name="nivelAcesso 2" data-toggle="tooltip"
+          data-placement="bottom" title="Sendo colaborador você poderá anunciar em nosso site" id="flexRadioDefault1" value="2" >
+          <label class="form-check-label" for="flexRadioDefault1" >
+            Colaborador
+          </label>
+        </div>
+
       </div>
+
+      <div class="col-md-6">
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="usuario.nivelAcesso" type="radio" name="nivelAcesso 3" data-toggle="tooltip"
+          data-placement="bottom" title="Como cliente você poderá navegar pelo nosso site em busca da festa perfeita"
+          id="flexRadioDefault2" value="3" checked>
+          <label class="form-check-label" for="flexRadioDefault2" >
+            Cliente
+          </label>
+        </div>
+      </div>
+
+        <div class="col-md-6 col-12">
+          <label class="form-group">Senha</label>
+          <input [(ngModel)]="usuario.senha" name="senha" type="password" class="form-control" required>
+        </div>
+
+        <div class="col-md-6 col-12">
+          <label class="form-group">Confirmar Senha</label>
+          <input [(ngModel)]="senha" name="confirmaSenha" type="password" class="form-control" required>
+        </div>
 
 
       <div class="col-12 col-sm-4 mt-5">
-        <button type="submit" class="btn btn-primary btn-md btn-block">Cadastrar</button>
+        <button type="submit" class="btn btn-primary btn-md btn-block" (click)="gravarUsuario()">Cadastrar</button>
       </div>
     </form>
   </div>
 </div>
+
+

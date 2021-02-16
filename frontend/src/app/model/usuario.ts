@@ -8,6 +8,7 @@ export class Usuario {
   celular: number | undefined;
   rua: String | undefined;
   numero: number | undefined;
+  cep: String | undefined;
   bairro: String | undefined;
   cidade: String | undefined;
   email: String | undefined;
@@ -15,8 +16,8 @@ export class Usuario {
   nivelAcesso: number | undefined;
 
   constructor( idUsuario ?: number, nome ?: String, cpf ?: number, nascimento ?: String,
-    celular ?: number, rua ?: String, numero ?: number, bairro ?: String, cidade ?: String,
-    email ?: String, senha ?: String, nivelAcesso ?: number) {
+    celular ?: number, rua ?: String, numero ?: number, cep ?: String, bairro ?: String,
+    cidade ?: String, email ?: String, senha ?: String, nivelAcesso ?: number) {
 
     this.idUsuario = idUsuario;
     this.nome = nome;
@@ -25,6 +26,7 @@ export class Usuario {
     this.celular = celular;
     this.rua = rua;
     this.numero = numero;
+    this.cep = cep;
     this.bairro = bairro;
     this.cidade = cidade;
     this.email = email;

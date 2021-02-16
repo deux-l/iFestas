@@ -11,8 +11,9 @@ import { Usuario } from './../model/usuario';
 export class UsuarioareaComponent implements OnInit {
 
   dados: Usuario = new Usuario();
-  usuario: Usuario[] = [];
+  usuario: Usuario = new Usuario ();
   email: String = '';
+  nome: any;
 
   constructor(private usuarioareaService: UsuarioareaService) {
     //this.usuario = new Usuario();
@@ -31,8 +32,8 @@ export class UsuarioareaComponent implements OnInit {
     this.email= texto
 
     this.usuarioareaService.buscaUsuario(this.email).subscribe(res => {
-      this.usuario = res;
-      console.log(this.usuario)
+      this.usuario = res[0];
+
       //this.usuario.nome = this.dados[0]['nome'];
 
       //console.log(this.usuario.nome)
@@ -41,4 +42,8 @@ export class UsuarioareaComponent implements OnInit {
     //  converte json para objeto var tarefa = JSON.parse(jsonTarefa);
 
   }
+  exibiNome(){
+    return this.usuario.nome;
+}
+
 }

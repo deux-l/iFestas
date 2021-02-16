@@ -15,4 +15,9 @@ export class UsuarioareaService {
   public buscaUsuario(email : any){
     return this.http.get<Usuario[]>(`${URL}/${email}`);
   }
+
+  public atualizaUsuario(usuario : Usuario){
+    return this.http.put(`${URL}/${usuario.email}`, usuario)
+  }
+
 }

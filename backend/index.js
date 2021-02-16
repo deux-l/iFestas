@@ -37,24 +37,33 @@ function execSqlQuery(sqlQry, res) {
 		console.log('Executou ...');
 	})
 }
-/* método inserir (precisa alterar)
-app.post('/aluno', (req, res) => {
+// método inserir 
+app.post('/criar', (req, res) => {
 	var nome = req.body.nome;
-    var disciplina = req.body.disciplina;
-    var nota1 = req.body.nota1;
-    var nota2 = req.body.nota2;
-execSqlQuery(`insert into aluno (nome, disciplina, nota1, nota2)
-  values ('${nome}','${disciplina}','${nota1}','${nota2}')`, res);
-});*/
+	var cpf = req.body.cpf;
+    var nascimento = req.body.nascimento;
+    var celular = req.body.celular;
+	var rua = req.body.rua;
+	var numero = req.body.numero;
+	var cep = req.body.cep;
+	var bairro = req.body.bairro;
+	var cidade = req.body.cidade;
+	var email = req.body.email;
+	var senha = req.body.senha;
+	var nivelAcesso = req.body.nivelAcesso;
+execSqlQuery(`insert into usuario (nome, cpf, nascimento, celular, rua, numero, cep, bairro, cidade, email, senha, nivelAcesso)
+  values ('${nome}','${cpf}','${nascimento}','${celular}','${rua}','${numero}',
+  '${cep}','${bairro}','${cidade}','${email}','${senha}','${nivelAcesso}')`, res);
+})
 
 // método selecionar todos os usuários
-app.get('/logar', (req, res) => {
+app.get('/criar', (req, res) => {
 	execSqlQuery(`select * from usuario `, res);
 });
 
 // método logar  buscando por email do cliente...
 app.post('/logar', (req, res) => {
-	let email = req.body.email;;
+	var email = req.body.email;;
 	//let senha = req.body.senha;
 execSqlQuery(`select * from usuario where email='${email}'`, res);
 });
@@ -70,17 +79,23 @@ app.delete('/aluno/:codigo', (req, res) => {
 	execSqlQuery(`delete from aluno where codigo=` + codigo, res);
 });*/
 
-/*método de atualizar (precisa alterar)
-app.put('/aluno/:codigo', (req, res) => {
-    var codigo= parseInt(req.params.codigo); 
+//método de atualizar 
+app.put('/logar/:email', (req, res) => {
+    var idUsuario = parseInt(req.body.idUsuario); 
     var nome = req.body.nome;
-    var disciplina = req.body.disciplina;
-    var nota1 = req.body.nota1;
-    var nota2 = req.body.nota2;
-execSqlQuery(`update aluno set nome='${nome}', 
-  disciplina='${disciplina}',nota1='${nota1}',nota2='${nota2}'
-    where codigo=${+codigo}` , res);
-});*/
+    var nascimento = req.body.nascimento;
+    var celular = req.body.celular;
+	var rua = req.body.rua;
+	var numero = req.body.numero;
+	var cep = req.body.cep;
+	var bairro = req.body.bairro;
+	var cidade = req.body.cidade;
+	var email = req.params.email;
+	var senha = req.body.senha;
+execSqlQuery(`update usuario set nome='${nome}', nascimento='${nascimento}', celular='${celular}', rua='${rua}',
+			  	numero='${numero}', cep='${cep}', bairro='${bairro}', cidade='${cidade}', email='${email}', senha='${senha}'
+    where idUsuario=${+idUsuario}` , res);
+});
 
 
 var server = app.listen(3007, 'localhost', function () {
