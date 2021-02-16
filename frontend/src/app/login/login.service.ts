@@ -21,9 +21,9 @@ export class LoginService {
     return this.http.post<Usuario>(`${URL}`, usuario);
   }
 
-  public findAll(){
+  /*public findAll(){
     return this.http.get<Usuario[]>(`${URL}`)
-  }
+  }*/
 
-  
+
 }

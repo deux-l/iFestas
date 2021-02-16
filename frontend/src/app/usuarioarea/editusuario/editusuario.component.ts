@@ -45,18 +45,18 @@ export class EditusuarioComponent implements OnInit {
 
       })
 
-      this.buscaDados();
+
   }
 
-  buscaDados(){
+  /*buscaDados(){
 
-     /*this.usuario[0].forEach(valor => {
+     this.usuario[0].forEach(valor => {
        console.log(valor)
       this.user = valor;
      });
      console.log(this.user)
-     return this.user;*/
-  }
+     return this.user;
+  }*/
 
   public atualizaUsuario(){
 

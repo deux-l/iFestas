@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
               private router: Router) {
 
                 this.usuario = new Usuario();
-                this.buscarUsuario();
+
                }
 
   ngOnInit(): void {
@@ -32,11 +32,11 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('logado',JSON.stringify(usuario))
   }
 
-  buscarUsuario(){
+ /* buscarUsuario(){
     this.loginService.findAll().subscribe(res => {
       this.usuarios = res;
     })
-  }
+  }*/
 
    login(){
       this.loginService.login(this.usuario).subscribe(async res => {
