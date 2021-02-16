@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UsuarioareaService } from './usuarioarea.service';
+import { Usuario } from './../model/usuario';
+
 @Component({
   selector: 'app-usuarioarea',
   templateUrl: './usuarioarea.component.html',
@@ -7,9 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioareaComponent implements OnInit {
 
-  constructor() { }
+  dados: Usuario = new Usuario();
+  usuario: Usuario[] = [];
+  email: String = '';
 
-  ngOnInit(): void {
+  constructor(private usuarioareaService: UsuarioareaService) {
+    //this.usuario = new Usuario();
   }
 
+  ngOnInit(): void {
+    this.buscarUsuario();
+  }
+
+  public buscarUsuario(){
+
+    var storage = localStorage.getItem('logado')
+    var texto = JSON.stringify(storage)
+    var er =/[""\\]/gi;
+    texto = texto.replace(er, "")
+    this.email= texto
+
+    this.usuarioareaService.buscaUsuario(this.email).subscribe(res => {
+      this.usuario = res;
+      console.log(this.usuario)
+      //this.usuario.nome = this.dados[0]['nome'];
+
+      //console.log(this.usuario.nome)
+
+    })
+    //  converte json para objeto var tarefa = JSON.parse(jsonTarefa);
+
+  }
 }

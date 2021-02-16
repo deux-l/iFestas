@@ -11,7 +11,7 @@
     <!-- Login Form -->
     <form>
       <input [(ngModel)]="usuario.email" type="text" id="login" class="fadeIn second" name="login" placeholder="email">
-      <input [(ngModel)]="usuario.senha" type="text" id="password" class="fadeIn third" name="senha" placeholder="senha">
+      <input [(ngModel)]="usuario.senha" type="password" id="password" class="fadeIn third" name="senha" placeholder="senha">
       <!--input type="submit" class="fadeIn fourth" value="Log In" (click)="logar()" -->
       <input type="submit" class="fadeIn fourth" value="logar" (click)="login()" >
 
@@ -25,4 +25,7 @@
     </div>
 
   </div>
+</div>
+<div *ngFor='let item of usuarios'>
+  {{item.email}}
 </div>

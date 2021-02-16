@@ -1,5 +1,68 @@
-<p>usuarioarea works!</p>
+<h1>Área do usuário</h1>
+<div class="row">
+  <div class="col-2">
 
-<router-outlet>
-  
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" routerLink="editusuario">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="editproduto">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="cadproduto">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+  </div>
+
+<div class="col-8">
+
+  <form class="row g-3" *ngFor="let user of  usuario">
+    <div class="col-md-6" >
+      <label for="inputEmail4" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="inputEmail4" name="nome" [(ngModel)]="user.nome"  disabled>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Nascimento</label>
+      <input type="text" class="form-control" id="inputPassword4" name="nascimento" [(ngModel)]="user.nascimento" disabled>
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Celular</label>
+      <input type="text" class="form-control" id="inputAddress" name="celular" [(ngModel)]="user.celular" disabled>
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">Rua</label>
+      <input type="text" class="form-control" id="inputCity" name="rua" [(ngModel)]="user.rua" disabled>
+    </div>
+
+    <div class="col-md-2">
+      <label for="inputCity" class="form-label">Numero</label>
+      <input type="text" class="form-control" id="inputCity" name="numero" [(ngModel)]="user.numero" disabled>
+    </div>
+
+    <div class="col-md-5">
+      <label for="inputCity" class="form-label">Bairro</label>
+      <input type="text" class="form-control" id="inputCity" name="bairro" [(ngModel)]="user.bairro" disabled>
+    </div>
+
+    <div class="col-md-5">
+      <label for="inputCity" class="form-label">Cidade</label>
+      <input type="text" class="form-control" id="inputCity" name="cidade" [(ngModel)]="user.cidade" disabled>
+    </div>
+  </form>
+
+</div>
+
+
+
+
+</div>
+
+
+<router-outlet >
+
 </router-outlet>

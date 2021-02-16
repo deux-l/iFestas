@@ -23,8 +23,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
     LandingComponent,
     LoginComponent,
     CadusuarioComponent,
-    PaginanaoencontradaComponent,
-
+    PaginanaoencontradaComponent
   ],
   imports: [
     BrowserModule,

@@ -10,41 +10,19 @@ const URL = 'http://localhost:3007/cadusuario';
   templateUrl: './cadusuario.component.html',
   styleUrls: ['./cadusuario.component.css']
 })
-
 export class CadusuarioComponent implements OnInit {
+
+  constructor(private cadusuarioService: CadusuarioService) { }
 
   usuario: Usuario = new Usuario();
 
   constructor(private cadusuarioService: CadusuarioService,
     private http: HttpClient
-    ) {
+    ) 
 
-  }
 
   ngOnInit(): void {
   }
 
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

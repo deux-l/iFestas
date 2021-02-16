@@ -12,10 +12,13 @@ const routes: Routes = [
         children: [
           { path: 'cadproduto', component: CadprodutoComponent},
 
+          { path: 'editproduto', component: EditprodutoComponent},
+
           { path: 'editusuario', component: EditusuarioComponent},
 
-          { path: 'editproduto', component: EditprodutoComponent}
+          { path: ':id', component: EditprodutoComponent},
 
+          { path: ':id', component: EditusuarioComponent}
         ]}
 ];
 

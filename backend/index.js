@@ -58,6 +58,12 @@ app.post('/logar', (req, res) => {
 	//let senha = req.body.senha;
 execSqlQuery(`select * from usuario where email='${email}'`, res);
 });
+
+// método buscar por email
+app.get('/logar/:email', (req, res) => {
+    var email = req.params.email;
+    execSqlQuery(`select * from usuario where email='${email}'`, res);
+});
 /*método de apagar ... (precisa alterar)
 app.delete('/aluno/:codigo', (req, res) => {
     var codigo = parseInt(req.params.codigo);

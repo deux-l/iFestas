@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -17,6 +18,7 @@ import { UsuarioareaComponent } from './usuarioarea.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     UsuarioareaRoutingModule
   ]
 })
