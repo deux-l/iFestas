@@ -1,4 +1,4 @@
-# ifestas :cocktail: :birthday: :beers: :wine_glass: :pizza: :tropical_drink: :cake:
+# iFestas :cocktail: :birthday: :beers: :wine_glass: :pizza: :tropical_drink: :cake:
  
 Projeto gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 11.1.2.
 
