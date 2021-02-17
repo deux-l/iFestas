@@ -7,6 +7,9 @@ import { EditprodutoComponent } from './editproduto/editproduto.component';
 import { EditusuarioComponent } from './editusuario/editusuario.component';
 import { CadprodutoComponent } from './cadproduto/cadproduto.component';
 import { UsuarioareaComponent } from './usuarioarea.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 
 
 @NgModule({
@@ -20,7 +23,9 @@ import { UsuarioareaComponent } from './usuarioarea.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    UsuarioareaRoutingModule
+    UsuarioareaRoutingModule,
+    NgxMaskModule.forRoot(),
+    MDBBootstrapModule.forRoot(),
   ]
 })
 export class UsuarioareaModule { }

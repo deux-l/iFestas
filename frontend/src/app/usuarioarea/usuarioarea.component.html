@@ -1,24 +1,24 @@
 <h1>  Bem vindo a sua área de usuário </h1>
-<h3>{{exibiNome()}}</h3>
+<h3> <mdb-icon far icon="user-circle"></mdb-icon> {{exibiNome()}}</h3>
 
 <div class="row">
   <div class="col-2">
 
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" [routerLink]="[usuario.email]" >Edite seus dados</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="[usuario.email]"> <mdb-icon fas icon="edit"></mdb-icon> Edite seus dados</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" routerLink="cadproduto">Cadastrar um novo produto</a>
+        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" routerLink="cadproduto"> <mdb-icon far icon="plus-square"></mdb-icon> Cadastrar um novo produto</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" routerLink="editproduto">Editar informações do produto</a>
+        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" routerLink="editproduto"> <mdb-icon fas icon="edit"></mdb-icon> Editar informações do produto</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pedidos</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"> <mdb-icon fas icon="bars"></mdb-icon> Pedidos</a>
       </li>
     </ul>
   </div>
