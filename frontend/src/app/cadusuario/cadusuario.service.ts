@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Usuario } from 'src/app/model/usuario';
 import { NivelAcesso } from './../model/nivelAcesso';
 
-const URL = 'http://localhost:3007/criar';
+const URL = 'http://localhost:3007/usuario';
 
 @Injectable({
   providedIn: 'root'

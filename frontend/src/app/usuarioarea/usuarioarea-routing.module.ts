@@ -10,13 +10,15 @@ const routes: Routes = [
 
   { path: '', component: UsuarioareaComponent,
         children: [
-          { path: 'cadproduto', component: CadprodutoComponent},
-
           { path: 'editproduto', component: EditprodutoComponent},
 
-          { path: 'editusuario/:id', component: EditusuarioComponent},
+          { path: 'cadproduto/:id', component: CadprodutoComponent},
 
-          { path: ':email', component: EditusuarioComponent},
+          { path: 'editusuario/:email', component: EditusuarioComponent}
+
+          //{ path: ':id', component: CadprodutoComponent},
+
+          //{ path: ':email', component: EditusuarioComponent}
 
         ]}
 ];

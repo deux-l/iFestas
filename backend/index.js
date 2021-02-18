@@ -37,8 +37,8 @@ function execSqlQuery(sqlQry, res) {
 		console.log('Executou ...');
 	})
 }
-// método inserir 
-app.post('/criar', (req, res) => {
+// método inserir usuario
+app.post('/usuario', (req, res) => {
 	var nome = req.body.nome;
 	var cpf = req.body.cpf;
     var nascimento = req.body.nascimento;
@@ -54,11 +54,29 @@ app.post('/criar', (req, res) => {
 execSqlQuery(`insert into usuario (nome, cpf, nascimento, celular, rua, numero, cep, bairro, cidade, email, senha, nivelAcesso)
   values ('${nome}','${cpf}','${nascimento}','${celular}','${rua}','${numero}',
   '${cep}','${bairro}','${cidade}','${email}','${senha}','${nivelAcesso}')`, res);
-})
+});
+
+// método inserir produto
+app.post('/produto', (req, res) => {
+	var nomeProduto = req.body.nomeProduto;
+	var valor = req.body.valor;
+	var descricao = req.body.descricao;
+    var imagem1 = req.body.imagem1;
+    var imagem2 = req.body.imagem2;
+	var imagem3 = req.body.imagem3;
+	var idUsuario = req.body.idUsuario;
+execSqlQuery(`insert into produto (nomeProduto, valor, descricao, imagem1, imagem2, imagem3, idUsuario)
+  values ('${nomeProduto}','${valor}','${descricao}','${imagem1}','${imagem2}','${imagem3}','${idUsuario}')`, res);
+});
 
 // método selecionar todos os usuários
-app.get('/criar', (req, res) => {
+app.get('/usuario', (req, res) => {
 	execSqlQuery(`select * from usuario `, res);
+});
+
+// método selecionar todos os produtos
+app.get('/produto', (req, res) => {
+	execSqlQuery(`select * from produto `, res);
 });
 
 // método logar  buscando por email do cliente...

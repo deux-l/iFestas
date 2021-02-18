@@ -1,3 +1,4 @@
+import { CadprodutoService } from './cadproduto/cadproduto.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -26,6 +27,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     UsuarioareaRoutingModule,
     NgxMaskModule.forRoot(),
     MDBBootstrapModule.forRoot(),
+  ],
+  providers: [
+    CadprodutoService
   ]
 })
 export class UsuarioareaModule { }

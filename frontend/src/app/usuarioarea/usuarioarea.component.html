@@ -6,11 +6,11 @@
 
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" [routerLink]="[usuario.email]"> <mdb-icon fas icon="edit"></mdb-icon> Edite seus dados</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['editusuario', usuario.email]"> <mdb-icon fas icon="edit"></mdb-icon> Edite seus dados</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" routerLink="cadproduto"> <mdb-icon far icon="plus-square"></mdb-icon> Cadastrar um novo produto</a>
+        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" [routerLink]="['cadproduto', usuario.idUsuario]"> <mdb-icon far icon="plus-square"></mdb-icon> Cadastrar um novo produto</a>
       </li>
 
       <li class="nav-item">
@@ -30,3 +30,8 @@
 <router-outlet >
 
 </router-outlet>
+
+
+<p>
+  {{usuario.idUsuario}}
+</p>
