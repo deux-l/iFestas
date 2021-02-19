@@ -5,75 +5,94 @@
       Edite seu produto aqui
     </h1>
 
-    <form class="row g-3"  *ngFor="let produto of produtos">
-      <div class="col-md-6 mt-4">
-        <div class="col-md-12">
-          <label class="form-group"> Nome Do produto</label>
-          <input [(ngModel)]="produto.nomeProduto" name="nomeProduto" type="text" class="form-control">
-        </div>
 
+      <form class="row g-3"  *ngFor="let produto of produtos">
+
+        <div class="col-md-6 mt-4">
           <div class="col-md-12">
-            <label class="form-group"> Imagem </label>
-            <input [(ngModel)]="produto.imagem1" name="imagem" type="text" class="form-control">
+            <label class="form-group"> Nome Do produto</label>
+            <input [(ngModel)]="produto.nomeProduto" name="nomeProduto" type="text" class="form-control">
           </div>
 
-          <div class="col-md-12">
-            <label class="form-group">Valor</label>
-            <input [(ngModel)]="produto.valor" name="valor" type="text" class="form-control" >
+            <div class="col-md-12">
+              <label class="form-group"> Imagem </label>
+              <input [(ngModel)]="produto.imagem1" name="imagem" type="text" class="form-control">
+            </div>
+
+            <div class="col-md-12">
+              <label class="form-group">Valor</label>
+              <input [(ngModel)]="produto.valor" name="valor" type="text" class="form-control" >
+            </div>
+           </div>
+
+        <div class="row">
+          <div class="form-floating col-md-6">
+            <label for="floatingTextarea2">Descrição</label>
+            <textarea [(ngModel)]="produto.descricao"  name="descricao" class="form-control" placeholder="Altere aqui a descrição do produto ou serviço"
+            id="floatingTextarea2" style="height: 300px; width: 500px;"></textarea>
           </div>
-         </div>
-
-      <div class="row">
-        <div class="form-floating col-md-6">
-          <label for="floatingTextarea2">Descrição</label>
-          <textarea [(ngModel)]="produto.descricao"  name="descricao" class="form-control" placeholder="Altere aqui a descrição do produto ou serviço"
-          id="floatingTextarea2" style="height: 300px; width: 500px;"></textarea>
         </div>
-      </div>
 
 
-      <div class="card-deck">
-        <mdb-card>
-          <mdb-card-body>
-            <mdb-card-title>
-              <h4>Imagem principal</h4>
-            </mdb-card-title>
-            <mdb-card-text>
-              <img [src]="produto.imagem1" class="img-fluid" alt="">
-            </mdb-card-text>
-          </mdb-card-body>
-          <mdb-card-footer><small class="text-muted"><h6>R$: {{produto.valor}}</h6></small></mdb-card-footer>
-        </mdb-card>
+        <div class="card-deck">
+          <mdb-card>
+            <mdb-card-body>
+              <mdb-card-title>
+                <h4>Imagem principal</h4>
+              </mdb-card-title>
+              <mdb-card-text>
+                <img [src]="produto.imagem1" class="img-fluid" alt="">
+              </mdb-card-text>
+            </mdb-card-body>
+            <mdb-card-footer><small class="text-muted"><h6>
+              R$: {{produto.valor}}<br><br>
+              <a [routerLink]="['editimagem', produto.idProduto]"><mdb-icon far icon="image" size="2x"></mdb-icon>Inserir ou alterar imagem</a>
+            </h6></small>
+          </mdb-card-footer>
+          </mdb-card>
 
-        <mdb-card>
-          <mdb-card-body>
-            <mdb-card-title>
-              <h4>Segunda imagem</h4>
-            </mdb-card-title>
-            <mdb-card-text>
-              <img [src]="produto.imagem2" class="img-fluid" alt="">
-            </mdb-card-text>
-          </mdb-card-body>
-          <mdb-card-footer><small class="text-muted"><h6> R$: {{produto.valor}} </h6></small></mdb-card-footer>
-        </mdb-card>
+          <mdb-card>
+            <mdb-card-body>
+              <mdb-card-title>
+                <h4>Segunda imagem</h4>
+              </mdb-card-title>
+              <mdb-card-text>
+                <img [src]="produto.imagem2" class="img-fluid" alt="">
+              </mdb-card-text>
+            </mdb-card-body>
+            <mdb-card-footer><small class="text-muted"><h6>
+              R$: {{produto.valor}}<br><br>
+              <a [routerLink]="['editimagem', produto.idProduto]"><mdb-icon far icon="image" size="2x"></mdb-icon>Inserir ou alterar imagem</a>
+            </h6></small>
+          </mdb-card-footer>
+          </mdb-card>
 
-        <mdb-card>
-          <mdb-card-body>
-            <mdb-card-title>
-              <h4>Terceira imagem</h4>
-            </mdb-card-title>
-            <mdb-card-text>
-              <img [src]="produto.imagem3" class="img-fluid" alt="">
-            </mdb-card-text>
-          </mdb-card-body>
-          <mdb-card-footer><small class="text-muted"><h6> R$: {{produto.valor}} </h6></small></mdb-card-footer>
-        </mdb-card>
-      </div>
+          <mdb-card>
+            <mdb-card-body>
+              <mdb-card-title>
+                <h4>Terceira imagem</h4>
+              </mdb-card-title>
+              <mdb-card-text>
+                <img [src]="produto.imagem3" class="img-fluid" alt="">
+              </mdb-card-text>
+            </mdb-card-body>
+            <mdb-card-footer><small class="text-muted"><h6>
+              R$: {{produto.valor}}<br><br>
+              <a [routerLink]="['editimagem', produto.idProduto]"><mdb-icon far icon="image" size="2x"></mdb-icon>Inserir ou alterar imagem</a>
+            </h6></small>
+          </mdb-card-footer>
+          </mdb-card>
+        </div>
 
-      <div class="col-6 col-sm-4 mt-5">
-        <button type="submit" class="btn btn-primary btn-md btn-block" >Atualizar</button>
-      </div>
-    </form>
+        <div class="col-6 col-sm-4 mt-5">
+          <button type="submit" class="btn btn-primary btn-md btn-block" >Atualizar Dados do produto</button>
+        </div>
+
+      </form>
+
+
+
+
 
 
 
@@ -103,4 +122,4 @@
 
 
 
-<p>{{produto.idUsuario}}</p>
+<p>{{produto.idProduto}}</p>

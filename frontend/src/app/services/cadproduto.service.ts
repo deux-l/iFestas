@@ -16,20 +16,6 @@ export class CadprodutoService {
     return this.http.post<Produto>(`${URL}`, produto);
   }
 
-  upload(files: Set<File>) {
-
-    const formData = new FormData();
-    files.forEach(file => formData.append('file', file, file.name));
-
-    // const request = new HttpRequest('POST', url, formData);
-    // return this.http.request(request);
-    console.log(`${URL}`);
-    return this.http.post(`${URL}`, formData, {
-      observe: 'events',
-      reportProgress: true
-    });
-  }
-
    public buscarProdutos(idUsuario: any){
     return this.http.get<Produto[]>(`${URL}/${idUsuario}`)
   }

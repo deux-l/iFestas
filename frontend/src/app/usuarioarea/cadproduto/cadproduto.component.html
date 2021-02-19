@@ -4,32 +4,48 @@
       Cadastro de produto ou serviço:
     </h1>
 
-    <form #f="ngForm" class="row g-3" >
+    <form #f="ngForm">
 
-      <div class="col-md-6">
-        <label class="form-group"> Produto</label>
-        <input [(ngModel)]="produto.nomeProduto" name="nomeProduto" type="text" class="form-control"  required >
-      </div>
-
-      <div class="col-md-6">
-        <label class="form-group"> Valor </label>
-        <input [(ngModel)]="produto.valor" name="valor" type="text" class="form-control"  mask="separator.2" thousandSeparator="."
-        placeholder="R$ "required >
-      </div>
-
-      <div class="col-md-6">
-        <label class="form-group">Descrição</label>
-        <input [(ngModel)]="produto.descricao" name="descricao" type="text" class="form-control"
-        required>
-      </div>
-
-      <div class="col-md-6">
-          <label class="form-group">Categoria</label>
-          <input [(ngModel)]="produto.descricao" name="descricao" type="text" class="form-control"
-          required>
+      <div class="row">
+        <div class="col-md-6">
+          <label class="form-group"> Nome Do produto</label>
+          <input [(ngModel)]="produto.nomeProduto" name="nomeProduto" type="text" class="form-control">
         </div>
 
-      <div class="col-md-6">
+        <div class="col-md-6">
+          <label class="form-group">Categoria do produto</label>
+          <select [(ngModel)]="produto.categoria" name="categoria" class="browser-default custom-select mb-4">
+            <option  disabled>Categorias:</option>
+            <option value="brinquedos">Brinquedos</option>
+            <option value="comidas">Comidas</option>
+            <option value="equipamentos">Equipamentos</option>
+            <option value="servicos">Serviços</option>
+        </select>
+          </div>
+      </div>
+
+
+      <div class="row">
+        <div class="md-form col-md-8">
+          <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon>
+          <textarea [(ngModel)]="produto.descricao" name="descricao" type="text" id="form8" class="md-textarea form-control" mdbInput></textarea>
+          <label for="form8">Descrição do produto</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <mdb-icon fas icon="dollar-sign"></mdb-icon>
+          <label class="form-group">Valor</label>
+          <input [(ngModel)]="produto.valor" name="valor" type="text" class="form-control" >
+        </div>
+      </div>
+
+
+
+
+
+      <!--div class="col-md-6">
           <label class="form-group" for="customFile" id="customFileLabel">
               Selecionar Arquivo
             </label>
@@ -40,23 +56,17 @@
               class="form-control"
               id="customFile"
               (change)="onChange($event)"
-              multiple/>
+              />
           </div>
           <button type="button" class="btn btn-primary" (click)="onUpload()" [disabled]="!files">
               Upload
             </button>
-      </div>
-
-      <div class="col-md-6">
-
-      </div>
-
-
+      </div-->
 
 
 
       <div class="col-12 col-sm-4 mt-5">
-        <button type="submit" class="btn btn-primary btn-md btn-block" (click)="onUpload()"><mdb-icon fas icon="check"></mdb-icon> Cadastrar</button>
+        <button type="submit" class="btn btn-primary btn-md btn-block" (click)="gravarProduto()"><mdb-icon fas icon="check"></mdb-icon> Cadastrar</button>
       </div>
     </form>
   </div>

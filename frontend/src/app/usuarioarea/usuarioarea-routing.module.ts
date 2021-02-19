@@ -5,6 +5,7 @@ import { UsuarioareaComponent } from './usuarioarea.component';
 import { CadprodutoComponent } from './cadproduto/cadproduto.component';
 import { EditusuarioComponent } from './editusuario/editusuario.component';
 import { EditprodutoComponent } from './editproduto/editproduto.component';
+import { EditimagemComponent } from './editimagem/editimagem.component';
 
 const routes: Routes = [
 
@@ -14,7 +15,9 @@ const routes: Routes = [
 
           { path: 'cadproduto/:id', component: CadprodutoComponent},
 
-          { path: 'editusuario/:email', component: EditusuarioComponent}
+          { path: 'editusuario/:email', component: EditusuarioComponent},
+
+          { path: 'editproduto/:id/editimagem/:id', component: EditimagemComponent},
 
           //{ path: ':id', component: CadprodutoComponent},
 

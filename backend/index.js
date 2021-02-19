@@ -19,6 +19,7 @@ app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Headers','X-Requested-With, Content-Type, X-Codingpedia,Authorization');
 	next();
 }); 
+//------------------------------------------A partir da aqui estão todos os métodos referente à usuário----------------------------
 
 function execSqlQuery(sqlQry, res) {
 	const connection = mysql.createConnection({
@@ -38,6 +39,14 @@ function execSqlQuery(sqlQry, res) {
 		console.log('Executou ...');
 	})
 }
+
+// método logar  buscando por email do cliente...
+app.post('/logar', (req, res) => {
+	var email = req.body.email;;
+	//let senha = req.body.senha;
+execSqlQuery(`select * from usuario where email='${email}'`, res);
+});
+
 // método inserir usuario
 app.post('/usuario', (req, res) => {
 	var nome = req.body.nome;
@@ -57,29 +66,68 @@ execSqlQuery(`insert into usuario (nome, cpf, nascimento, celular, rua, numero, 
   '${cep}','${bairro}','${cidade}','${email}','${senha}','${nivelAcesso}')`, res);
 });
 
-// método inserir produto
-/*app.post('/produto', (req, res) => {
-	var nomeProduto = req.body.nomeProduto;
-	var valor = req.body.valor;
-	var descricao = req.body.descricao;
-    var imagem1 = req.body.imagem1;
-    var imagem2 = req.body.imagem2;
-	var imagem3 = req.body.imagem3;
-	var idUsuario = req.body.idUsuario;
-execSqlQuery(`insert into produto (nomeProduto, valor, descricao, imagem1, imagem2, imagem3, idUsuario)
-  values ('${nomeProduto}','${valor}','${descricao}','${imagem1}','${imagem2}','${imagem3}','${idUsuario}')`, res);
-});*/
+// método selecionar todos os usuários
+app.get('/usuario', (req, res) => {
+	execSqlQuery(`select * from usuario `, res);
+});
 
+// método buscar usuário por email
+app.get('/logar/:email', (req, res) => {
+    var email = req.params.email;
+    execSqlQuery(`select * from usuario where email='${email}'`, res);
+});
+
+//método de atualizar usuário
+app.put('/logar/:email', (req, res) => {
+    var idUsuario = parseInt(req.body.idUsuario); 
+    var nome = req.body.nome;
+    var nascimento = req.body.nascimento;
+    var celular = req.body.celular;
+	var rua = req.body.rua;
+	var numero = req.body.numero;
+	var cep = req.body.cep;
+	var bairro = req.body.bairro;
+	var cidade = req.body.cidade;
+	var email = req.params.email;
+	var senha = req.body.senha;
+execSqlQuery(`update usuario set nome='${nome}', nascimento='${nascimento}', celular='${celular}', rua='${rua}',
+			  	numero='${numero}', cep='${cep}', bairro='${bairro}', cidade='${cidade}', email='${email}', senha='${senha}'
+    where idUsuario=${+idUsuario}` , res);
+});
+//------------------------------------------A partir da aqui estão todos os métodos referente à produtos----------------------------
+
+// método inserir produto
+app.post('/produto', (req, res) => {
+	var nomeProduto = req.body.nomeProduto;
+	var valor 		= req.body.valor;
+	var descricao 	= req.body.descricao;
+	var categoria   = req.body.categoria;
+	var idUsuario 	= req.body.idUsuario;
+execSqlQuery(`insert into produto (nomeProduto, valor, descricao, categoria, idUsuario)
+  values ('${nomeProduto}','${valor}','${descricao}','${categoria}','${idUsuario}')`, res);
+});
+
+// método selecionar todos os produtos por id do usuário
+app.get('/produto/:idUsuario', (req, res) => {
+	var idUsuario = req.params.idUsuario;
+	execSqlQuery(`select * from produto where idUsuario='${idUsuario}'`, res);
+});
+
+
+// método buscar produto por idProduto
+app.get('/imagem/:idproduto', (req, res) => {
+    var idProduto = req.params.idproduto;
+    execSqlQuery(`select * from produto where idProduto='${idProduto}'`, res);
+});
+
+//metodo atualizar imagens na tabela produto
 const multipartMiddleware = multipart({ uploadDir: 'C:/Users/crist/projetoangular/projetoifestas/frontend/src/assets/imagens' });
-app.post('/produto', multipartMiddleware, (req, res) => {	
+app.put('/imagem/:idproduto', multipartMiddleware, (req, res) => {	
   const files = req.files;
-  var nomeProduto = 'Bolo';
-  var valor = 34.99;
-  var descricao = 'Bolo de laranja';
+  var idProduto = parseInt(req.params.idproduto);
   var imagem1 = files['file'][0]['path'];
   var imagem2 = files['file'][1]['path'];;
   var imagem3 = files['file'][2]['path'];
-  var idUsuario = 33;
   //const item = files.file[0]['path']
   const item = files
 
@@ -104,58 +152,15 @@ app.post('/produto', multipartMiddleware, (req, res) => {
   console.log(imagem1);
   console.log(imagem2);
   console.log(imagem3);
-  execSqlQuery(`insert into produto (nomeProduto, valor, descricao, imagem1, imagem2, imagem3, idUsuario)
-  values ('${nomeProduto}','${valor}','${descricao}','${imagem1}','${imagem2}','${imagem3}','${idUsuario}')`, res);
+  execSqlQuery(`update produto set imagem1='${imagem1}', imagem2='${imagem2}', imagem3='${imagem3}'
+				where idProduto=${+idProduto}` , res);
 });
 
-
-// método selecionar todos os usuários
-app.get('/usuario', (req, res) => {
-	execSqlQuery(`select * from usuario `, res);
-});
-
-// método selecionar todos os produtos por id do usuário
-app.get('/produto/:idUsuario', (req, res) => {
-	var idUsuario = req.params.idUsuario;
-	execSqlQuery(`select * from produto where idUsuario='${idUsuario}'`, res);
-});
-
-// método logar  buscando por email do cliente...
-app.post('/logar', (req, res) => {
-	var email = req.body.email;;
-	//let senha = req.body.senha;
-execSqlQuery(`select * from usuario where email='${email}'`, res);
-});
-
-// método buscar por email
-app.get('/logar/:email', (req, res) => {
-    var email = req.params.email;
-    execSqlQuery(`select * from usuario where email='${email}'`, res);
-});
 /*método de apagar ... (precisa alterar)
 app.delete('/aluno/:codigo', (req, res) => {
     var codigo = parseInt(req.params.codigo);
 	execSqlQuery(`delete from aluno where codigo=` + codigo, res);
 });*/
-
-//método de atualizar 
-app.put('/logar/:email', (req, res) => {
-    var idUsuario = parseInt(req.body.idUsuario); 
-    var nome = req.body.nome;
-    var nascimento = req.body.nascimento;
-    var celular = req.body.celular;
-	var rua = req.body.rua;
-	var numero = req.body.numero;
-	var cep = req.body.cep;
-	var bairro = req.body.bairro;
-	var cidade = req.body.cidade;
-	var email = req.params.email;
-	var senha = req.body.senha;
-execSqlQuery(`update usuario set nome='${nome}', nascimento='${nascimento}', celular='${celular}', rua='${rua}',
-			  	numero='${numero}', cep='${cep}', bairro='${bairro}', cidade='${cidade}', email='${email}', senha='${senha}'
-    where idUsuario=${+idUsuario}` , res);
-});
-
 
 var server = app.listen(3007, 'localhost', function () {
 	var host = server.address().address;

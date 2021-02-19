@@ -10,6 +10,8 @@ import { CadprodutoComponent } from './cadproduto/cadproduto.component';
 import { UsuarioareaComponent } from './usuarioarea.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { EditimagemComponent } from './editimagem/editimagem.component';
+import { ImagemService } from '../services/imagem.service';
 
 
 
@@ -18,7 +20,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     UsuarioareaComponent,
     CadprodutoComponent,
     EditusuarioComponent,
-    EditprodutoComponent
+    EditprodutoComponent,
+    EditimagemComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +32,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     MDBBootstrapModule.forRoot(),
   ],
   providers: [
-    CadprodutoService
+    CadprodutoService,
+    ImagemService
   ]
 })
 export class UsuarioareaModule { }
