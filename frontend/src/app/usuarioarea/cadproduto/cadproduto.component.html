@@ -5,6 +5,7 @@
     </h1>
 
     <form #f="ngForm" class="row g-3" >
+
       <div class="col-md-6">
         <label class="form-group"> Produto</label>
         <input [(ngModel)]="produto.nomeProduto" name="nomeProduto" type="text" class="form-control"  required >
@@ -22,30 +23,40 @@
         required>
       </div>
 
+      <div class="col-md-6">
+          <label class="form-group">Categoria</label>
+          <input [(ngModel)]="produto.descricao" name="descricao" type="text" class="form-control"
+          required>
+        </div>
 
-      <div class="col-md-7">
-        <label class="form-group" for="customFile" id="customFileLabel"> Imagem 1 </label>
-        <input [(ngModel)]="produto.imagem1" name="imagem1" type="file" class="form-control-file" id="customFile"
-        accept="image/png, image/jpeg"  required>
+      <div class="col-md-6">
+          <label class="form-group" for="customFile" id="customFileLabel">
+              Selecionar Arquivo
+            </label>
+          <div class="form-group">
+            <input
+            accept="image/png, image/jpeg"
+              type="file"
+              class="form-control"
+              id="customFile"
+              (change)="onChange($event)"
+              multiple/>
+          </div>
+          <button type="button" class="btn btn-primary" (click)="onUpload()" [disabled]="!files">
+              Upload
+            </button>
       </div>
 
-      <div class="col-md-7">
-        <label class="form-group" for="exampleFormControlFile1"> Imagem 2 </label>
-        <input name="imagem2" type="file" class="form-control-file" id="exampleFormControlFile1"
-        accept="image/png, image/jpeg"
-        required>
+      <div class="col-md-6">
+
       </div>
 
-      <div class="col-md-9">
-        <label class="form-group" for="exampleFormControlFile1"> Imagem 3 </label>
-        <input name="imagem3" type="file" class="form-control-file" id="exampleFormControlFile1"
-        accept="image/png, image/jpeg"
-        required>
-      </div>
+
+
 
 
       <div class="col-12 col-sm-4 mt-5">
-        <button type="submit" class="btn btn-primary btn-md btn-block" (click)="gravarProduto()"><mdb-icon fas icon="check"></mdb-icon> Cadastrar</button>
+        <button type="submit" class="btn btn-primary btn-md btn-block" (click)="onUpload()"><mdb-icon fas icon="check"></mdb-icon> Cadastrar</button>
       </div>
     </form>
   </div>

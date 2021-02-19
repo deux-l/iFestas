@@ -1,6 +1,7 @@
 //linguagem express
 var express = require('express');
 var bodyParser = require('body-parser');
+const multipart = require('connect-multiparty');
 var app = express();
 
 // saída (json)
@@ -57,7 +58,7 @@ execSqlQuery(`insert into usuario (nome, cpf, nascimento, celular, rua, numero, 
 });
 
 // método inserir produto
-app.post('/produto', (req, res) => {
+/*app.post('/produto', (req, res) => {
 	var nomeProduto = req.body.nomeProduto;
 	var valor = req.body.valor;
 	var descricao = req.body.descricao;
@@ -67,16 +68,56 @@ app.post('/produto', (req, res) => {
 	var idUsuario = req.body.idUsuario;
 execSqlQuery(`insert into produto (nomeProduto, valor, descricao, imagem1, imagem2, imagem3, idUsuario)
   values ('${nomeProduto}','${valor}','${descricao}','${imagem1}','${imagem2}','${imagem3}','${idUsuario}')`, res);
+});*/
+
+const multipartMiddleware = multipart({ uploadDir: 'C:/Users/crist/projetoangular/projetoifestas/frontend/src/assets/imagens' });
+app.post('/produto', multipartMiddleware, (req, res) => {	
+  const files = req.files;
+  var nomeProduto = 'Bolo';
+  var valor = 34.99;
+  var descricao = 'Bolo de laranja';
+  var imagem1 = files['file'][0]['path'];
+  var imagem2 = files['file'][1]['path'];;
+  var imagem3 = files['file'][2]['path'];
+  var idUsuario = 33;
+  //const item = files.file[0]['path']
+  const item = files
+
+  //var resultado = imagem1.replace(//g, " ");
+  var er = /[""\\]/gi
+  imagem1 = imagem1.replace(er, "")	
+  imagem1 = imagem1.replace(/C:Userscristprojetoangularprojetoifestasfrontendsrcassetsimagens/g,"")
+  imagem1 = `assets\\\\imagens\\\\${imagem1}`
+
+  //var er = /[""\\]/gi
+  imagem2 = imagem2.replace(er, "")	
+  imagem2 = imagem2.replace(/C:Userscristprojetoangularprojetoifestasfrontendsrcassetsimagens/g,"")
+  imagem2 = `assets\\\\imagens\\\\${imagem2}`
+  
+  //var er = /[""\\]/gi
+  imagem3 = imagem3.replace(er, "")	
+  imagem3 = imagem3.replace(/C:Userscristprojetoangularprojetoifestasfrontendsrcassetsimagens/g,"")
+  imagem3 = `assets\\\\imagens\\\\${imagem3}`
+
+  //res.json({ message: files });
+  //var imagem1 = files['file']['path'];
+  console.log(imagem1);
+  console.log(imagem2);
+  console.log(imagem3);
+  execSqlQuery(`insert into produto (nomeProduto, valor, descricao, imagem1, imagem2, imagem3, idUsuario)
+  values ('${nomeProduto}','${valor}','${descricao}','${imagem1}','${imagem2}','${imagem3}','${idUsuario}')`, res);
 });
+
 
 // método selecionar todos os usuários
 app.get('/usuario', (req, res) => {
 	execSqlQuery(`select * from usuario `, res);
 });
 
-// método selecionar todos os produtos
-app.get('/produto', (req, res) => {
-	execSqlQuery(`select * from produto `, res);
+// método selecionar todos os produtos por id do usuário
+app.get('/produto/:idUsuario', (req, res) => {
+	var idUsuario = req.params.idUsuario;
+	execSqlQuery(`select * from produto where idUsuario='${idUsuario}'`, res);
 });
 
 // método logar  buscando por email do cliente...

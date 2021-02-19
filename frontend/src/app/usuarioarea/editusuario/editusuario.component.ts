@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { Usuario } from 'src/app/model/usuario';
-import { UsuarioareaService } from './../usuarioarea.service';
+import { UsuarioareaService } from '../../services/usuarioarea.service';
 
 @Component({
   selector: 'app-editusuario',

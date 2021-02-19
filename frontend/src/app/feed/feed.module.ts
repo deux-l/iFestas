@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,6 +10,7 @@ import { EquipamentosComponent } from './equipamentos/equipamentos.component';
 import { BrinquedosComponent } from './brinquedos/brinquedos.component';
 import { ProdutodetalheComponent } from './produtodetalhe/produtodetalhe.component';
 import { FecharnegocioComponent } from './fecharnegocio/fecharnegocio.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 
@@ -26,7 +28,9 @@ import { FecharnegocioComponent } from './fecharnegocio/fecharnegocio.component'
   ],
   imports: [
     CommonModule,
-    FeedRoutingModule
+    FormsModule,
+    FeedRoutingModule,
+    MDBBootstrapModule.forRoot(),
   ]
 })
 export class FeedModule { }

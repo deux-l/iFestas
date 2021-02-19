@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Usuario } from './../model/usuario';
+import { Usuario } from '../model/usuario';
 
 const URL = 'http://localhost:3007/logar';
 

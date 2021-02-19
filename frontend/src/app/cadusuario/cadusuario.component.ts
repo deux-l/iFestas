@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Usuario } from '../model/usuario';
-import { CadusuarioService } from './cadusuario.service';
+import { CadusuarioService } from '../services/cadusuario.service';
 
 @Component({
   selector: 'app-cadusuario',

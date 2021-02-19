@@ -14,7 +14,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" routerLink="editproduto"> <mdb-icon fas icon="edit"></mdb-icon> Editar informações do produto</a>
+        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" [routerLink]="['editproduto', usuario.idUsuario]"> <mdb-icon fas icon="edit"></mdb-icon> Editar informações do produto</a>
       </li>
 
       <li class="nav-item">

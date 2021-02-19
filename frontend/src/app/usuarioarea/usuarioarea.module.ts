@@ -1,4 +1,4 @@
-import { CadprodutoService } from './cadproduto/cadproduto.service';
+import { CadprodutoService } from '../services/cadproduto.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

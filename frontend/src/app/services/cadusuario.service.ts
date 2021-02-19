@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { Usuario } from 'src/app/model/usuario';
-import { NivelAcesso } from './../model/nivelAcesso';
+import { NivelAcesso } from '../model/nivelAcesso';
 
 const URL = 'http://localhost:3007/usuario';
 
