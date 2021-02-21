@@ -3,31 +3,38 @@
 
   <!-- Navbar brand -->
   <mdb-navbar-brand><a class="navbar-brand" routerLink="/feed">
-    <img src="assets\imagens\logo.png" width="30" height="30">
-    Feed</a></mdb-navbar-brand>
-    
+      <img src="assets\imagens\logo.png" width="30" height="30">
+      Feed</a></mdb-navbar-brand>
+
   <!-- Collapsible content -->
   <links>
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-          <a class="nav-link waves-light" mdbWavesEffect routerLink="/landing"><mdb-icon fas icon="home"></mdb-icon> Página Inicial</a>
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/landing">
+          <mdb-icon fas icon="home"></mdb-icon> Página Inicial
+        </a>
       </li>
-  </ul>
+    </ul>
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="envelope"></mdb-icon> Contact<span class="sr-only">(current)</span></a>
+        <a class="nav-link waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="envelope"></mdb-icon> Contact<span class="sr-only">(current)</span>
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon> Settings</a>
+        <a class="nav-link waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="cog"></mdb-icon> Settings
+        </a>
       </li>
 
       <!-- Dropdown -->
       <li class="nav-item dropdown" dropdown>
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-          <mdb-icon fas icon="user"></mdb-icon> Perfil<span class="caret"></span></a>
+          <mdb-icon fas icon="user"></mdb-icon> Perfil<span class="caret"></span>
+        </a>
         <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
 
           <div *ngIf="!autenticado">
@@ -35,7 +42,7 @@
             <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/cadusuario">Cadastre-se</a>
           </div>
 
-          <div *ngIf="autenticado" >
+          <div *ngIf="autenticado">
             <a class="dropdown-item waves-light" mdbWavesEffect href="#" (click)="logout()">Log out</a>
             <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/usuarioarea">Área do usuário</a>
           </div>
@@ -55,3 +62,71 @@
 
 
 <router-outlet></router-outlet>
+
+
+
+<footer id="footer" class="bg-primary text-white d-flex-column text-center">
+
+  <hr class="mb-0">
+  <!--Footer Links-->
+  <div class="container text-left text-md-center">
+    <div class="row align-items-center">
+      <!--Contate-nos-->
+      <div class="col-sm-4 shfooter">
+        <h5 class="my-1 font-weight-bold">Contate-nos</h5>
+        <ul class="list-unstyled collapse">
+          <li><strong>Matriz:</strong> Rua Shadow de Almeida - S/N <br>Nova Iguaçu Centro - RJ | CEP:3866-156</li>
+          <li><strong>Telefone:</strong> 2764-1025<br><strong>Email:</strong> ifestas@entretenimento.com.br</li>
+        </ul>
+      </div>
+      <!--/.Contate-nos-->
+
+      <!--Sobre-nós-->
+      <div class="col-sm-4 shfooter">
+        <h5 class="my-1 font-weight-bold">Sobre-nós</h5>
+        <ul class="list-unstyled collapse">
+          <li>
+            <p><strong>iFestas</strong> é um projeto desenvolvido por pessoas comprometidas em trazer facilidade e
+              conveniência ao seu evento.<br>Sua diversão é o nosso objetivo</p>
+          </li>
+        </ul>
+      </div>
+      <!--/.Sobre-nós-->
+
+      <!--Social buttons-->
+      <div class="col-sm-4 shfooter">
+        <h4>Se conecte com a gente!</h4>
+        <ul class="list-unstyled list-inline">
+          <li class="list-inline-item">
+            <a href="#!" class="sbtn btn-large mx-1" title="Facebook">
+              <i class="fab fa-facebook-square fa-3x"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#!" class="sbtn btn-large mx-1" title="Linkedin">
+              <i class="fab fa-linkedin fa-3x"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#!" class="sbtn btn-large mx-1" title="Twitter">
+              <i class="fab fa-twitter-square fa-3x"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#!" class="sbtn btn-large mx-1" title="Youtube">
+              <i class="fab fa-youtube-square fa-3x"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--/.Social buttons-->
+    </div>
+  </div>
+  <!--/.Footer Links-->
+  <hr class="mb-0">
+  <!--Copyright-->
+  <div class="py-1 text-center">
+    &copy; Copyright iFestas | Grupo: Daniele, Cris, Pedro e Carlos - SenacRJ
+  </div>
+  <!--/.Copyright-->
+</footer>
