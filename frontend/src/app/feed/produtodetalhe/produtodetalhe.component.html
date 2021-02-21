@@ -1,1 +1,196 @@
-<p>produtodetalhe works!</p>
+<div class="container">
+  <div class="row">
+
+    <div class=" col-lg-6">
+      <div class="card-deck my-4">
+        <img class="card-img-fluid" [src]="produto.imagem1" alt="">
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 mb-4">
+      <div class="card   my-4">
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="#">{{produto.nomeProduto}}</a>
+          </h4>
+          <h6>R$: {{produto.valor}}</h6>
+          <p class="card-text">{{produto.descricao}}</p>
+        </div>
+        <div class="card-footer">
+          <button mdbBtn type="button" gradient="blue"  mdbWavesEffect><mdb-icon far icon="handshake" size="2x"></mdb-icon> Fechar negócio</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg-10">
+      <div class="carrossel my-4">
+        <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" [src]="produto.imagem3" alt="First slide">
+              <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+            </div>
+
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" [src]="produto.imagem2" alt="Second slide">
+              <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+            </div>
+
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" [src]="produto.imagem1" alt="Third slide">
+              <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+            </div>
+
+          </mdb-carousel-item>
+        </mdb-carousel>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-lg-10">
+      <mdb-card style="width: 50rem">
+        <mdb-card-body>
+          <mdb-card-title>
+
+              <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()"  mdbWavesEffect>Avalie</button>
+              <!--span>É preciso estar logado para enviar uma avaliação</span-->
+              <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                        <span aria-hidden="true">×</span>
+                      </button>
+
+                      <div class="estrelas">
+                        <input  type="radio" id="vazio" name="estrela" value="0" checked>
+
+                        <label for="estrela_um"><i class="fa"></i></label>
+                        <input [(ngModel)]="avaliar.nota" type="radio" id="estrela_um" name="estrela" value="1" >
+
+                        <label for="estrela_dois"><i class="fa"></i></label>
+                        <input [(ngModel)]="avaliar.nota" type="radio" id="estrela_dois" name="estrela" value="2">
+
+                        <label for="estrela_tres"><i class="fa"></i></label>
+                        <input [(ngModel)]="avaliar.nota" type="radio" id="estrela_tres" name="estrela" value="3">
+
+                        <label for="estrela_quatro"><i class="fa"></i></label>
+                        <input [(ngModel)]="avaliar.nota" type="radio" id="estrela_quatro" name="estrela" value="4">
+
+                        <label for="estrela_cinco"><i class="fa"></i></label>
+                        <input [(ngModel)]="avaliar.nota" type="radio" id="estrela_cinco" name="estrela" value="5"><br><br>
+
+
+                      </div>
+                    </div>
+                    <div class="modal-body">
+                      <input [(ngModel)]="avaliar.avaliacao" name="avaliar" maxlength="50" type="text" placeholder="Descreva aqui sua avaliação" class="form-control">
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Fechar</button>
+                      <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)="salvarAvaliacao()">Enviar Avaliação</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="font-weight-bold mb-3">Avaliações</h2>
+              <h5 *ngIf="media == 0">{{temAvaliacao}}</h5>
+              <h3 *ngIf="media > 0">{{media}}</h3>
+          </mdb-card-title>
+          <mdb-card-text class="mb-0">Média das notas </mdb-card-text>
+        </mdb-card-body>
+        <ul class="list-group list-group-flush" *ngFor="let avaliar of avaliacoes">
+          <li class="list-group-item">
+            <h3>{{avaliar.nomeUsuario}}</h3>
+            <h5>Nota: {{avaliar.nota}}/5</h5>
+            <h6>{{avaliar.avaliacao}}</h6>
+          </li>
+
+        </ul>
+        <mdb-card-body>
+
+
+
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+
+
+<!----
+
+    <div class="md-form col-lg-4">
+      <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon>
+      <textarea ng-model="txtarea" minlength="10" maxlength="50" type="text" id="form8" class="md-textarea form-control" mdbInput ></textarea>
+      <label for="form8">Deixa aqui sua avaliação do produto ou serviço</label>
+    </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Item Two</a>
+              </h4>
+              <h5>$24.99</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="carrossel my-4">
+        <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide">
+              <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+            </div>
+            <div class="carousel-caption">
+              <h3 class="h3-responsive">Light mask</h3>
+              <p>First text</p>
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide">
+              <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+            </div>
+            <div class="carousel-caption">
+              <h3 class="h3-responsive">Strong mask</h3>
+              <p>Secondary text</p>
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide">
+              <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+            </div>
+            <div class="carousel-caption">
+              <h3 class="h3-responsive">Slight mask</h3>
+              <p>Third text</p>
+            </div>
+          </mdb-carousel-item>
+        </mdb-carousel>
+      </div>
+-->

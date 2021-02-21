@@ -28,7 +28,7 @@
         <div class="row">
           <div class="form-floating col-md-6">
             <label for="floatingTextarea2">Descrição</label>
-            <textarea [(ngModel)]="produto.descricao"  name="descricao" class="form-control" placeholder="Altere aqui a descrição do produto ou serviço"
+            <textarea minlength="10" maxlength="200" [(ngModel)]="produto.descricao"  name="descricao" class="form-control" placeholder="Altere aqui a descrição do produto ou serviço"
             id="floatingTextarea2" style="height: 300px; width: 500px;"></textarea>
           </div>
         </div>

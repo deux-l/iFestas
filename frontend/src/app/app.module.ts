@@ -12,6 +12,7 @@ import { PaginanaoencontradaComponent } from './paginanaoencontrada/paginanaoenc
 import { LoginService } from './services/login.service';
 import { AuthenticationService } from './services/authentication.service';
 import { CadusuarioService } from './services/cadusuario.service';
+import { FeedService } from './services/feed.service';
 import { LoginGuard } from './guards/login.guard';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
@@ -36,6 +37,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
   providers: [
     AuthenticationService,
     CadusuarioService,
+    FeedService,
     LoginService,
     LoginGuard
   ],

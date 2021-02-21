@@ -11,21 +11,19 @@ import { ComidasComponent } from './comidas/comidas.component';
 
 const routes: Routes = [
 
-  { path: '', component: FeedComponent,
-        children: [
-          { path: 'comidas', component: ComidasComponent },
+  { path: '', component: FeedComponent},
 
-          { path: 'servicos', component: ServicosComponent },
+  { path: 'comidas', component: ComidasComponent },
 
-          { path: 'equipamentos', component: EquipamentosComponent },
+  { path: 'servicos', component: ServicosComponent },
 
-          { path: 'brinquedos', component: BrinquedosComponent },
+  { path: 'equipamentos', component: EquipamentosComponent },
 
-          { path: 'produtodetalhe', component: ProdutodetalheComponent },
+  { path: 'brinquedos', component: BrinquedosComponent },
 
-          { path: 'fecharnegocio', component: FecharnegocioComponent }
-        ]
-  }
+  { path: 'produtodetalhe/:id', component: ProdutodetalheComponent },
+
+  { path: 'fecharnegocio', component: FecharnegocioComponent }
 
 ];
 

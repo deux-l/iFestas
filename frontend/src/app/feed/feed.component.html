@@ -1,13 +1,8 @@
 <p>Bem vindo(a) ao Ifestas!</p>
 
 
-
-<router-outlet></router-outlet>
-
-
-
 <!-- Conteúdo da página -->
-<div class="container">
+<div class="container" >
 
   <div class="row">
 
@@ -63,23 +58,26 @@
     <!-- Aqui começa os cards -->
 
       <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let produto of produtos">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <a href="#"><img class="card-img-top" [src]="produto.imagem1" alt=""></a>
             <div class="card-body">
-              <h4 class="card-title">
-                <p>Item One</p>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+              <h3 class="card-title">
+                <p>{{produto.nomeProduto}}</p>
+              </h3>
+              <h6>
+                <p>R$: {{produto.valor}}</p>
+              </h6>
+
             </div>
             <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              <button type="button" class="btn btn-primary btn-sm">Small button</button>
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>{{''}}
+              <a [routerLink]="['produtodetalhe', produto.idProduto]"><button type="button" class="btn btn-primary btn-sm">Detalhes</button> </a>
+
             </div>
           </div>
         </div>
-
+<!----
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
@@ -159,7 +157,7 @@
             </div>
           </div>
         </div>
-
+-->
       </div>
       <!-- /.row -->
 
@@ -173,12 +171,7 @@
 <!-- /.container -->
 
 <!-- Footer -->
-<footer class="py-5 bg-dark">
-  <div class="container">
-    <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
-  </div>
-  <!-- /.container -->
-</footer>
+
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>

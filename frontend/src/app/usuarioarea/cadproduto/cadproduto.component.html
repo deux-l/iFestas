@@ -28,7 +28,7 @@
       <div class="row">
         <div class="md-form col-md-8">
           <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon>
-          <textarea [(ngModel)]="produto.descricao" name="descricao" type="text" id="form8" class="md-textarea form-control" mdbInput></textarea>
+          <textarea minlength="10" maxlength="200" [(ngModel)]="produto.descricao" name="descricao" type="text" id="form8" class="md-textarea form-control" mdbInput></textarea>
           <label for="form8">Descrição do produto</label>
         </div>
       </div>

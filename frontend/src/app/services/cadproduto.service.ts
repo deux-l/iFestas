@@ -16,7 +16,8 @@ export class CadprodutoService {
     return this.http.post<Produto>(`${URL}`, produto);
   }
 
-   public buscarProdutos(idUsuario: any){
-    return this.http.get<Produto[]>(`${URL}/${idUsuario}`)
+  public buscarProdutos(idUsuario: any){
+    return this.http.get<Produto[]>(`${URL}/${idUsuario}`);
   }
+
 }

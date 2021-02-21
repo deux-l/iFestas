@@ -1,4 +1,8 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+
+import { Produto } from 'src/app/model/produto';
+import { FeedService } from '../services/feed.service';
 
 @Component({
   selector: 'app-feed',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
-  constructor() { }
+  produtos: Produto[] =[];
+  produto: Produto;
+
+  constructor(private feedService: FeedService,
+              private router: Router) {
+    this.produto = new Produto();
+  }
 
   ngOnInit(): void {
+    this.buscarTodosProdutos();
+  }
+
+  buscarTodosProdutos(){
+    this.feedService.buscarTodosProdutos().subscribe(res => {
+      this.produtos = res;
+    })
   }
 
 }

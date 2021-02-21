@@ -31,6 +31,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     FormsModule,
     FeedRoutingModule,
     MDBBootstrapModule.forRoot(),
-  ]
+  ],
+  providers: []
 })
 export class FeedModule { }

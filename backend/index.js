@@ -107,6 +107,22 @@ execSqlQuery(`insert into produto (nomeProduto, valor, descricao, categoria, idU
   values ('${nomeProduto}','${valor}','${descricao}','${categoria}','${idUsuario}')`, res);
 });
 
+// método inserir avaliação
+app.post('/avaliacoes', (req, res) => {
+	var idUsuario = parseInt(req.body.idUsuario); 
+	var idProduto 		= parseInt(req.body.idProduto); 
+	var nomeUsuario 	= req.body.nomeUsuario;
+	var avaliacao   = req.body.avaliacao;
+	var nota 	= req.body.nota;
+execSqlQuery(`insert into avaliacoes (idUsuario, idProduto, nomeUsuario, avaliacao, nota)
+  values ('${idUsuario}','${idProduto}','${nomeUsuario}','${avaliacao}','${nota}')`, res);
+});
+
+// método selecionar todos os produtos
+app.get('/feed', (req, res) => {
+	execSqlQuery(`select * from produto`, res);
+});
+
 // método selecionar todos os produtos por id do usuário
 app.get('/produto/:idUsuario', (req, res) => {
 	var idUsuario = req.params.idUsuario;
@@ -118,6 +134,12 @@ app.get('/produto/:idUsuario', (req, res) => {
 app.get('/imagem/:idproduto', (req, res) => {
     var idProduto = req.params.idproduto;
     execSqlQuery(`select * from produto where idProduto='${idProduto}'`, res);
+});
+
+// método buscar avaliações por idProduto
+app.get('/avaliacoes/:idproduto', (req, res) => {
+    var idProduto = req.params.idproduto;
+    execSqlQuery(`select * from avaliacoes where idProduto='${idProduto}'`, res);
 });
 
 //metodo atualizar imagens na tabela produto

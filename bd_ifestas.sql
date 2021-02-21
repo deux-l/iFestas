@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Fev-2021 às 01:40
+-- Tempo de geração: 21-Fev-2021 às 06:43
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -21,6 +21,31 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bd_ifestas`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `avaliacoes`
+--
+
+CREATE TABLE `avaliacoes` (
+  `idAvaliacao` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
+  `idProduto` int(11) NOT NULL,
+  `nomeUsuario` varchar(50) NOT NULL,
+  `avaliacao` varchar(50) NOT NULL,
+  `nota` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `avaliacoes`
+--
+
+INSERT INTO `avaliacoes` (`idAvaliacao`, `idUsuario`, `idProduto`, `nomeUsuario`, `avaliacao`, `nota`) VALUES
+(2, 19, 48, 'Patricia Querino', 'Muito bom, massa leve e fofa.', 3),
+(3, 32, 48, 'Elizabeth Cassia', 'Nada bom, seco e sem sabor', 1),
+(6, 33, 48, 'Cristian Daniel ', 'Muito bom, recomendo!', 5),
+(7, 33, 46, 'Cristian Daniel ', 'Muito ruim', 2);
 
 -- --------------------------------------------------------
 
@@ -69,12 +94,13 @@ CREATE TABLE `pedido` (
 
 CREATE TABLE `produto` (
   `idProduto` int(11) NOT NULL,
-  `nomeProduto` varchar(100) DEFAULT NULL,
+  `nomeProduto` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `valor` float(10,2) NOT NULL,
-  `descricao` varchar(300) DEFAULT NULL,
-  `imagem1` varchar(50) DEFAULT NULL,
-  `imagem2` varchar(50) DEFAULT NULL,
-  `imagem3` varchar(50) DEFAULT NULL,
+  `descricao` varchar(200) CHARACTER SET utf8 DEFAULT NULL,
+  `categoria` varchar(30) NOT NULL,
+  `imagem1` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `imagem2` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `imagem3` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `idUsuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -82,10 +108,11 @@ CREATE TABLE `produto` (
 -- Extraindo dados da tabela `produto`
 --
 
-INSERT INTO `produto` (`idProduto`, `nomeProduto`, `valor`, `descricao`, `imagem1`, `imagem2`, `imagem3`, `idUsuario`) VALUES
-(2, 'Bolo ', 100.00, 'Bolo recheado de chocolate ', 'undefined', 'undefined', 'undefined', 33),
-(5, 'Banco de dados', 10.00, 'Exemplo', 'C:fakepathBanco_de_dados_10.png', 'undefined', 'undefined', 33),
-(6, 'Bolo', 80.00, 'Bolo de Laranja', 'undefined', 'undefined', 'undefined', 33);
+INSERT INTO `produto` (`idProduto`, `nomeProduto`, `valor`, `descricao`, `categoria`, `imagem1`, `imagem2`, `imagem3`, `idUsuario`) VALUES
+(44, 'Bolo', 34.99, 'Bolo de laranja', '', 'assets\\imagens\\vNRXNieOWkYbDd6PmG8t33lF.jpg', 'assets\\imagens\\XykSZaRnyEoVeKWnM-yQSjjR.jpg', 'assets\\imagens\\hCMcPeEiV_K1HTmzxcX7y59_.jpg', 33),
+(46, 'Bolo ', 39.00, 'Bolo de coco', 'comida', 'assets\\imagens\\vNRXNieOWkYbDd6PmG8t33lF.jpg', 'assets\\imagens\\XykSZaRnyEoVeKWnM-yQSjjR.jpg', NULL, 33),
+(47, 'Bolo de chocolate', 39.00, 'Bolo de chocolate com recheio de coco', 'comidas', 'assets\\imagens\\Aue0cZUY1oSCzrOi4QGUjD6d.jpg', 'assets\\imagens\\ipP2t9YQsUgAJTFxx54CQ3Ix.jpg', 'assets\\imagens\\RgW6R2_5jQSX3ZA_I2U078tf.jpg', 33),
+(48, 'Bolo ', 40.00, 'Bolo de doce de leite', 'comidas', 'assets\\imagens\\GvPVLgSoQU7skHFdx2uvHFlC.jpg', 'assets\\imagens\\cvYHnRaw6JElRZgPXNIFH5VB.jpg', 'assets\\imagens\\6a75QS-CWQ5O2Cb-B_s7koKO.jpg', 33);
 
 -- --------------------------------------------------------
 
@@ -136,6 +163,14 @@ INSERT INTO `usuario` (`idUsuario`, `nome`, `cpf`, `nascimento`, `celular`, `rua
 --
 
 --
+-- Índices para tabela `avaliacoes`
+--
+ALTER TABLE `avaliacoes`
+  ADD PRIMARY KEY (`idAvaliacao`),
+  ADD KEY `fk_avaliacoes_idProduto` (`idProduto`),
+  ADD KEY `fk_avaliacoes_idUsuario` (`idUsuario`);
+
+--
 -- Índices para tabela `pedido`
 --
 ALTER TABLE `pedido`
@@ -169,6 +204,12 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de tabela `avaliacoes`
+--
+ALTER TABLE `avaliacoes`
+  MODIFY `idAvaliacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
@@ -178,7 +219,7 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de tabela `reserva`
@@ -190,11 +231,18 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- Restrições para despejos de tabelas
 --
+
+--
+-- Limitadores para a tabela `avaliacoes`
+--
+ALTER TABLE `avaliacoes`
+  ADD CONSTRAINT `fk_avaliacoes_idProduto` FOREIGN KEY (`idProduto`) REFERENCES `produto` (`idProduto`),
+  ADD CONSTRAINT `fk_avaliacoes_idUsuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
 
 --
 -- Limitadores para a tabela `pedido`
