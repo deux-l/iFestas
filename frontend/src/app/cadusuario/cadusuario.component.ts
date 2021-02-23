@@ -39,4 +39,24 @@ export class CadusuarioComponent implements OnInit {
     }
 
   }
+
+  public verificaValidTouched(campo: any){
+    return !campo.valid && campo.touched;
+  }
+
+  public aplicaCssErro(campo: any){
+    return {
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo)
+      };
+
+  }
+
+  onSubmit(form: any){
+
+    console.log(form);
+
+
+     }
+
 }

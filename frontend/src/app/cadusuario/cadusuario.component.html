@@ -5,60 +5,111 @@
       Formulário de Cadastro
     </h1>
 
-    <form #f="ngForm" class="row g-3">
-      <div class="col-md-6">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="row g-3">
+      <div class="col-md-6" [ngClass]="aplicaCssErro(nome)">
         <label class="form-group"> Nome Completo</label>
-        <input [(ngModel)]="usuario.nome" name="nome" type="text" class="form-control"  required >
+        <input [(ngModel)]="usuario.nome" name="nome" #nome="ngModel" type="text" class="form-control"  required >
+
+        <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(nome)"
+        msgErro="Campo obrigatório.">
+      </app-campo-control-erro>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6" [ngClass]="aplicaCssErro(cpf)">
         <label class="form-group"> CPF </label>
-        <input [(ngModel)]="usuario.cpf" name="cpf" type="text" class="form-control" mask="000.000.000-00"
+        <input [(ngModel)]="usuario.cpf" name="cpf" #cpf="ngModel" type="text" class="form-control" mask="000.000.000-00"
         placeholder="Ex.: 000.000.000-00"  required >
+
+        <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(cpf)"
+        msgErro="Campo é obrigatório.">
+      </app-campo-control-erro>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6" [ngClass]="aplicaCssErro(cpf)">
         <label class="form-group">Data de Nascimento</label>
-        <input [(ngModel)]="usuario.nascimento" name="nascimento" type="text" class="form-control"
+        <input [(ngModel)]="usuario.nascimento" name="nascimento" #nascimento="ngModel" type="text" class="form-control"
         required >
+
+        <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(nascimento)"
+        msgErro="Campo é obrigatório.">
+      </app-campo-control-erro>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6" [ngClass]="aplicaCssErro(celular)">
         <label class="form-group">Celular</label>
-        <input [(ngModel)]="usuario.celular" name="celular" type="tel" class="form-control"
-        mask="(00)00000-0000" placeholder="Ex.:(00)00000-0000">
+        <input [(ngModel)]="usuario.celular" name="celular" #celular="ngModel" type="tel" class="form-control"
+        mask="(00)00000-0000" placeholder="Ex.:(00)00000-0000" required>
+
+        <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(celular)"
+        msgErro="Campo é obrigatório.">
+      </app-campo-control-erro>
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-8" [ngClass]="aplicaCssErro(rua)">
         <label class="form-group"> Rua </label>
-        <input [(ngModel)]="usuario.rua" name="rua" type="text" class="form-control" required>
+        <input [(ngModel)]="usuario.rua" name="rua" #rua="ngModel" type="text" class="form-control" required>
+
+        <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(rua)"
+        msgErro="Campo é obrigatório.">
+      </app-campo-control-erro>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-4" [ngClass]="aplicaCssErro(numero)">
         <label class="form-group">Número</label>
-        <input [(ngModel)]="usuario.numero" name="numero" type="number" class="form-control">
+        <input [(ngModel)]="usuario.numero" name="numero" #numero="ngModel" type="number" class="form-control" required>
+
+        <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(numero)"
+        msgErro="Campo é obrigatório.">
+      </app-campo-control-erro>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6" [ngClass]="aplicaCssErro(bairro)">
         <label class="form-group">Bairro</label>
-        <input [(ngModel)]="usuario.bairro" name="bairro" type="text" class="form-control" required >
+        <input [(ngModel)]="usuario.bairro" name="bairro" #bairro="ngModel" type="text" class="form-control" required >
+
+        <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(bairro)"
+        msgErro="Campo é obrigatório.">
+      </app-campo-control-erro>
       </div>
 
 
-      <div class="col-md-6">
+      <div class="col-md-6" [ngClass]="aplicaCssErro(cep)">
         <label for="cep" class="form-group">Cep</label>
-        <input [(ngModel)]="usuario.cep" name="cep" type="Text" id="cep" class="form-control" mask="00000-000"
-        placeholder="Ex.:00000-000">
-      </div>
-      <div class="col-md-6">
-        <label for="cidade" class="form-group">Cidade</label>
-        <input [(ngModel)]="usuario.cidade" name="cidade" type="text" id="cidade" class="form-control"
-        required >
+        <input [(ngModel)]="usuario.cep" name="cep" #cep="ngModel" type="Text" id="cep" class="form-control" mask="00000-000"
+        placeholder="Ex.:00000-000" required>
+
+        <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(cep)"
+        msgErro="Campo é obrigatório.">
+      </app-campo-control-erro>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6" [ngClass]="aplicaCssErro(cidade)">
+        <label for="cidade" class="form-group">Cidade</label>
+        <input [(ngModel)]="usuario.cidade" name="cidade" #cidade="ngModel" type="text" id="cidade" class="form-control"
+        required >
+
+        <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(cidade)"
+        msgErro="Campo é obrigatório.">
+      </app-campo-control-erro>
+      </div>
+
+      <div class="col-md-6" [ngClass]="aplicaCssErro(email)">
         <label class="form-group">Email</label>
-        <input [(ngModel)]="usuario.email" name="email" type="Text" class="form-control">
+        <input [(ngModel)]="usuario.email" name="email" #email="ngModel" type="Text" class="form-control" required>
+
+        <app-campo-control-erro
+        [mostrarErro]="verificaValidTouched(email)"
+        msgErro="Campo é obrigatório.">
+      </app-campo-control-erro>
       </div>
 
       <div class="col-6">
@@ -66,7 +117,7 @@
         <div class="form-check">
 
           <input class="form-check-input"  [(ngModel)]="usuario.nivelAcesso" type="radio" name="nivelAcesso 2" data-toggle="tooltip"
-          data-placement="bottom" title="Sendo colaborador você poderá anunciar em nosso site" id="flexRadioDefault1" value="2" >
+          data-placement="bottom" title="Sendo colaborador você poderá anunciar em nosso site" id="flexRadioDefault1" value="2" checked>
           <label class="form-check-label" for="flexRadioDefault1" >
             Colaborador
           </label>
@@ -78,7 +129,7 @@
         <div class="form-check">
           <input class="form-check-input" [(ngModel)]="usuario.nivelAcesso" type="radio" name="nivelAcesso 3" data-toggle="tooltip"
           data-placement="bottom" title="Como cliente você poderá navegar pelo nosso site em busca da festa perfeita"
-          id="flexRadioDefault2" value="3" checked>
+          id="flexRadioDefault2" value="3" required>
           <label class="form-check-label" for="flexRadioDefault2" >
             Cliente
           </label>
@@ -97,7 +148,7 @@
 
 
       <div class="col-12 col-sm-4 mt-5">
-        <button type="submit" class="btn btn-primary btn-md btn-block" (click)="gravarUsuario()">Cadastrar</button>
+        <button type="submit" class="btn btn-primary btn-md btn-block" [disabled]="!f.valid" (click)="gravarUsuario()">Cadastrar</button>
       </div>
     </form>
   </div>

@@ -43,8 +43,8 @@
             <input [(ngModel)]="pedido.dataDevolucao" name="dataDevolucao" type="date" id="input" class="form-control" mdbInput>
             <label for="input">Data de devolução</label>
           </div>
-          <span *ngIf="!disponibilidade">Por favor escolha <br> uma data disponível </span>
-          <span *ngIf="disponibilidade">Data disponível </span>
+          <span *ngIf="produto.tipoNegocio == 'aluguel' && !disponibilidade">Por favor escolha <br> uma data disponível </span>
+          <span *ngIf="produto.tipoNegocio == 'aluguel' && disponibilidade">Data disponível </span>
           <div class="col-md-4" *ngIf="produto.tipoNegocio == 'aluguel'">
           <input  type="submit" value="Verificar disponibilidade"  class="form-group" (click)="verificaData()" >
           </div>

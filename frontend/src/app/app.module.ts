@@ -16,6 +16,7 @@ import { FeedService } from './services/feed.service';
 import { LoginGuard } from './guards/login.guard';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { CampoControlErroComponent } from './campo-control-erro/campo-control-erro.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
     LandingComponent,
     LoginComponent,
     CadusuarioComponent,
-    PaginanaoencontradaComponent
+    PaginanaoencontradaComponent,
+    CampoControlErroComponent
   ],
   imports: [
     BrowserModule,

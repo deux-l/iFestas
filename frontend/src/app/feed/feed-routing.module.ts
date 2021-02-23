@@ -8,6 +8,7 @@ import { BrinquedosComponent } from './brinquedos/brinquedos.component';
 import { EquipamentosComponent } from './equipamentos/equipamentos.component';
 import { ServicosComponent } from './servicos/servicos.component';
 import { ComidasComponent } from './comidas/comidas.component';
+import { LoginGuard } from '../guards/login.guard';
 
 const routes: Routes = [
 
@@ -23,7 +24,8 @@ const routes: Routes = [
 
   { path: 'produtodetalhe/:id', component: ProdutodetalheComponent },
 
-  { path: 'produtodetalhe/:id/fecharnegocio/:id', component: FecharnegocioComponent }
+  { path: 'produtodetalhe/:id/fecharnegocio/:id', component: FecharnegocioComponent,
+    canActivate: [LoginGuard] }
 
 ];
 

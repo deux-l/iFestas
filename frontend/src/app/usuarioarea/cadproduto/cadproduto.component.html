@@ -34,9 +34,9 @@
 
         <div class="col-md-4">
           <label class="form-group">Qual será o tipo de negócio?</label>
-          <select [(ngModel)]="produto.categoria" name="categoria" class="browser-default custom-select mb-4">
-            <option value="brinquedos">Venda</option>
-            <option value="comidas">Aluguel</option>
+          <select [(ngModel)]="produto.tipoNegocio" name="tiponegocio" class="browser-default custom-select mb-4">
+            <option value="venda">Venda</option>
+            <option value="aluguel">Aluguel</option>
         </select>
           </div>
       </div>
@@ -82,4 +82,4 @@
 
 <p>{{produto.imagem1}}</p>
 
-
+<p>{{produto.tipoNegocio}}</p>
