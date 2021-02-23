@@ -31,6 +31,14 @@
           <textarea minlength="10" maxlength="200" [(ngModel)]="produto.descricao" name="descricao" type="text" id="form8" class="md-textarea form-control" mdbInput></textarea>
           <label for="form8">Descrição do produto</label>
         </div>
+
+        <div class="col-md-4">
+          <label class="form-group">Qual será o tipo de negócio?</label>
+          <select [(ngModel)]="produto.categoria" name="categoria" class="browser-default custom-select mb-4">
+            <option value="brinquedos">Venda</option>
+            <option value="comidas">Aluguel</option>
+        </select>
+          </div>
       </div>
 
       <div class="row">

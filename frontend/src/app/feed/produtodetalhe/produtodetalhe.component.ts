@@ -1,3 +1,4 @@
+import { Pedido } from './../../model/pedido';
 import { Usuario } from './../../model/usuario';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -7,6 +8,7 @@ import { Avaliacao } from './../../model/avaliacao';
 import { Produto } from 'src/app/model/produto';
 import { ImagemService } from 'src/app/services/imagem.service';
 import { UsuarioareaService } from './../../services/usuarioarea.service';
+import { FeedService } from './../../services/feed.service';
 
 @Component({
   selector: 'app-produtodetalhe',
@@ -70,13 +72,14 @@ export class ProdutodetalheComponent implements OnInit, OnDestroy {
   buscarProduto(){
     this.imagemService.buscarImagens(this.id).subscribe(res => {
       this.produto = res[0];
+      console.log(this.produto)
     });
   }
 
   buscarAvaliacoes(){
     this.imagemService.buscarAvaliacoes(this.id).subscribe(res => {
       this.avaliacoes = res;
-
+      console.log(res);
 
       for (let i = 0; i < this.avaliacoes.length; i++) {
 
@@ -111,8 +114,6 @@ export class ProdutodetalheComponent implements OnInit, OnDestroy {
       console.log(res);
       location.reload();
        })
-
-
 
   }
 

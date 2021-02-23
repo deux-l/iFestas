@@ -1,1 +1,175 @@
-<p>fecharnegocio works!</p>
+<div class="container">
+    <div class="fadeIn">
+      <h1 class="fadeIn">
+        <img src="assets\imagens\logo.png" class="my-4" id="icon" alt="User Icon" width="150" height="150"/> <br>
+        Dados da finalização do negócio
+      </h1>
+
+      <form #f="ngForm" class="">
+
+        <div class="row">
+
+          <div class="col-md-4">
+            <label class="form-group">Nome do produto:</label>
+            <input [ngModel]="produto.nomeProduto" name="nomeproduto" type="text" class="form-control"  disabled >
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-10 col-md-8 my-4">
+            <textarea [ngModel]="produto.descricao" name="descricao" id="" cols="70" rows="5" disabled></textarea>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-2">
+            <label class="form-group">Valor:</label>
+            <input [ngModel]="produto.valor" name="valor" type="text" class="form-control" disabled>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="md-form col-md-3" *ngIf="produto.tipoNegocio == 'aluguel'">
+            <input [(ngModel)]="pedido.dataEntrega" name="dataEntrega" type="date" id="input" class="form-control" mdbInput>
+            <label for="input">Data de Entrega</label>
+          </div>
+
+          <div class="md-form col-md-3" *ngIf="produto.tipoNegocio == 'aluguel'">
+            <input [(ngModel)]="pedido.dataDevolucao" name="dataDevolucao" type="date" id="input" class="form-control" mdbInput>
+            <label for="input">Data de devolução</label>
+          </div>
+          <span *ngIf="!disponibilidade">Por favor escolha <br> uma data disponível </span>
+          <span *ngIf="disponibilidade">Data disponível </span>
+          <div class="col-md-4" *ngIf="produto.tipoNegocio == 'aluguel'">
+          <input  type="submit" value="Verificar disponibilidade"  class="form-group" (click)="verificaData()" >
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-4">
+            <label class="form-group">Telefone:</label>
+            <input [ngModel]="usuario.celular" name="celular" type="tel" class="form-control"
+            mask="(00)00000-0000" placeholder="Ex.:(00)00000-0000" disabled>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-group"> Rua: </label>
+            <input [ngModel]="usuario.rua" name="rua" type="text" class="form-control" disabled>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-2">
+            <label class="form-group">Número:</label>
+            <input [ngModel]="usuario.numero" name="numero" type="number" class="form-control" disabled>
+          </div>
+
+          <div class="col-md-6">
+            <label for="cep" class="form-group">Cep:</label>
+            <input [ngModel]="usuario.cep" name="cep" type="Text" id="cep" class="form-control" mask="00000-000"
+            placeholder="Ex.:00000-000" disabled>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <label class="form-group">Bairro</label>
+            <input [ngModel]="usuario.bairro" name="bairro" type="text" class="form-control" disabled>
+          </div>
+
+          <div class="col-md-6">
+            <label for="cidade" class="form-group">Cidade</label>
+            <input [ngModel]="usuario.cidade" name="cidade" type="text" id="cidade" class="form-control"
+            disabled>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <label class="form-group">Email</label>
+            <input [ngModel]="usuario.email" name="email" type="Text" class="form-control" disabled>
+          </div>
+
+        </div>
+
+
+        <div class="row">
+
+          <div class="col-md-12 col-lg-12">
+            <h3>Dados do cartão:</h3>
+            <label for="">Tipo do cartão:</label>
+            <div class="form-check">
+
+              <input [(ngModel)]="pedido.tipoCartao" class="form-check-input" type="radio" name="tipoCartao" data-toggle="tooltip"
+              data-placement="bottom" title="Sendo colaborador você poderá anunciar em nosso site" id="flexRadioDefault1" value="credito" required>
+              <label class="form-check-label" for="flexRadioDefault1"  >
+                Crédito
+              </label>
+            </div>
+
+
+            <div class="form-check">
+              <input [(ngModel)]="pedido.tipoCartao" class="form-check-input" type="radio" name="debito" data-toggle="tooltip"
+              data-placement="bottom" title="Como cliente você poderá navegar pelo nosso site em busca da festa perfeita"
+              id="flexRadioDefault2" value="tipoCartao" checked required>
+              <label class="form-check-label" for="flexRadioDefault2" >
+                Débito
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="row">
+
+          <div class="col-md-6 col-lg-6">
+            <label class="form-group">Nome:</label>
+            <input [(ngModel)]="pedido.nomeCartao" name="nomeCartao" placeholder="Confome estar escrito no cartão" type="text" class="form-control" required>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+            <label class="form-group">Número:</label>
+            <input [(ngModel)]="pedido.numeroCartao" name="numeroCartao" placeholder="Número do cartão de crédito" type="text" class="form-control" required>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-4 col-lg-3">
+            <label class="form-group">Validade:</label>
+            <input [(ngModel)]="pedido.validade" name="validade" type="" class="form-control" required>
+          </div>
+
+          <div class="col-md-4 col-lg-2">
+            <label class="form-group">Código de segurança:</label>
+            <input [(ngModel)]="pedido.codigoSeguranca" name="codigoSeguranca" type="password" class="form-control" required>
+          </div>
+
+        </div>
+
+
+
+
+        <div class="col-lg-12 col-sm-4 mt-5">
+          <button type="submit" class="btn btn-primary btn-md btn-block" (click)="salvarPedido()">Finalizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+

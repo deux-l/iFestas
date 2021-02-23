@@ -5,7 +5,7 @@ export class Usuario {
   nome: String | undefined;
   cpf: number | undefined;
   nascimento: String | undefined;
-  celular: number | undefined;
+  celular: String | undefined;
   rua: String | undefined;
   numero: number | undefined;
   cep: String | undefined;
@@ -16,7 +16,7 @@ export class Usuario {
   nivelAcesso: number | undefined;
 
   constructor( idUsuario ?: number, nome ?: String, cpf ?: number, nascimento ?: String,
-    celular ?: number, rua ?: String, numero ?: number, cep ?: String, bairro ?: String,
+    celular ?: String, rua ?: String, numero ?: number, cep ?: String, bairro ?: String,
     cidade ?: String, email ?: String, senha ?: String, nivelAcesso ?: number) {
 
     this.idUsuario = idUsuario;

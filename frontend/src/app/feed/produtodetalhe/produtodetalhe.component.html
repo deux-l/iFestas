@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
 
-    <div class=" col-lg-6">
+    <div class=" col-lg-4 col-md-4">
       <div class="card-deck my-4">
-        <img class="card-img-fluid" [src]="produto.imagem1" alt="">
+        <img class="card-img-fluid" width="300" height="300" [src]="produto.imagem1" alt="">
       </div>
     </div>
 
-    <div class="col-lg-6 col-md-6 mb-4">
+    <div class="col-lg-4 col-md-4 mb-4">
       <div class="card   my-4">
         <div class="card-body">
           <h4 class="card-title">
@@ -17,12 +17,17 @@
           <p class="card-text">{{produto.descricao}}</p>
         </div>
         <div class="card-footer">
-          <button mdbBtn type="button" gradient="blue"  mdbWavesEffect><mdb-icon far icon="handshake" size="2x"></mdb-icon> Fechar negócio</button>
+          <a [routerLink]="['fecharnegocio', produto.idProduto]">
+             <button mdbBtn type="button" gradient="blue" mdbWavesEffect><mdb-icon far icon="handshake" size="2x"></mdb-icon> Fechar negócio</button>
+          </a>
+
         </div>
       </div>
     </div>
 
+
   </div>
+
 
   <div class="row">
 

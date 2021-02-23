@@ -118,9 +118,48 @@ execSqlQuery(`insert into avaliacoes (idUsuario, idProduto, nomeUsuario, avaliac
   values ('${idUsuario}','${idProduto}','${nomeUsuario}','${avaliacao}','${nota}')`, res);
 });
 
+// método inserir pedido
+app.post('/feed', (req, res) => {
+	var idProduto = parseInt(req.body.idProduto);  
+	var idUsuario = parseInt(req.body.idUsuario); 	
+	var nomeUsuario 	= req.body.nomeUsuario;
+	var nomeProduto 	= req.body.nomeProduto;
+	var tipoNegocio 	= req.body.tipoNegocio;
+	var descricao   = req.body.descricao;
+	var nivelAcesso 	= req.body.nivelAcesso;
+	var dataEntrega 	= req.body.dataEntrega;
+	var dataDevolucao = req.body.dataDevolucao;
+	var email 	= req.body.email;
+	var rua 	= req.body.rua;
+	var numero 	= req.body.numero;
+	var bairro 	= req.body.bairro;
+	var cidade 	= req.body.cidade;
+	var celular 	= req.body.celular;
+	var valor 	= req.body.valor;
+	var tipoCartao 	= req.body.tipoCartao;
+	var nomeCartao 	= req.body.nomeCartao;
+	var numeroCartao 	= req.body.numeroCartao;
+	var validade 	= req.body.validade;
+	var codigoSeguranca 	= req.body.codigoSeguranca;
+
+	
+execSqlQuery(`insert into pedido (idProduto, idUsuario, nomeUsuario, nomeProduto, tipoNegocio, descricao, nivelAcesso, dataEntrega, dataDevolucao,
+	 								  email, rua, numero, bairro, cidade, celular, valor, tipoCartao, nomeCartao, numeroCartao, validade, codigoSeguranca)
+  			  values ('${idProduto}','${idUsuario}','${nomeUsuario}','${nomeProduto}','${tipoNegocio}','${descricao}',
+					  '${nivelAcesso}','${dataEntrega}','${dataDevolucao}','${email}','${rua}','${numero}','${bairro}','${cidade}','${celular}',
+				      '${valor}','${tipoCartao}','${nomeCartao}','${numeroCartao}','${validade}','${codigoSeguranca}')`, res);
+				
+});
+
 // método selecionar todos os produtos
 app.get('/feed', (req, res) => {
 	execSqlQuery(`select * from produto`, res);
+});
+
+//método selecionar todos os pedidos
+app.get('/feed/:idproduto', (req, res) => {
+	var idProduto = req.params.idproduto;
+	execSqlQuery(`select dataEntrega, dataDevolucao from pedido where idProduto='${idProduto}'`, res);
 });
 
 // método selecionar todos os produtos por id do usuário

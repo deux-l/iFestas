@@ -4,6 +4,7 @@ export class Produto{
   nomeProduto: String | undefined;
   valor: number | undefined;
   descricao: String | undefined;
+  tipoNegocio: String| undefined
  //disponibilidade: String | undefined;
   categoria: String | undefined;
   imagem1: String | undefined;
@@ -11,14 +12,15 @@ export class Produto{
   imagem3: String | undefined;
   idUsuario: number | undefined;
 
-  constructor( idProduto ?: number, nomeProduto ?: String, valor ?: number,
-               descricao ?: String, categoria ?: String, imagem1 ?: String, imagem2 ?: String,
+  constructor(idProduto ?: number, nomeProduto ?: String, valor ?: number, descricao ?: String,
+              tipoNegocio ?: String, categoria ?: String, imagem1 ?: String, imagem2 ?: String,
                imagem3 ?: String, idUsuario ?: number) {
 
                 this.idProduto = idProduto;
                 this.nomeProduto = nomeProduto;
                 this.valor = valor;
                 this.descricao = descricao;
+                this.tipoNegocio = tipoNegocio;
                 //this.disponibilidade = disponibilidade;
                 this.categoria = categoria;
                 this.imagem1 = imagem1;

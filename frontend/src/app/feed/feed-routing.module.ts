@@ -23,7 +23,7 @@ const routes: Routes = [
 
   { path: 'produtodetalhe/:id', component: ProdutodetalheComponent },
 
-  { path: 'fecharnegocio', component: FecharnegocioComponent }
+  { path: 'produtodetalhe/:id/fecharnegocio/:id', component: FecharnegocioComponent }
 
 ];
 
