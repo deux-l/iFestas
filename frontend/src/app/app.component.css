@@ -1,4 +1,14 @@
 
+li, h4, p {
+  font-size: 0.9rem;
+  font-family:sans-serif;
+  text-align: center;
+}
+.copyright{
+  font-size: smaller;
+  margin-top: 0.5rem;
+}
+
 a{
     color:white;
   }
@@ -6,7 +16,7 @@ a{
     display: inherit;
     margin: auto;
   }
-  @media (max-width:767px) {
+  @media (max-width:900px) {
     .shfooter ul {
       margin-bottom: 0;
       text-align: center;
