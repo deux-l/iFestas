@@ -159,38 +159,38 @@ app.get('/feed', (req, res) => {
 
 //método selecionar todos os pedidos
 app.get('/feed/:idproduto', (req, res) => {
-	var idProduto = req.params.idproduto;
+	var idProduto = parseInt(req.params.idproduto);
 	execSqlQuery(`select dataEntrega, dataDevolucao from pedido where idProduto='${idProduto}'`, res);
 });
 
 //método selecionar pedidos por id do fornecedor
 app.get('/pedidos/:idfornecedor', (req, res) => {
-	var idFornecedor = req.params.idfornecedor;
+	var idFornecedor = parseInt(req.params.idfornecedor);
 	execSqlQuery(`select * from pedido where idFornecedor='${idFornecedor}'`, res);
 });
 
 //método selecionar pedidos por id do usuário
 app.get('/pedidosc/:idusuario', (req, res) => {
-	var idUsuario = req.params.idusuario;
+	var idUsuario = parseInt(req.params.idusuario);
 	execSqlQuery(`select * from pedido where idUsuario='${idUsuario}'`, res);
 });
 
 // método selecionar todos os produtos por id do usuário
 app.get('/produto/:idUsuario', (req, res) => {
-	var idUsuario = req.params.idUsuario;
+	var idUsuario = parseInt(req.params.idUsuario);
 	execSqlQuery(`select * from produto where idUsuario='${idUsuario}'`, res);
 });
 
 
 // método buscar produto por idProduto
 app.get('/imagem/:idproduto', (req, res) => {
-    var idProduto = req.params.idproduto;
+    var idProduto = parseInt(req.params.idproduto);
     execSqlQuery(`select * from produto where idProduto='${idProduto}'`, res);
 });
 
 // método buscar avaliações por idProduto
 app.get('/avaliacoes/:idproduto', (req, res) => {
-    var idProduto = req.params.idproduto;
+    var idProduto = parseInt(req.params.idproduto);
     execSqlQuery(`select * from avaliacoes where idProduto='${idProduto}'`, res);
 });
 
@@ -230,11 +230,20 @@ app.put('/imagem/:idproduto', multipartMiddleware, (req, res) => {
 				where idProduto=${+idProduto}` , res);
 });
 
-/*método de apagar ... (precisa alterar)
-app.delete('/aluno/:codigo', (req, res) => {
-    var codigo = parseInt(req.params.codigo);
-	execSqlQuery(`delete from aluno where codigo=` + codigo, res);
-});*/
+//método de atualizar os dados do produto por idProduto (precisa alterar)
+app.put('/produto/:idproduto', (req, res) => {
+	var idProduto = parseInt(req.params.idproduto);
+	var nomeProduto = req.body.nomeProduto;
+	var valor = req.body.valor;
+	var descricao = req.body.descricao;
+	execSqlQuery(`update produto set nomeProduto='${nomeProduto}', valor='${valor}', descricao='${descricao}' where idProduto=${+idProduto}` , res);
+});
+
+//método de apagar produto por idProduto (precisa alterar)
+app.delete('/produto/:idproduto', (req, res) => {
+    var idProduto = parseInt(req.params.idproduto);
+	execSqlQuery(`delete from produto where idProduto=${+idProduto}` , res);
+});
 
 var server = app.listen(3007, 'localhost', function () {
 	var host = server.address().address;

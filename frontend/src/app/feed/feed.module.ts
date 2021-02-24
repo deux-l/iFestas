@@ -11,6 +11,7 @@ import { BrinquedosComponent } from './brinquedos/brinquedos.component';
 import { ProdutodetalheComponent } from './produtodetalhe/produtodetalhe.component';
 import { FecharnegocioComponent } from './fecharnegocio/fecharnegocio.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 
 
@@ -31,6 +32,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     FormsModule,
     FeedRoutingModule,
     MDBBootstrapModule.forRoot(),
+    NgxMaskModule.forRoot()
+
   ],
   providers: []
 })

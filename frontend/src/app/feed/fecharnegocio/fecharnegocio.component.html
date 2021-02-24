@@ -144,7 +144,7 @@
 
           <div class="col-md-6 col-lg-6">
             <label class="form-group">Número:</label>
-            <input [(ngModel)]="pedido.numeroCartao" name="numeroCartao" placeholder="Número do cartão de crédito" type="text" class="form-control" required>
+            <input [(ngModel)]="pedido.numeroCartao" name="numeroCartao" mask="0000 0000 0000 0000" placeholder="Número do cartão de crédito" type="text" class="form-control" required>
           </div>
 
         </div>
@@ -153,7 +153,7 @@
 
           <div class="col-md-4 col-lg-3">
             <label class="form-group">Validade:</label>
-            <input [(ngModel)]="pedido.validade"  name="validade" type="text" class="form-control" required>
+            <input [(ngModel)]="pedido.validade" name="validade" type="text" class="form-control" required mask="00/00">
           </div>
 
           <div class="col-md-4 col-lg-2">
