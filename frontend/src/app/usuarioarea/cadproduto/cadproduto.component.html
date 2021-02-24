@@ -20,32 +20,33 @@
             <option value="comidas">Comidas</option>
             <option value="equipamentos">Equipamentos</option>
             <option value="servicos">Serviços</option>
-        </select>
-          </div>
+          </select>
+        </div>
       </div>
 
 
       <div class="row">
-        <div class="md-form col-md-8">
+        <div class="col-md-6">
           <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon>
-          <textarea minlength="10" maxlength="200" [(ngModel)]="produto.descricao" name="descricao" type="text" id="form8" class="md-textarea form-control" mdbInput></textarea>
           <label for="form8">Descrição do produto</label>
+          <textarea minlength="10" maxlength="200" [(ngModel)]="produto.descricao" name="descricao" type="text" id="form8" class="md-textarea form-control" mdbInput></textarea> 
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6">
           <label class="form-group">Qual será o tipo de negócio?</label>
           <select [(ngModel)]="produto.tipoNegocio" name="tiponegocio" class="browser-default custom-select mb-4">
             <option value="venda">Venda</option>
             <option value="aluguel">Aluguel</option>
-        </select>
-          </div>
+          </select>
+        </div>
       </div>
 
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-6">
           <mdb-icon fas icon="dollar-sign"></mdb-icon>
           <label class="form-group">Valor</label>
-          <input [(ngModel)]="produto.valor" name="valor" type="text" class="form-control" >
+          <input type="text"  name="valor" class="form-control" currencyMask [(ngModel)]="produto.valor" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+          placeholder="R$ "required>
         </div>
       </div>
 

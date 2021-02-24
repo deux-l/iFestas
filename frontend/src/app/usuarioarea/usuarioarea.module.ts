@@ -14,6 +14,8 @@ import { EditimagemComponent } from './editimagem/editimagem.component';
 import { ImagemService } from '../services/imagem.service';
 import { VendasComponent } from './vendas/vendas.component';
 import { MeuspedidosComponent } from './meuspedidos/meuspedidos.component';
+import { CurrencyMaskModule } from "ng2-currency-mask";
+
 
 
 
@@ -34,6 +36,7 @@ import { MeuspedidosComponent } from './meuspedidos/meuspedidos.component';
     UsuarioareaRoutingModule,
     NgxMaskModule.forRoot(),
     MDBBootstrapModule.forRoot(),
+    CurrencyMaskModule
   ],
   providers: [
     CadprodutoService,
