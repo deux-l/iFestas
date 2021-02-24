@@ -20,4 +20,11 @@ export class CadprodutoService {
     return this.http.get<Produto[]>(`${URL}/${idUsuario}`);
   }
 
+  public atualizaProduto(produto: Produto){
+    return this.http.put(`${URL}/${produto.idProduto}`, produto)
+  }
+
+  public deletaProduto(idProduto: any){
+    return this.http.delete(`${URL}/${idProduto}`)
+  }
 }
