@@ -22,11 +22,12 @@ export class Pedido{
   numeroCartao: String | undefined;
   validade: String | undefined;
   codigoSeguranca: number | undefined;
+  idFornecedor: number | undefined;
 
   constructor(idPedido ?: number, idProduto ?: number, idUsuario ?: number, nomeUsuario ?: String, nomeProduto ?: String,
               tipoNegocio ?: String, descricao ?: String, nivelAcesso ?: number, email ?: String, rua ?: String, numero ?: number, bairro ?: String,
               cidade ?: String, celular ?: String, valor ?: number, dataEntrega ?: String, dataDevolucao ?: String, tipoCartao ?: String,
-              nomeCartao ?: String, validade ?: String, codigoSeguranca ?: number){
+              nomeCartao ?: String, validade ?: String, codigoSeguranca ?: number, idFornecedor ?: number){
 
                 this.idPedido = idPedido;
                 this.idProduto = idProduto;
@@ -49,6 +50,8 @@ export class Pedido{
                 this.nomeCartao = nomeCartao;
                 this.validade = validade;
                 this.codigoSeguranca = codigoSeguranca;
+                this.idFornecedor = idFornecedor
+
 
   }
 

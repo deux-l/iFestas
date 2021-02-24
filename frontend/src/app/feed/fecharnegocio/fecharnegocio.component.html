@@ -25,9 +25,10 @@
         </div>
 
         <div class="row">
-          <div class="col-md-2">
+          <div class="col-md-4">
             <label class="form-group">Valor:</label>
-            <input [ngModel]="produto.valor" name="valor" type="text" class="form-control" disabled>
+            <input [ngModel]="pedido.valor | currency:'BRL'"  name="valor" type="text" class="form-control" disabled>
+            <span *ngIf="usuario.nivelAcesso == 2" class="desconto">Desconto de colaborador</span>
           </div>
 
         </div>
@@ -124,7 +125,7 @@
             <div class="form-check">
               <input [(ngModel)]="pedido.tipoCartao" class="form-check-input" type="radio" name="debito" data-toggle="tooltip"
               data-placement="bottom" title="Como cliente você poderá navegar pelo nosso site em busca da festa perfeita"
-              id="flexRadioDefault2" value="tipoCartao" checked required>
+              id="flexRadioDefault2" value="debito" checked required>
               <label class="form-check-label" for="flexRadioDefault2" >
                 Débito
               </label>
@@ -136,7 +137,7 @@
 
         <div class="row">
 
-          <div class="col-md-6 col-lg-6">
+          <div class="col-md-6 col-lg-6" >
             <label class="form-group">Nome:</label>
             <input [(ngModel)]="pedido.nomeCartao" name="nomeCartao" placeholder="Confome estar escrito no cartão" type="text" class="form-control" required>
           </div>
@@ -152,12 +153,12 @@
 
           <div class="col-md-4 col-lg-3">
             <label class="form-group">Validade:</label>
-            <input [(ngModel)]="pedido.validade" name="validade" type="" class="form-control" required>
+            <input [(ngModel)]="pedido.validade"  name="validade" type="text" class="form-control" required>
           </div>
 
           <div class="col-md-4 col-lg-2">
             <label class="form-group">Código de segurança:</label>
-            <input [(ngModel)]="pedido.codigoSeguranca" name="codigoSeguranca" type="password" class="form-control" required>
+            <input [(ngModel)]="pedido.codigoSeguranca" minlength="3" maxlength="3"  name="codigoSeguranca" type="tel" class="form-control" required>
           </div>
 
         </div>
@@ -166,7 +167,7 @@
 
 
         <div class="col-lg-12 col-sm-4 mt-5">
-          <button type="submit" class="btn btn-primary btn-md btn-block" (click)="salvarPedido()">Finalizar</button>
+          <button type="submit" class="btn btn-primary btn-md btn-block" [disabled]="!f.valid" (click)="salvarPedido()">Finalizar</button>
         </div>
       </form>
     </div>

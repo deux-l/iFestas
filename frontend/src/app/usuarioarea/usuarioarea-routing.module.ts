@@ -6,6 +6,8 @@ import { CadprodutoComponent } from './cadproduto/cadproduto.component';
 import { EditusuarioComponent } from './editusuario/editusuario.component';
 import { EditprodutoComponent } from './editproduto/editproduto.component';
 import { EditimagemComponent } from './editimagem/editimagem.component';
+import { MeuspedidosComponent } from './meuspedidos/meuspedidos.component';
+import { VendasComponent } from './vendas/vendas.component';
 
 const routes: Routes = [
 
@@ -18,6 +20,10 @@ const routes: Routes = [
           { path: 'editusuario/:email', component: EditusuarioComponent},
 
           { path: 'editproduto/:id/editimagem/:id', component: EditimagemComponent},
+
+          { path: 'vendas/:id', component: VendasComponent},
+
+          { path: 'meuspedidos/:id', component: MeuspedidosComponent}
 
           //{ path: ':id', component: CadprodutoComponent},
 

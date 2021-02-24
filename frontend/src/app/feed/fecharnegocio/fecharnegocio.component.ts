@@ -45,7 +45,7 @@ export class FecharnegocioComponent implements OnInit {
         this.id = params['id'];
     })
 
-    this.buscarProduto();
+    //this.buscarProduto();
     this.buscarUsuario();
     //this.verificaData()
 
@@ -62,15 +62,31 @@ export class FecharnegocioComponent implements OnInit {
       this.usuario = res[0];
       console.log(this.usuario);
 
+      this.imagemService.buscarImagens(this.id).subscribe(res => {
+        this.produto = res[0];
+        console.log(this.produto);
+
+        if (this.usuario.nivelAcesso == 2) {
+          this.pedido.valor = this.produto.valor - (this.produto.valor * 0.05)
+        } else {
+          this.pedido.valor = this.produto.valor
+        }
+      });
+      console.log(this.usuario.nivelAcesso)
+
+
     })
+
+
+
   }
 
-  buscarProduto(){
+ /* buscarProduto(){
     this.imagemService.buscarImagens(this.id).subscribe(res => {
       this.produto = res[0];
       console.log(this.produto);
     });
-  }
+  }*/
 
   verificaData(){
     this.feedService.verificaData(this.id).subscribe(res => {
@@ -138,6 +154,18 @@ export class FecharnegocioComponent implements OnInit {
     })
   }
 
+  public verificaValidTouched(campo: any){
+    return !campo.valid && campo.touched;
+  }
+
+  public aplicaCssErro(campo: any){
+    return {
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo)
+      };
+
+  }
+
   salvarPedido(){
     this.pedido.idProduto = this.produto.idProduto;
     this.pedido.idUsuario = this.usuario.idUsuario;
@@ -152,7 +180,8 @@ export class FecharnegocioComponent implements OnInit {
     this.pedido.bairro = this.usuario.bairro;
     this.pedido.cidade = this.usuario.cidade;
     this.pedido.celular = this.usuario.celular;
-    this.pedido.valor = this.produto.valor;
+    //this.pedido.valor = this.produto.valor;
+    this.pedido.idFornecedor = this.produto.idUsuario;
 
     //this.pedido.
     this.feedService.salvarPedido(this.pedido).subscribe(res => {

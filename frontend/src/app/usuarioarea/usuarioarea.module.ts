@@ -12,6 +12,8 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { EditimagemComponent } from './editimagem/editimagem.component';
 import { ImagemService } from '../services/imagem.service';
+import { VendasComponent } from './vendas/vendas.component';
+import { MeuspedidosComponent } from './meuspedidos/meuspedidos.component';
 
 
 
@@ -21,7 +23,9 @@ import { ImagemService } from '../services/imagem.service';
     CadprodutoComponent,
     EditusuarioComponent,
     EditprodutoComponent,
-    EditimagemComponent
+    EditimagemComponent,
+    VendasComponent,
+    MeuspedidosComponent
   ],
   imports: [
     CommonModule,

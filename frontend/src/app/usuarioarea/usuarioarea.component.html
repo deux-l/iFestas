@@ -6,7 +6,7 @@
 
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" [routerLink]="['editusuario', usuario.email]"> <mdb-icon fas icon="edit"></mdb-icon> Edite seus dados</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['editusuario', usuario.email]" > <mdb-icon fas icon="edit"></mdb-icon> Edite seus dados</a>
       </li>
 
       <li class="nav-item">
@@ -18,7 +18,11 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"> <mdb-icon fas icon="bars"></mdb-icon> Pedidos</a>
+        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" [routerLink]="['vendas', usuario.idUsuario]" tabindex="-1" aria-disabled="true"> <mdb-icon fas icon="bars"></mdb-icon> Vendas</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['meuspedidos', usuario.idUsuario]" tabindex="-1" aria-disabled="true"> <mdb-icon fas icon="bars"></mdb-icon> Meus Pedidos</a>
       </li>
     </ul>
   </div>
@@ -35,3 +39,8 @@
 <p>
   {{usuario.idUsuario}}
 </p>
+
+<button type="button" mdbBtn color="primary" class="bwaves-light" mdbTooltip="Edite seus dados" placement="top"
+  mdbWavesEffect>
+  <mdb-icon fas icon="edit" size="2x"></mdb-icon>
+</button>

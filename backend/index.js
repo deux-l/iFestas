@@ -141,13 +141,14 @@ app.post('/feed', (req, res) => {
 	var numeroCartao 	= req.body.numeroCartao;
 	var validade 	= req.body.validade;
 	var codigoSeguranca 	= req.body.codigoSeguranca;
+	var idFornecedor = req.body.idFornecedor;
 
 	
-execSqlQuery(`insert into pedido (idProduto, idUsuario, nomeUsuario, nomeProduto, tipoNegocio, descricao, nivelAcesso, dataEntrega, dataDevolucao,
-	 								  email, rua, numero, bairro, cidade, celular, valor, tipoCartao, nomeCartao, numeroCartao, validade, codigoSeguranca)
+execSqlQuery(`insert into pedido (idProduto, idUsuario, nomeUsuario, nomeProduto, tipoNegocio, descricao, nivelAcesso, dataEntrega, dataDevolucao, email, 
+			  rua, numero, bairro, cidade, celular, valor, tipoCartao, nomeCartao, numeroCartao, validade, codigoSeguranca, idFornecedor)
   			  values ('${idProduto}','${idUsuario}','${nomeUsuario}','${nomeProduto}','${tipoNegocio}','${descricao}',
 					  '${nivelAcesso}','${dataEntrega}','${dataDevolucao}','${email}','${rua}','${numero}','${bairro}','${cidade}','${celular}',
-				      '${valor}','${tipoCartao}','${nomeCartao}','${numeroCartao}','${validade}','${codigoSeguranca}')`, res);
+				      '${valor}','${tipoCartao}','${nomeCartao}','${numeroCartao}','${validade}','${codigoSeguranca}','${idFornecedor}')`, res);
 				
 });
 
@@ -160,6 +161,18 @@ app.get('/feed', (req, res) => {
 app.get('/feed/:idproduto', (req, res) => {
 	var idProduto = req.params.idproduto;
 	execSqlQuery(`select dataEntrega, dataDevolucao from pedido where idProduto='${idProduto}'`, res);
+});
+
+//método selecionar pedidos por id do fornecedor
+app.get('/pedidos/:idfornecedor', (req, res) => {
+	var idFornecedor = req.params.idfornecedor;
+	execSqlQuery(`select * from pedido where idFornecedor='${idFornecedor}'`, res);
+});
+
+//método selecionar pedidos por id do usuário
+app.get('/pedidosc/:idusuario', (req, res) => {
+	var idUsuario = req.params.idusuario;
+	execSqlQuery(`select * from pedido where idUsuario='${idUsuario}'`, res);
 });
 
 // método selecionar todos os produtos por id do usuário

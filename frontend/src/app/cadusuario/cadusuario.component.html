@@ -5,7 +5,7 @@
       Formulário de Cadastro
     </h1>
 
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="row g-3">
+    <form #f="ngForm"  class="row g-3">
       <div class="col-md-6" [ngClass]="aplicaCssErro(nome)">
         <label class="form-group"> Nome Completo</label>
         <input [(ngModel)]="usuario.nome" name="nome" #nome="ngModel" type="text" class="form-control"  required >
@@ -23,7 +23,7 @@
 
         <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(cpf)"
-        msgErro="Campo é obrigatório.">
+        msgErro="Campo  obrigatório.">
       </app-campo-control-erro>
       </div>
 
@@ -34,7 +34,7 @@
 
         <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(nascimento)"
-        msgErro="Campo é obrigatório.">
+        msgErro="Campo  obrigatório.">
       </app-campo-control-erro>
       </div>
 
@@ -45,7 +45,7 @@
 
         <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(celular)"
-        msgErro="Campo é obrigatório.">
+        msgErro="Campo  obrigatório.">
       </app-campo-control-erro>
       </div>
 
@@ -55,7 +55,7 @@
 
         <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(rua)"
-        msgErro="Campo é obrigatório.">
+        msgErro="Campo  obrigatório.">
       </app-campo-control-erro>
       </div>
 
@@ -65,7 +65,7 @@
 
         <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(numero)"
-        msgErro="Campo é obrigatório.">
+        msgErro="Campo  obrigatório.">
       </app-campo-control-erro>
       </div>
 
@@ -75,7 +75,7 @@
 
         <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(bairro)"
-        msgErro="Campo é obrigatório.">
+        msgErro="Campo  obrigatório.">
       </app-campo-control-erro>
       </div>
 
@@ -87,7 +87,7 @@
 
         <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(cep)"
-        msgErro="Campo é obrigatório.">
+        msgErro="Campo  obrigatório.">
       </app-campo-control-erro>
       </div>
 
@@ -98,17 +98,17 @@
 
         <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(cidade)"
-        msgErro="Campo é obrigatório.">
+        msgErro="Campo  obrigatório.">
       </app-campo-control-erro>
       </div>
 
       <div class="col-md-6" [ngClass]="aplicaCssErro(email)">
         <label class="form-group">Email</label>
-        <input [(ngModel)]="usuario.email" name="email" #email="ngModel" type="Text" class="form-control" required>
+        <input [(ngModel)]="usuario.email" email name="email" #email="ngModel" type="Text" class="form-control" required>
 
         <app-campo-control-erro
         [mostrarErro]="verificaValidTouched(email)"
-        msgErro="Campo é obrigatório.">
+        msgErro="Por favor informe um email válido.">
       </app-campo-control-erro>
       </div>
 

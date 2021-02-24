@@ -2,7 +2,7 @@ export class Produto{
 
   idProduto: number | undefined;
   nomeProduto: String | undefined;
-  valor: number | undefined;
+  valor: number = 0;
   descricao: String | undefined;
   tipoNegocio: String| undefined
  //disponibilidade: String | undefined;
@@ -18,7 +18,7 @@ export class Produto{
 
                 this.idProduto = idProduto;
                 this.nomeProduto = nomeProduto;
-                this.valor = valor;
+                //this.valor = valor;
                 this.descricao = descricao;
                 this.tipoNegocio = tipoNegocio;
                 //this.disponibilidade = disponibilidade;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Fev-2021 às 05:00
+-- Tempo de geração: 24-Fev-2021 às 03:53
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -84,29 +84,39 @@ CREATE TABLE `pedido` (
   `dataEntrega` varchar(20) NOT NULL,
   `dataDevolucao` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `rua` int(11) NOT NULL,
+  `rua` varchar(30) NOT NULL,
   `numero` int(11) NOT NULL,
-  `bairro` int(11) NOT NULL,
-  `cidade` int(11) NOT NULL,
+  `bairro` varchar(30) NOT NULL,
+  `cidade` varchar(30) NOT NULL,
   `celular` varchar(30) NOT NULL,
   `valor` float(10,2) NOT NULL,
   `tipoCartao` varchar(20) NOT NULL,
   `nomeCartao` varchar(30) NOT NULL,
   `numeroCartao` varchar(30) NOT NULL,
   `validade` varchar(15) NOT NULL,
-  `codigoSeguranca` int(3) NOT NULL
+  `codigoSeguranca` int(3) NOT NULL,
+  `idFornecedor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `pedido`
 --
 
-INSERT INTO `pedido` (`idPedido`, `idProduto`, `idUsuario`, `nomeUsuario`, `nomeProduto`, `tipoNegocio`, `descricao`, `nivelAcesso`, `dataEntrega`, `dataDevolucao`, `email`, `rua`, `numero`, `bairro`, `cidade`, `celular`, `valor`, `tipoCartao`, `nomeCartao`, `numeroCartao`, `validade`, `codigoSeguranca`) VALUES
-(5, 44, 33, 'Cristian Daniel ', 'Bolo', 'venda', 'Bolo de laranja', 2, 'undefined', 'undefined', 'cristian@email.com', 0, 363, 0, 0, '912345678', 34.99, 'credito', 'cnjcnj', '3,23,', '543', 123),
-(17, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-22', '2021-02-23', 'cristian@email.com', 0, 363, 0, 0, '912345678', 39.00, 'credito', 'dffdhdh', '35434', '31', 13),
-(18, 47, 33, 'Cristian Daniel ', 'Bolo de chocolate', '', 'Bolo de chocolate com recheio de coco', 2, '2021-02-23T03:55:42.', '2021-02-23T03:55:42.', 'cristian@email.com', 0, 363, 0, 0, '912345678', 39.00, 'credito', 'hfddf', '1', '21', 2121),
-(19, 47, 33, 'Cristian Daniel ', 'Bolo de chocolate', '', 'Bolo de chocolate com recheio de coco', 2, '2021-02-23T03:57:40.', '2021-02-23T03:57:40.', 'cristian@email.com', 0, 363, 0, 0, '912345678', 39.00, 'tipoCartao', 'gjjgj', '51465', '5214', 5641),
-(20, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-24', '2021-02-25', 'cristian@email.com', 0, 363, 0, 0, '912345678', 39.00, 'credito', 'ghghfsd', '333', '3131', 1331);
+INSERT INTO `pedido` (`idPedido`, `idProduto`, `idUsuario`, `nomeUsuario`, `nomeProduto`, `tipoNegocio`, `descricao`, `nivelAcesso`, `dataEntrega`, `dataDevolucao`, `email`, `rua`, `numero`, `bairro`, `cidade`, `celular`, `valor`, `tipoCartao`, `nomeCartao`, `numeroCartao`, `validade`, `codigoSeguranca`, `idFornecedor`) VALUES
+(5, 44, 33, 'Cristian Daniel ', 'Bolo', 'venda', 'Bolo de laranja', 2, 'undefined', 'undefined', 'cristian@email.com', '0', 363, '0', '0', '912345678', 34.99, 'credito', 'cnjcnj', '3,23,', '543', 123, 0),
+(17, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-22', '2021-02-23', 'cristian@email.com', '0', 363, '0', '0', '912345678', 39.00, 'credito', 'dffdhdh', '35434', '31', 13, 0),
+(18, 47, 33, 'Cristian Daniel ', 'Bolo de chocolate', '', 'Bolo de chocolate com recheio de coco', 2, '2021-02-23T03:55:42.', '2021-02-23T03:55:42.', 'cristian@email.com', '0', 363, '0', '0', '912345678', 39.00, 'credito', 'hfddf', '1', '21', 2121, 0),
+(19, 47, 33, 'Cristian Daniel ', 'Bolo de chocolate', '', 'Bolo de chocolate com recheio de coco', 2, '2021-02-23T03:57:40.', '2021-02-23T03:57:40.', 'cristian@email.com', '0', 363, '0', '0', '912345678', 39.00, 'tipoCartao', 'gjjgj', '51465', '5214', 5641, 0),
+(20, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-24', '2021-02-25', 'cristian@email.com', '0', 363, '0', '0', '912345678', 39.00, 'credito', 'ghghfsd', '333', '3131', 1331, 0),
+(21, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-23T23:39:54.', '2021-02-23T23:39:54.', 'cristian@email.com', '0', 363, '0', '0', '912345678', 39.00, 'credito', 'cristian daniel', '1165655', '05/20', 123, 33),
+(22, 47, 2, 'Sasuke Uchiha', 'Bolo de chocolate', 'venda', 'Bolo de chocolate com recheio de coco', 3, '2021-02-23T23:40:52.', '2021-02-23T23:40:52.', 'sasuke@email.com', '0', 123, '0', '0', '912345678', 33.45, 'credito', 'sasuke uchiha', '3,54353', '05/22', 123, 33),
+(23, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-24T02:29:17.', '2021-02-24T02:29:17.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 39.00, 'credito', 'cristian daniel', '25156465', '05/02', 123, 33),
+(24, 47, 33, 'Cristian Daniel ', 'Bolo de chocolate', '', 'Bolo de chocolate com recheio de coco', 2, '2021-02-24T02:32:22.', '2021-02-24T02:32:22.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 33.45, 'tipoCartao', 'stark uchiha', '5151', '05/22', 123, 33),
+(25, 47, 33, 'Cristian Daniel ', 'Bolo de chocolate', '', 'Bolo de chocolate com recheio de coco', 2, '2021-02-24T02:35:09.', '2021-02-24T02:35:09.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 31.78, 'debito', 'stark uchiha', '152165', '05/22', 123, 33),
+(26, 44, 33, 'Cristian Daniel ', 'Bolo', 'venda', 'Bolo de laranja', 2, '2021-02-24T02:37:21.', '2021-02-24T02:37:21.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 33.24, 'debito', 'daniel pedreira', '156165', '05/22', 123, 33),
+(27, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-25', '2021-02-26', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 37.05, 'credito', 'cristian daniel', '11561456', '05/22', 123, 33),
+(28, 44, 33, 'Cristian Daniel ', 'Bolo', 'venda', 'Bolo de laranja', 2, '2021-02-24T02:39:33.', '2021-02-24T02:39:33.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 33.24, 'credito', 'cristian daniel', '651465', '05/23', 123, 33),
+(29, 48, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de doce de leite', 2, '2021-02-27', '2021-03-01', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 38.00, 'debito', 'daniel cristian', '65541+654', '05/25', 123, 33);
 
 -- --------------------------------------------------------
 
@@ -134,8 +144,8 @@ CREATE TABLE `produto` (
 INSERT INTO `produto` (`idProduto`, `nomeProduto`, `valor`, `descricao`, `categoria`, `tipoNegocio`, `imagem1`, `imagem2`, `imagem3`, `idUsuario`) VALUES
 (44, 'Bolo', 34.99, 'Bolo de laranja', '', 'venda', 'assets\\imagens\\vNRXNieOWkYbDd6PmG8t33lF.jpg', 'assets\\imagens\\XykSZaRnyEoVeKWnM-yQSjjR.jpg', 'assets\\imagens\\hCMcPeEiV_K1HTmzxcX7y59_.jpg', 33),
 (46, 'Bolo ', 39.00, 'Bolo de coco', 'comida', 'aluguel', 'assets\\imagens\\vNRXNieOWkYbDd6PmG8t33lF.jpg', 'assets\\imagens\\XykSZaRnyEoVeKWnM-yQSjjR.jpg', NULL, 33),
-(47, 'Bolo de chocolate', 39.00, 'Bolo de chocolate com recheio de coco', 'comidas', '', 'assets\\imagens\\Aue0cZUY1oSCzrOi4QGUjD6d.jpg', 'assets\\imagens\\ipP2t9YQsUgAJTFxx54CQ3Ix.jpg', 'assets\\imagens\\RgW6R2_5jQSX3ZA_I2U078tf.jpg', 33),
-(48, 'Bolo ', 40.00, 'Bolo de doce de leite', 'comidas', '', 'assets\\imagens\\GvPVLgSoQU7skHFdx2uvHFlC.jpg', 'assets\\imagens\\cvYHnRaw6JElRZgPXNIFH5VB.jpg', 'assets\\imagens\\6a75QS-CWQ5O2Cb-B_s7koKO.jpg', 33);
+(47, 'Bolo de chocolate', 33.45, 'Bolo de chocolate com recheio de coco', 'comidas', 'venda', 'assets\\imagens\\Aue0cZUY1oSCzrOi4QGUjD6d.jpg', 'assets\\imagens\\ipP2t9YQsUgAJTFxx54CQ3Ix.jpg', 'assets\\imagens\\RgW6R2_5jQSX3ZA_I2U078tf.jpg', 33),
+(48, 'Bolo ', 40.00, 'Bolo de doce de leite', 'comidas', 'aluguel', 'assets\\imagens\\GvPVLgSoQU7skHFdx2uvHFlC.jpg', 'assets\\imagens\\cvYHnRaw6JElRZgPXNIFH5VB.jpg', 'assets\\imagens\\6a75QS-CWQ5O2Cb-B_s7koKO.jpg', 33);
 
 -- --------------------------------------------------------
 
@@ -251,7 +261,7 @@ ALTER TABLE `avaliacoes`
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
