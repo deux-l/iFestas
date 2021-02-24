@@ -14,16 +14,10 @@
             <input [(ngModel)]="produto.nomeProduto" name="nomeProduto" type="text" class="form-control">
           </div>
 
-          <p>{{produto.nomeProduto}}</p>
-
-            <div class="col-md-12">
-              <label class="form-group"> Imagem </label>
-              <input [(ngModel)]="produto.imagem1" name="imagem" type="text" class="form-control">
-            </div>
-
             <div class="col-md-12">
               <label class="form-group">Valor</label>
-              <input [(ngModel)]="produto.valor" name="valor" type="text" class="form-control" >
+              <input [(ngModel)]="produto.valor" name="valor" type="text" class="form-control"
+              currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" placeholder="R$ ">
             </div>
            </div>
 

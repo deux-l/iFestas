@@ -63,12 +63,14 @@ export class EditprodutoComponent implements OnInit {
     this.cadProdutoService.atualizaProduto(produto).subscribe(res => {
       //console.log(idProduto)
       console.log(res);
+      location.reload();
     })
   }
 
   deletaProduto(idProduto: any){
-    this.cadProdutoService.deletaProduto(idProduto).subscribe(res => {
+    this.cadProdutoService.deletaProduto(idProduto).subscribe(async res => {
       console.log(res);
+      location.reload();
     })
   }
 }
