@@ -2,3 +2,24 @@
 {
   margin-bottom: 5%;
 }
+
+.bemVindo{
+  animation-duration: 1s;
+  animation-name: slidein;
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+  font-size:x-large;
+  color: rgba(4, 4, 161, 0.438);
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
