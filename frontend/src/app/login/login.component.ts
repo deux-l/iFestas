@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
    login(){
       this.loginService.login(this.usuario).subscribe(async res => {
         this.logado = res[0]
-        console.log(this.logado)
+        
         if ((this.logado) && (this.logado.email == this.usuario.email && this.logado.senha == this.usuario.senha)
          && (this.logado.email != null && this.logado.senha != null)) {
 
@@ -57,7 +57,6 @@ export class LoginComponent implements OnInit {
       })
 
   }
-
 
 
   /*logar(){

@@ -12,6 +12,7 @@ import { ProdutodetalheComponent } from './produtodetalhe/produtodetalhe.compone
 import { FecharnegocioComponent } from './fecharnegocio/fecharnegocio.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -32,7 +33,8 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
     FormsModule,
     FeedRoutingModule,
     MDBBootstrapModule.forRoot(),
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    NgxSpinnerModule
 
   ],
   providers: []

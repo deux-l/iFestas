@@ -24,8 +24,7 @@ const routes: Routes = [
 
   { path: 'produtodetalhe/:id', component: ProdutodetalheComponent },
 
-  { path: 'produtodetalhe/:id/fecharnegocio/:id', component: FecharnegocioComponent,
-    canActivate: [LoginGuard] }
+  { path: 'produtodetalhe/:id/fecharnegocio/:id', component: FecharnegocioComponent }
 
 ];
 

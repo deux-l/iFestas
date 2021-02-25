@@ -36,7 +36,7 @@ export class EditusuarioComponent implements OnInit {
 
         this.usuarioareaService.buscaUsuario(email).subscribe(res => {
           this.usuario = res[0];
-            console.log(this.usuario)
+            
           //this.usuario.nome = this.dados[0]['nome'];
 
           //console.log(this.usuario.nome)

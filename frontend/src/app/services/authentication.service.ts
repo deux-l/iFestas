@@ -22,9 +22,10 @@ export class AuthenticationService {
     }
    }
 
-  logout(){
+  async logout(){
     localStorage.removeItem('logado');
-    this.router.navigate(['landing'])
+    window.location.reload(await this.router.navigate(['landing']));
+    //this.router.navigate(['landing'])
   }
 
 }

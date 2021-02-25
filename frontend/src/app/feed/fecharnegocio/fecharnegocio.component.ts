@@ -60,11 +60,11 @@ export class FecharnegocioComponent implements OnInit {
     this.email= texto
     this.usuarioareaService.buscaUsuario(this.email).subscribe(res => {
       this.usuario = res[0];
-      console.log(this.usuario);
+
 
       this.imagemService.buscarImagens(this.id).subscribe(res => {
         this.produto = res[0];
-        console.log(this.produto);
+        
 
         if (this.usuario.nivelAcesso == 2) {
           this.pedido.valor = this.produto.valor - (this.produto.valor * 0.05)
@@ -72,7 +72,7 @@ export class FecharnegocioComponent implements OnInit {
           this.pedido.valor = this.produto.valor
         }
       });
-      console.log(this.usuario.nivelAcesso)
+
 
 
     })

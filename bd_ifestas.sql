@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Fev-2021 às 03:53
+-- Tempo de geração: 25-Fev-2021 às 22:50
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `avaliacoes` (
   `idAvaliacao` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
-  `idProduto` int(11) NOT NULL,
+  `idProduto` int(11) DEFAULT NULL,
   `nomeUsuario` varchar(50) NOT NULL,
   `avaliacao` varchar(50) NOT NULL,
   `nota` int(11) NOT NULL
@@ -42,9 +42,6 @@ CREATE TABLE `avaliacoes` (
 --
 
 INSERT INTO `avaliacoes` (`idAvaliacao`, `idUsuario`, `idProduto`, `nomeUsuario`, `avaliacao`, `nota`) VALUES
-(2, 19, 48, 'Patricia Querino', 'Muito bom, massa leve e fofa.', 3),
-(3, 32, 48, 'Elizabeth Cassia', 'Nada bom, seco e sem sabor', 1),
-(6, 33, 48, 'Cristian Daniel ', 'Muito bom, recomendo!', 5),
 (7, 33, 46, 'Cristian Daniel ', 'Muito ruim', 2);
 
 -- --------------------------------------------------------
@@ -116,7 +113,8 @@ INSERT INTO `pedido` (`idPedido`, `idProduto`, `idUsuario`, `nomeUsuario`, `nome
 (26, 44, 33, 'Cristian Daniel ', 'Bolo', 'venda', 'Bolo de laranja', 2, '2021-02-24T02:37:21.', '2021-02-24T02:37:21.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 33.24, 'debito', 'daniel pedreira', '156165', '05/22', 123, 33),
 (27, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-25', '2021-02-26', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 37.05, 'credito', 'cristian daniel', '11561456', '05/22', 123, 33),
 (28, 44, 33, 'Cristian Daniel ', 'Bolo', 'venda', 'Bolo de laranja', 2, '2021-02-24T02:39:33.', '2021-02-24T02:39:33.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 33.24, 'credito', 'cristian daniel', '651465', '05/23', 123, 33),
-(29, 48, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de doce de leite', 2, '2021-02-27', '2021-03-01', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 38.00, 'debito', 'daniel cristian', '65541+654', '05/25', 123, 33);
+(29, 48, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de doce de leite', 2, '2021-02-27', '2021-03-01', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 38.00, 'debito', 'daniel cristian', '65541+654', '05/25', 123, 33),
+(30, 44, 33, 'Cristian Daniel ', 'Bolo de fubá', 'venda', 'Bolo de fubá com laranja', 2, '2021-02-24T17:13:13.', '2021-02-24T17:13:13.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 33.24, 'credito', 'cristian daniel', '4156464654654465', '0522', 123, 33);
 
 -- --------------------------------------------------------
 
@@ -142,10 +140,12 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`idProduto`, `nomeProduto`, `valor`, `descricao`, `categoria`, `tipoNegocio`, `imagem1`, `imagem2`, `imagem3`, `idUsuario`) VALUES
-(44, 'Bolo', 34.99, 'Bolo de laranja', '', 'venda', 'assets\\imagens\\vNRXNieOWkYbDd6PmG8t33lF.jpg', 'assets\\imagens\\XykSZaRnyEoVeKWnM-yQSjjR.jpg', 'assets\\imagens\\hCMcPeEiV_K1HTmzxcX7y59_.jpg', 33),
-(46, 'Bolo ', 39.00, 'Bolo de coco', 'comida', 'aluguel', 'assets\\imagens\\vNRXNieOWkYbDd6PmG8t33lF.jpg', 'assets\\imagens\\XykSZaRnyEoVeKWnM-yQSjjR.jpg', NULL, 33),
-(47, 'Bolo de chocolate', 33.45, 'Bolo de chocolate com recheio de coco', 'comidas', 'venda', 'assets\\imagens\\Aue0cZUY1oSCzrOi4QGUjD6d.jpg', 'assets\\imagens\\ipP2t9YQsUgAJTFxx54CQ3Ix.jpg', 'assets\\imagens\\RgW6R2_5jQSX3ZA_I2U078tf.jpg', 33),
-(48, 'Bolo ', 40.00, 'Bolo de doce de leite', 'comidas', 'aluguel', 'assets\\imagens\\GvPVLgSoQU7skHFdx2uvHFlC.jpg', 'assets\\imagens\\cvYHnRaw6JElRZgPXNIFH5VB.jpg', 'assets\\imagens\\6a75QS-CWQ5O2Cb-B_s7koKO.jpg', 33);
+(46, 'Bolo de chocolate', 45.00, 'Bolo de chocolate com recheio de coco médio ', 'comida', 'venda', 'assets\\imagens\\vNRXNieOWkYbDd6PmG8t33lF.jpg', 'assets\\imagens\\XykSZaRnyEoVeKWnM-yQSjjR.jpg', NULL, 33),
+(47, 'Bolo de chocolate', 83.45, 'Bolo de chocolate com recheio de coco e granulados de chocolate\ngrande', 'comidas', 'venda', 'assets\\imagens\\inAiXvHBrkxoBIni7fCOPS2Q.jpg', 'assets\\imagens\\VW_UiWKfV420ZljaZOkz0R1G.jpg', 'assets\\imagens\\xTJtU1rSaUj4m88lWj-e9yuV.jpg', 33),
+(52, 'Pula Pula', 50.00, 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 'brinquedos', 'aluguel', 'assets\\imagens\\DbKwBGcRFcE45DUxAbybcVxY.jpg', 'assets\\imagens\\kE4Lx949wjy8dE2AIsSZLjKI.jpg', 'assets\\imagens\\T3gR0EPnBCsOXXmRbCBKvB-S.jpg', 33),
+(53, 'Escorrego pequeno', 300.00, 'Vendo escorrego infantil pequeno novo!', 'brinquedos', 'venda', 'assets\\imagens\\5yoE2nPdMVoM2kdPwo4oMC1i.jpg', 'assets\\imagens\\0HAIEhGKP0ve4ls7IPuJtT1C.jpg', 'assets\\imagens\\faFEmwHfGFXQzIMO9dfEClU-.jpg', 33),
+(54, 'Batedeira Arno', 250.00, 'Batedeira planetaria arno\n8 velocidades', 'equipamentos', 'venda', 'assets\\imagens\\PrBf4l4LQm65agnr4h9W4ar9.jpg', 'assets\\imagens\\pfYSRovvOkF0TXzd96UNngU1.jpg', 'assets\\imagens\\qmu9Ck4TwQtEUJMJVwgRIR5k.jpg', 33),
+(55, 'Máquina de algodão doce', 40.00, 'Alugo máquina de algodão doce\nR$ 40,00 a diária ', 'equipamentos', 'aluguel', 'assets\\imagens\\cuHMquFgRL9uTx5rnE4loJ1B.jpg', 'assets\\imagens\\vt569Yys5J1i8BkQpD3PKjiT.jpg', 'assets\\imagens\\LhfPC6HegKrtY6Cz6eroGqqm.jpg', 33);
 
 -- --------------------------------------------------------
 
@@ -215,8 +215,8 @@ INSERT INTO `usuario` (`idUsuario`, `nome`, `cpf`, `nascimento`, `celular`, `rua
 --
 ALTER TABLE `avaliacoes`
   ADD PRIMARY KEY (`idAvaliacao`),
-  ADD KEY `fk_avaliacoes_idProduto` (`idProduto`),
-  ADD KEY `fk_avaliacoes_idUsuario` (`idUsuario`);
+  ADD KEY `fk_avaliacoes_idUsuario` (`idUsuario`),
+  ADD KEY `fk_avaliacoes_idProduto` (`idProduto`);
 
 --
 -- Índices para tabela `pedido`
@@ -261,13 +261,13 @@ ALTER TABLE `avaliacoes`
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de tabela `reserva`
@@ -289,14 +289,13 @@ ALTER TABLE `usuario`
 -- Limitadores para a tabela `avaliacoes`
 --
 ALTER TABLE `avaliacoes`
-  ADD CONSTRAINT `fk_avaliacoes_idProduto` FOREIGN KEY (`idProduto`) REFERENCES `produto` (`idProduto`),
+  ADD CONSTRAINT `fk_avaliacoes_idProduto` FOREIGN KEY (`idProduto`) REFERENCES `produto` (`idProduto`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_avaliacoes_idUsuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
 
 --
 -- Limitadores para a tabela `pedido`
 --
 ALTER TABLE `pedido`
-  ADD CONSTRAINT `fk_pedido_idProduto` FOREIGN KEY (`idProduto`) REFERENCES `produto` (`idProduto`),
   ADD CONSTRAINT `fk_pedido_idUsuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
 
 --

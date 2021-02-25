@@ -1,9 +1,10 @@
 <h1>  Bem vindo a sua área de usuário </h1>
-<h3> <mdb-icon far icon="user-circle"></mdb-icon> {{exibiNome()}}</h3>
+
+
 
 <div class="row">
-  <div class="col-2">
-
+  <div class="col-4">
+    <h3> <mdb-icon far icon="user-circle"></mdb-icon> {{exibiNome()}}</h3>
     <ul class="nav flex-column">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" [routerLink]="['editusuario', usuario.email]" > <mdb-icon fas icon="edit"></mdb-icon> Edite seus dados</a>
@@ -27,20 +28,21 @@
     </ul>
   </div>
 
+  <div class="col-8">
+    <img src="assets\imagens\logo.png" class="ml-5" width="30%" alt="">
+
+  </div>
 
 </div>
 
 
-<router-outlet >
+<router-outlet class="ml-2">
 
 </router-outlet>
 
-
-<p>
-  {{usuario.idUsuario}}
-</p>
-
+<!--
 <button type="button" mdbBtn color="primary" class="bwaves-light" mdbTooltip="Edite seus dados" placement="top"
   mdbWavesEffect>
   <mdb-icon fas icon="edit" size="2x"></mdb-icon>
 </button>
+-->

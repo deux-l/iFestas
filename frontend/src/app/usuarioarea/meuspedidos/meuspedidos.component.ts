@@ -46,13 +46,13 @@ export class MeuspedidosComponent implements OnInit {
     this.email= texto
     this.usuarioareaService.buscaUsuario(this.email).subscribe(res => {
       this.usuario = res[0];
-      console.log(this.usuario);
+      
 
     })
 
     this.pedidosService.clientePedidos(this.id).subscribe(res => {
       this.pedidos = res;
-      console.log(res)
+
     })
   }
 

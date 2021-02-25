@@ -17,6 +17,7 @@ const routes: Routes = [
 
   { path: 'feed',
     loadChildren: () => import ('src/app/feed/feed.module').then(m => m.FeedModule),
+    canActivate: [LoginGuard]
   },
 
   { path: 'landing', component: LandingComponent},

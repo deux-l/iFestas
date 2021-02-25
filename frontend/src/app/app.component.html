@@ -2,9 +2,14 @@
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan" [containerInside]="false">
 
   <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" routerLink="/feed">
+  <mdb-navbar-brand *ngIf="!autenticado">
+    <img src="assets\imagens\logo.png" width="30" height="30">
+  </mdb-navbar-brand>
+
+  <mdb-navbar-brand *ngIf="autenticado"><a class="navbar-brand" routerLink="/feed">
       <img src="assets\imagens\logo.png" width="30" height="30">
-      Feed</a></mdb-navbar-brand>
+      Feed</a>
+  </mdb-navbar-brand>
 
   <!-- Collapsible content -->
   <links>
@@ -19,30 +24,24 @@
     </ul>
 
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link waves-light" mdbWavesEffect>
-          <mdb-icon fas icon="envelope"></mdb-icon> Contact<span class="sr-only">(current)</span>
+      <li class="nav-item active" *ngIf="!autenticado">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/cadusuario">
+          <mdb-icon fas icon="clipboard-check"></mdb-icon> Cadastre-se<span class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>
-          <mdb-icon fas icon="cog"></mdb-icon> Settings
+      <li class="nav-item" *ngIf="!autenticado">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/login">
+          <mdb-icon fas icon="sign-in-alt"></mdb-icon> Login
         </a>
       </li>
 
       <!-- Dropdown -->
-      <li class="nav-item dropdown" dropdown>
+      <li class="nav-item dropdown" dropdown *ngIf="autenticado">
         <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
           <mdb-icon fas icon="user"></mdb-icon> Perfil<span class="caret"></span>
         </a>
         <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-
-          <div *ngIf="!autenticado">
-            <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/login">Log in</a>
-            <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/cadusuario">Cadastre-se</a>
-          </div>
-
-          <div *ngIf="autenticado">
+          <div >
             <a class="dropdown-item waves-light" mdbWavesEffect href="#" (click)="logout()">Log out</a>
             <a class="dropdown-item waves-light" mdbWavesEffect href="#" routerLink="/usuarioarea">Área do usuário</a>
           </div>
@@ -61,11 +60,9 @@
 <router-outlet></router-outlet>
 
 
-<router-outlet></router-outlet>
 
 
-
-<footer id="footer" class="bg-primary text-white text-center">
+<footer id="footer" class="bg-primary text-white d-flex-column text-center">
 
   <hr class="mb-0">
   <!--Footer Links-->
@@ -75,7 +72,7 @@
       <div class="col-sm-5 shfooter">
         <h5 class="my-1 font-weight-bold">Contate-nos</h5>
         <ul class="list-unstyled collapse">
-          <p><strong>Matriz:</strong> R. Cel. Carlos Matos - S/N | Nova Iguaçu Centro - RJ  CEP:3866-156 - 
+          <p><strong>Matriz:</strong> R. Cel. Carlos Matos - S/N | Nova Iguaçu Centro - RJ  CEP:3866-156 -
             <strong>Telefone:</strong> 2764-1025<br><strong>Email:</strong> ifestas@entretenimento.com.br</p>
           <p></p>
         </ul>

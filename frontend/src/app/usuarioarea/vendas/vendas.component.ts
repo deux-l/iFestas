@@ -45,13 +45,13 @@ export class VendasComponent implements OnInit {
     this.email= texto
     this.usuarioareaService.buscaUsuario(this.email).subscribe(res => {
       this.usuario = res[0];
-      console.log(this.usuario);
+
 
     })
 
     this.pedidosService.fornecedorPedidos(this.id).subscribe(res => {
       this.pedidos = res;
-      console.log(res)
+      
     })
   }
 

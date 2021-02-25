@@ -41,7 +41,7 @@ export class EditprodutoComponent implements OnInit {
         this.cadProdutoService.buscarProdutos(idUsuario).subscribe(res => {
           this.produtos = res;
 
-          console.log(this.produtos)
+          
 
           this.produtos.forEach(valores => {
 
@@ -62,14 +62,14 @@ export class EditprodutoComponent implements OnInit {
   atualizaProduto(produto: Produto){
     this.cadProdutoService.atualizaProduto(produto).subscribe(res => {
       //console.log(idProduto)
-      console.log(res);
+
       location.reload();
     })
   }
 
   deletaProduto(idProduto: any){
     this.cadProdutoService.deletaProduto(idProduto).subscribe(async res => {
-      console.log(res);
+
       location.reload();
     })
   }

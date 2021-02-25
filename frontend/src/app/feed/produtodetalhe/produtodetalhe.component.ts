@@ -62,24 +62,24 @@ export class ProdutodetalheComponent implements OnInit, OnDestroy {
     var er =/[""\\]/gi;
     texto = texto.replace(er, "")
     this.email= texto
-    console.log(this.email)
+
     this.usuarioareaService.buscaUsuario(this.email).subscribe(res => {
       this.usuario = res[0];
-      console.log(this.usuario)
+
     })
   }
 
   buscarProduto(){
     this.imagemService.buscarImagens(this.id).subscribe(res => {
       this.produto = res[0];
-      console.log(this.produto)
+
     });
   }
 
   buscarAvaliacoes(){
     this.imagemService.buscarAvaliacoes(this.id).subscribe(res => {
       this.avaliacoes = res;
-      console.log(res);
+      
 
       for (let i = 0; i < this.avaliacoes.length; i++) {
 

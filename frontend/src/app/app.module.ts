@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -18,6 +19,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { CampoControlErroComponent } from './campo-control-erro/campo-control-erro.component';
 import { TermosComponent } from './termos/termos.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -32,11 +34,13 @@ import { TermosComponent } from './termos/termos.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    NgxSpinnerModule
   ],
   providers: [
     AuthenticationService,
