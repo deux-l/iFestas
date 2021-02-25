@@ -5,30 +5,23 @@
       Edite seu produto aqui
     </h1>
 
-
-      <form class="row g-3"  *ngFor="let produto of produtos">
-
-        <div class="col-md-6 mt-4">
-          <div class="col-md-12">
+    <div>
+      <form class="row g-3" *ngFor="let produto of produtos">
+    
+        <div class="col-md-6">
             <label class="form-group"> Nome Do produto</label>
             <input [(ngModel)]="produto.nomeProduto" name="nomeProduto" type="text" class="form-control">
-          </div>
 
-            <div class="col-md-12">
-              <label class="form-group">Valor</label>
-              <input [(ngModel)]="produto.valor" name="valor" type="text" class="form-control"
-              currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" placeholder="R$ ">
-            </div>
-           </div>
-
-        <div class="row">
-          <div class="form-floating col-md-6">
-            <label for="floatingTextarea2">Descrição</label>
-            <textarea minlength="10" maxlength="200" [(ngModel)]="produto.descricao"  name="descricao" class="form-control" placeholder="Altere aqui a descrição do produto ou serviço"
-            id="floatingTextarea2" style="height: 300px; width: 500px;"></textarea>
-          </div>
+            <label class="form-group">Valor</label>
+            <input [(ngModel)]="produto.valor" name="valor" type="text" class="form-control"
+            currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" placeholder="R$ ">
         </div>
 
+        <div class="col-md-6">
+          <label for="floatingTextarea2">Descrição</label>
+          <textarea minlength="10" maxlength="200" [(ngModel)]="produto.descricao"  name="descricao" class="form-control" placeholder="Altere aqui a descrição do produto ou serviço"
+          id="floatingTextarea2" style="height: 200px; width: 557px;"></textarea>
+        </div>
 
         <div class="card-deck">
           <mdb-card>
@@ -79,12 +72,10 @@
           </mdb-card-footer>
           </mdb-card>
         </div>
-
-        <div class="col-6 col-sm-4 mt-5">
+        <div >
             <mdb-card-body>
                 <mdb-card-title>
-
-                    <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()"  mdbWavesEffect>Deletar produto</button>
+                    <button type="button" mdbBtn color="primary"  class="relative waves-light mt-3" (click)="basicModal.show()"  mdbWavesEffect>Deletar produto</button>
                     <!--span>É preciso estar logado para enviar uma avaliação</span-->
                     <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
@@ -107,19 +98,22 @@
                     </div>
 
                 </mdb-card-title>
-                <mdb-card-text class="mb-0"> </mdb-card-text>
+                <mdb-card-text> </mdb-card-text>
               </mdb-card-body>
 
         </div>
 
-        <div class="col-6 col-sm-4 mt-5">
-            <button type="submit" class="btn btn-primary btn-md btn-block" (click)="atualizaProduto(produto)">Atualizar Dados do produto</button>
+        <div>
+            <button type="submit" mdbBtn color="primary"  class="relative waves-light mt-3"  (click)="atualizaProduto(produto)">Atualizar Dados do produto</button>       
         </div>
+        <br>
 
+        <div class="col-md-12">
+          <hr>
+        </div>
       </form>
-
-
-
+      
+    </div>
 
 
 

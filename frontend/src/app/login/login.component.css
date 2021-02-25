@@ -5,6 +5,8 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
+  background-image: url("/assets/imagens/party1.svg");
+  background-size: 55%;
 }
 
 a {
@@ -38,11 +40,6 @@ h2 {
   padding: 20px;
 }html {
   background-color: #56baed;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
 }
 
 a {
