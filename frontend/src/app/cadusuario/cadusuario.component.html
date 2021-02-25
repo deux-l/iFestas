@@ -161,8 +161,13 @@
       <label for="form2">⠀Confirmar senha </label>
       <input mdbInput [(ngModel)]="senha" name="confirmaSenha"
       type="password" class="form-control" required>
+      
     </div>
 
+    <div class="col-md-6">
+      <a routerLink="/termos" target="_blank">Termos de Uso</a>
+    </div>
+      
 
   <button class="col-12 col-md-3 col-sm-12 col-lg-2" type="submit" mdbBtn color="primary" [disabled]="!f.valid" (click)="gravarUsuario()">
     <mdb-icon fas icon="check" class="prefix"></mdb-icon>

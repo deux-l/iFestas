@@ -1,0 +1,15 @@
+h2 {
+  margin: 40px;
+  text-align: center;
+   
+}
+h3 {
+    margin: 30px
+}
+p {
+    margin: 10px;
+    text-justify: auto;
+}
+ul {
+    margin-block-end: auto;
+}

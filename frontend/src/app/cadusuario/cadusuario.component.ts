@@ -52,6 +52,8 @@ export class CadusuarioComponent implements OnInit {
 
   }
 
+  
+
   onSubmit(form: any){
 
     console.log(form);

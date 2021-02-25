@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { CadusuarioComponent } from './cadusuario/cadusuario.component';
 import { PaginanaoencontradaComponent } from './paginanaoencontrada/paginanaoencontrada.component';
 import { LoginGuard } from './guards/login.guard';
+import { TermosComponent } from './termos/termos.component';
 
 const routes: Routes = [
 
@@ -23,6 +24,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
 
   { path: 'cadusuario', component: CadusuarioComponent},
+
+  { path: 'termos', component: TermosComponent},
 
   { path: '', redirectTo: '/landing', pathMatch: 'full'},
 
