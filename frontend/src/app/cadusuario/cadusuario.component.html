@@ -1,182 +1,160 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
 <div class="container">
   <div class="fadeIn">
     <h2 class="fadeIn">
       Formulário de Cadastro
     </h2>
 
-<form #f="ngForm" class="row g-3">
-    <div class="md-form col-md-6" [ngClass]="aplicaCssErro(nome)">
-      <mdb-icon fas icon="user-alt" class="prefix"></mdb-icon>
-      <label for="form2">⠀Nome Completo</label>
-      <input mdbInput [(ngModel)]="usuario.nome" name="nome" #nome="ngModel"
-      type="text"  class="form-control" required>
+    <form #f="ngForm" class="row g-3">
+      <div class="md-form col-md-6" [ngClass]="aplicaCssErro(nome)">
+        <mdb-icon fas icon="user-alt" class="prefix"></mdb-icon>
+        <label for="form2">⠀Nome Completo</label>
+        <input mdbInput [(ngModel)]="usuario.nome" name="nome" #nome="ngModel" type="text" class="form-control"
+          required>
 
-      <app-campo-control-erro
-        [mostrarErro]="verificaValidTouched(nome)"
-        msgErro="Campo obrigatório.">
-      </app-campo-control-erro>
-    </div>
-    
-
-    <div class="md-form col-md-6" [ngClass]="aplicaCssErro(cpf)">
-      <mdb-icon fas icon="calendar-alt" class="prefix"></mdb-icon>
-      <label for="form2">⠀CPF</label>
-      <input mdbInput [(ngModel)]="usuario.cpf" name="cpf" #cpf="ngModel"
-      type="text" class="form-control"
-      mask="000.000.000-00" required>
-
-      <app-campo-control-erro
-        [mostrarErro]="verificaValidTouched(cpf)"
-        msgErro="Campo  obrigatório.">
-      </app-campo-control-erro>
-    </div>
-   
-
-    <div class="md-form col-md-6" [ngClass]="aplicaCssErro(cpf)">
-      <mdb-icon fas icon="calendar-alt" class="prefix"></mdb-icon>
-      <label for="form2">⠀Data de Nascimento</label>
-      <input mdbInput [(ngModel)]="usuario.nascimento" name="nascimento" #nascimento="ngModel"
-      type="text" class="form-control"
-      mask="00/00/0000" required>
-
-      <app-campo-control-erro
-        [mostrarErro]="verificaValidTouched(nascimento)"
-        msgErro="Campo  obrigatório.">
-      </app-campo-control-erro>
-    </div>
-
-    <div class="md-form col-md-6" [ngClass]="aplicaCssErro(celular)">
-      <mdb-icon fas icon="phone-alt" class="prefix"></mdb-icon>
-      <label for="form2">⠀Celular</label>
-      <input mdbInput [(ngModel)]="usuario.celular" name="celular" #celular="ngModel"
-      type="tel" class="form-control"
-      mask="(00)00000-0000" required>
-
-      <app-campo-control-erro
-        [mostrarErro]="verificaValidTouched(celular)"
-        msgErro="Campo  obrigatório.">
-      </app-campo-control-erro>
-    </div>
+        <app-campo-control-erro [mostrarErro]="verificaValidTouched(nome)" msgErro="Campo obrigatório.">
+        </app-campo-control-erro>
+      </div>
 
 
-    <div class="md-form col-md-6" [ngClass]="aplicaCssErro(rua)">
-      <mdb-icon fas icon="home" class="prefix"></mdb-icon>
-      <label for="form2">⠀Rua </label>
-      <input mdbInput [(ngModel)]="usuario.rua" name="rua" #rua="ngModel"
-      type="text" class="form-control" required>
+      <div class="md-form col-md-6" [ngClass]="aplicaCssErro(cpf)">
+        <mdb-icon fas icon="calendar-alt" class="prefix"></mdb-icon>
+        <label for="form2">⠀CPF</label>
+        <input mdbInput [(ngModel)]="usuario.cpf" name="cpf" #cpf="ngModel" type="text" class="form-control"
+          mask="000.000.000-00" required>
 
-      <app-campo-control-erro
-        [mostrarErro]="verificaValidTouched(rua)"
-        msgErro="Campo  obrigatório.">
-      </app-campo-control-erro>
-    </div>
+        <app-campo-control-erro [mostrarErro]="verificaValidTouched(cpf)" msgErro="Campo  obrigatório.">
+        </app-campo-control-erro>
+      </div>
 
-    <div class="md-form col-md-6" [ngClass]="aplicaCssErro(numero)"> 
-      <mdb-icon fab icon="creative-commons-zero" class="prefix"></mdb-icon>
-      <label for="form2">⠀Número </label>
-      <input mdbInput [(ngModel)]="usuario.numero" name="numero" #numero="ngModel"
-      type="number" class="form-control" required>
-    </div>
 
-    <div class="md-form col-md-6" [ngClass]="aplicaCssErro(bairro)">
-      <mdb-icon fas icon="road" class="prefix"></mdb-icon>
-      <label for="form2">⠀Bairro </label>
-      <input mdbInput [(ngModel)]="usuario.bairro" name="bairro" #bairro="ngModel"
-      type="text" class="form-control" required>
+      <div class="md-form col-md-6" [ngClass]="aplicaCssErro(cpf)">
+        <mdb-icon fas icon="calendar-alt" class="prefix"></mdb-icon>
+        <label for="form2">⠀Data de Nascimento</label>
+        <input mdbInput [(ngModel)]="usuario.nascimento" name="nascimento" #nascimento="ngModel" type="text"
+          class="form-control" mask="00/00/0000" required>
 
-      <app-campo-control-erro
-        [mostrarErro]="verificaValidTouched(bairro)"
-        msgErro="Campo  obrigatório.">
-      </app-campo-control-erro>
-    </div>
+        <app-campo-control-erro [mostrarErro]="verificaValidTouched(nascimento)" msgErro="Campo  obrigatório.">
+        </app-campo-control-erro>
+      </div>
 
-    <div class="md-form col-md-6" [ngClass]="aplicaCssErro(cep)">
-      <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
-      <label for="form2">⠀Cep </label>
-      <input mdbInput [(ngModel)]="usuario.cep" name="cep" #cep="ngModel"
-      type="text" class="form-control"
-      mask="00000-000" required>
+      <div class="md-form col-md-6" [ngClass]="aplicaCssErro(celular)">
+        <mdb-icon fas icon="phone-alt" class="prefix"></mdb-icon>
+        <label for="form2">⠀Celular</label>
+        <input mdbInput [(ngModel)]="usuario.celular" name="celular" #celular="ngModel" type="tel" class="form-control"
+          mask="(00)00000-0000" required>
 
-      <app-campo-control-erro
-        [mostrarErro]="verificaValidTouched(cep)"
-        msgErro="Campo  obrigatório.">
-      </app-campo-control-erro>
-    </div>
+        <app-campo-control-erro [mostrarErro]="verificaValidTouched(celular)" msgErro="Campo  obrigatório.">
+        </app-campo-control-erro>
+      </div>
 
-    <div class="md-form col-md-12" [ngClass]="aplicaCssErro(cidade)">
-      <mdb-icon fas icon="city" class="prefix"></mdb-icon>
-      <label for="form2">⠀Cidade </label>
-      <input mdbInput [(ngModel)]="usuario.cidade" name="cidade" #cidade="ngModel" 
-      type="text" class="form-control" required>
 
-      <app-campo-control-erro
-        [mostrarErro]="verificaValidTouched(cidade)"
-        msgErro="Campo  obrigatório.">
-      </app-campo-control-erro>
-    </div>
+      <div class="md-form col-md-6" [ngClass]="aplicaCssErro(rua)">
+        <mdb-icon fas icon="home" class="prefix"></mdb-icon>
+        <label for="form2">⠀Rua </label>
+        <input mdbInput [(ngModel)]="usuario.rua" name="rua" #rua="ngModel" type="text" class="form-control" required>
 
-    <div class="md-form col-md-12" [ngClass]="aplicaCssErro(email)">
-      <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
-      <label for="form2">⠀Email </label>
-      <input mdbInput [(ngModel)]="usuario.email" name="email" #email="ngModel"
-      type="text" class="form-control" required>
+        <app-campo-control-erro [mostrarErro]="verificaValidTouched(rua)" msgErro="Campo  obrigatório.">
+        </app-campo-control-erro>
+      </div>
 
-      <app-campo-control-erro
-        [mostrarErro]="verificaValidTouched(email)"
-        msgErro="Por favor informe um email válido.">
-      </app-campo-control-erro>
-    </div>
+      <div class="md-form col-md-6" [ngClass]="aplicaCssErro(numero)">
+        <mdb-icon fab icon="creative-commons-zero" class="prefix"></mdb-icon>
+        <label for="form2">⠀Número </label>
+        <input mdbInput [(ngModel)]="usuario.numero" name="numero" #numero="ngModel" type="number" class="form-control"
+          required>
+      </div>
 
-    <div class="col-6">
-      <label for="">O que deseja fazer no site:</label>
-      <div class="form-check">
-        <input class="form-check-input"  [(ngModel)]="usuario.nivelAcesso" type="radio" name="nivelAcesso 2" data-toggle="tooltip"
-        data-placement="bottom" title="Sendo colaborador você poderá anunciar em nosso site" id="flexRadioDefault1" value="2" >
-        <label class="form-check-label" for="flexRadioDefault1" >
-          Colaborador
-        </label>
+      <div class="md-form col-md-6" [ngClass]="aplicaCssErro(bairro)">
+        <mdb-icon fas icon="road" class="prefix"></mdb-icon>
+        <label for="form2">⠀Bairro </label>
+        <input mdbInput [(ngModel)]="usuario.bairro" name="bairro" #bairro="ngModel" type="text" class="form-control"
+          required>
+
+        <app-campo-control-erro [mostrarErro]="verificaValidTouched(bairro)" msgErro="Campo  obrigatório.">
+        </app-campo-control-erro>
+      </div>
+
+      <div class="md-form col-md-6" [ngClass]="aplicaCssErro(cep)">
+        <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
+        <label for="form2">⠀Cep </label>
+        <input mdbInput [(ngModel)]="usuario.cep" name="cep" #cep="ngModel" type="text" class="form-control"
+          mask="00000-000" required>
+
+        <app-campo-control-erro [mostrarErro]="verificaValidTouched(cep)" msgErro="Campo  obrigatório.">
+        </app-campo-control-erro>
+      </div>
+
+      <div class="md-form col-md-6" [ngClass]="aplicaCssErro(cidade)">
+        <mdb-icon fas icon="city" class="prefix"></mdb-icon>
+        <label for="form2">⠀Cidade </label>
+        <input mdbInput [(ngModel)]="usuario.cidade" name="cidade" #cidade="ngModel" type="text" class="form-control"
+          required>
+
+        <app-campo-control-erro [mostrarErro]="verificaValidTouched(cidade)" msgErro="Campo  obrigatório.">
+        </app-campo-control-erro>
+      </div>
+
+      <div class="md-form col-md-6" [ngClass]="aplicaCssErro(email)">
+        <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
+        <label for="form2">⠀Email </label>
+        <input mdbInput [(ngModel)]="usuario.email" name="email" #email="ngModel" type="text" class="form-control"
+          required>
+
+        <app-campo-control-erro [mostrarErro]="verificaValidTouched(email)"
+          msgErro="Por favor informe um email válido.">
+        </app-campo-control-erro>
+      </div>
+
+
+      <div class="col-md-12">
+        <label for="">O que deseja fazer no site:</label>
+        <div class="form-check">
+          <div class="col-md-6">
+            <input class="form-check-input" [(ngModel)]="usuario.nivelAcesso" type="radio" name="nivelAcesso 2"
+              data-toggle="tooltip" data-placement="bottom" title="Sendo colaborador você poderá anunciar em nosso site"
+              id="flexRadioDefault1" value="2">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Colaborador
+            </label>
+          </div>
+            <div class="col-md-6">
+            <input class="form-check-input" [(ngModel)]="usuario.nivelAcesso" type="radio" name="nivelAcesso 3"
+              data-toggle="tooltip" data-placement="bottom"
+              title="Como cliente você poderá navegar pelo nosso site em busca da festa perfeita" id="flexRadioDefault2"
+              value="3" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Cliente
+            </label>
+        </div>
       </div>
     </div>
 
-    <div class="col-md-12 col-12">
-      <div class="form-check">
-        <input class="form-check-input" [(ngModel)]="usuario.nivelAcesso" type="radio" name="nivelAcesso 3" data-toggle="tooltip"
-        data-placement="bottom" title="Como cliente você poderá navegar pelo nosso site em busca da festa perfeita"
-        id="flexRadioDefault2" value="3" checked>
-        <label class="form-check-label" for="flexRadioDefault2" >
-          Cliente
-        </label>
+      <div class="md-form col-md-6">
+        <mdb-icon fas icon="unlock-alt" class="prefix"></mdb-icon>
+        <label for="form2">⠀Senha </label>
+        <input mdbInput [(ngModel)]="usuario.senha" name="senha" type="password" class="form-control" required>
       </div>
-    </div>
 
-    <div class="md-form col-md-6">
-      <mdb-icon fas icon="unlock-alt" class="prefix"></mdb-icon>
-      <label for="form2">⠀Senha </label>
-      <input mdbInput [(ngModel)]="usuario.senha" name="senha"
-      type="password" class="form-control" required>
-    </div>
+      <div class="md-form col-md-6">
+        <mdb-icon fas icon="unlock-alt" class="prefix"></mdb-icon>
+        <label for="form2">⠀Confirmar senha </label>
+        <input mdbInput [(ngModel)]="senha" name="confirmaSenha" type="password" class="form-control" required>
 
-    <div class="md-form col-md-6">
-      <mdb-icon fas icon="unlock-alt" class="prefix"></mdb-icon>
-      <label for="form2">⠀Confirmar senha </label>
-      <input mdbInput [(ngModel)]="senha" name="confirmaSenha"
-      type="password" class="form-control" required>
-      
-    </div>
+      </div>
 
-    <div class="col-md-6">
-      <a routerLink="/termos" target="_blank">Termos de Uso</a>
-    </div>
-      
+      <div class="col-md-12">
+        <a routerLink="/termos" target="_blank">Termos de Uso</a>
+      </div>
 
-  <button class="col-12 col-md-3 col-sm-12 col-lg-2" type="submit" mdbBtn color="primary" [disabled]="!f.valid" (click)="gravarUsuario()">
-    <mdb-icon fas icon="check" class="prefix"></mdb-icon>
-    Cadastrar</button>
-</form>
 
+      <button class="col-12" type="submit" mdbBtn color="primary" [disabled]="!f.valid" (click)="gravarUsuario()">
+        <mdb-icon fas icon="check" class="prefix"></mdb-icon>
+        Cadastrar
+      </button>
+    </form>
+
+  </div>
 </div>
-</div>
-
-
-
-

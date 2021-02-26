@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TermosComponent implements OnInit {
 
+  dataAtual: Date = new Date()
+
   constructor() { }
 
   ngOnInit(): void {
