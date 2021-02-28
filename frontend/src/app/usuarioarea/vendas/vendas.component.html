@@ -1,7 +1,7 @@
 <div>
-  
+
   <div class="col-lg-6 col-md-6">
-    <h4>Vendas e alugueis:</h4>
+    <h4 class="text-secondary">Vendas e alugueis:</h4>
 
     <table mdbTable mdbTableCol *ngFor="let pedido of pedidos">
       <thead class="grey lighten-1 black-text">
@@ -27,8 +27,8 @@
           <td>{{pedido.nomeProduto}}</td>
           <td>{{pedido.tipoNegocio}}</td>
           <td>{{pedido.descricao}}</td>
-          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataEntrega}}</td>
-          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataDevolucao}}</td>
+          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataEntrega | date: 'dd-MM-yyyy'}}</td>
+          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataDevolucao | date: 'dd-MM-yyyy'}}</td>
           <td>{{pedido.email}}</td>
           <td>{{pedido.rua}}</td>
           <td>{{pedido.numero}}</td>

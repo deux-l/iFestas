@@ -10,8 +10,8 @@
     <div class="col-lg-4 col-md-4 mb-4">
       <div class="card   my-4">
         <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">{{produto.nomeProduto}}</a>
+          <h4 class="card-title text-secondary">
+            {{produto.nomeProduto}}
           </h4>
           <h6>R$: {{produto.valor}}</h6>
           <p class="card-text">{{produto.descricao}}</p>
@@ -67,7 +67,7 @@
         <mdb-card-body>
           <mdb-card-title>
 
-              <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()"  mdbWavesEffect>Avalie</button>
+              <button mdbBtn type="button" gradient="purple" class="relative waves-light" (click)="basicModal.show()"  mdbWavesEffect>Avalie</button>
               <!--span>É preciso estar logado para enviar uma avaliação</span-->
               <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">

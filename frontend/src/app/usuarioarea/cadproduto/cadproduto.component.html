@@ -1,18 +1,18 @@
 <div class="container">
   <div class="fadeIn">
-    <h1 class="fadeIn">
+    <h1 class="fadeIn edit">
       Cadastro de produto ou serviço:
     </h1>
 
     <form #f="ngForm">
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 edit">
           <label class="form-group"> Nome Do produto</label>
           <input [(ngModel)]="produto.nomeProduto" name="nomeProduto" type="text" class="form-control">
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 edit">
           <label class="form-group">Categoria do produto</label>
           <select [(ngModel)]="produto.categoria" name="categoria" class="browser-default custom-select mb-4">
             <option  disabled>Categorias:</option>
@@ -26,13 +26,13 @@
 
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 edit">
           <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon>
           <label for="form8">Descrição do produto</label>
           <textarea minlength="10" maxlength="200" [(ngModel)]="produto.descricao" name="descricao" type="text" id="form8" class="md-textarea form-control" mdbInput></textarea>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 edit">
           <label class="form-group">Qual será o tipo de negócio?</label>
           <select [(ngModel)]="produto.tipoNegocio" name="tiponegocio" class="browser-default custom-select mb-4">
             <option value="venda">Venda</option>
@@ -43,7 +43,7 @@
       <p>{{produto.tipoNegocio}}</p>
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 edit">
           <mdb-icon fas icon="dollar-sign"></mdb-icon>
           <label class="form-group">Valor</label>
           <input type="text"  name="valor" class="form-control" currencyMask [(ngModel)]="produto.valor" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
@@ -76,7 +76,7 @@
 
 
       <div class="col-12 col-sm-4 mt-5">
-        <button type="submit" class="btn btn-primary btn-md btn-block" (click)="gravarProduto()"><mdb-icon fas icon="check"></mdb-icon> Cadastrar</button>
+        <button type="submit" mdbBtn gradient="purple" (click)="gravarProduto()"><mdb-icon fas icon="check"></mdb-icon> Cadastrar</button>
       </div>
     </form>
   </div>

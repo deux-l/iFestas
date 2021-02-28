@@ -23,3 +23,12 @@
     width: 100%;
   }
 }
+
+.list-group-item:hover{
+
+  background-color:rgba(4, 4, 161, 0.438);
+
+
+}
+
+

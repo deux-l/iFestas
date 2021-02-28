@@ -1,29 +1,29 @@
-<h1>  Bem vindo a sua área de usuário </h1>
+<h1 class="text-info">  Minha área de usuário </h1>
 
 
 
 <div class="row">
   <div class="col-4">
-    <h3> <mdb-icon far icon="user-circle"></mdb-icon> {{exibiNome()}}</h3>
+    <h3 class="text-info"> <mdb-icon far icon="user-circle" size="2x"></mdb-icon> {{exibiNome()}}</h3>
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" [routerLink]="['editusuario', usuario.email]" > <mdb-icon fas icon="edit"></mdb-icon> Edite seus dados</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['editusuario', usuario.email]" > <mdb-icon fas icon="user-edit" size="2x" class="mr-0"></mdb-icon> Edite seus dados</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" [routerLink]="['cadproduto', usuario.idUsuario]"> <mdb-icon far icon="plus-square"></mdb-icon> Cadastrar um novo produto</a>
+        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" [routerLink]="['cadproduto', usuario.idUsuario]"> <mdb-icon far icon="plus-square" size="2x" class="mr-1"></mdb-icon> Cadastrar um novo produto</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" [routerLink]="['editproduto', usuario.idUsuario]"> <mdb-icon fas icon="edit"></mdb-icon> Editar informações do produto</a>
+        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" [routerLink]="['editproduto', usuario.idUsuario]"> <mdb-icon fas icon="edit" size="2x" class="mr-0"></mdb-icon> Editar informações do produto</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" [routerLink]="['vendas', usuario.idUsuario]" tabindex="-1" aria-disabled="true"> <mdb-icon fas icon="bars"></mdb-icon> Vendas</a>
+        <a class="nav-link" *ngIf="usuario.nivelAcesso == 2" [routerLink]="['vendas', usuario.idUsuario]" tabindex="-1" aria-disabled="true"> <mdb-icon fas icon="money-check-alt" size="2x" class="mr-0"></mdb-icon> Vendas</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['meuspedidos', usuario.idUsuario]" tabindex="-1" aria-disabled="true"> <mdb-icon fas icon="bars"></mdb-icon> Meus Pedidos</a>
+        <a class="nav-link" [routerLink]="['meuspedidos', usuario.idUsuario]" tabindex="-1" aria-disabled="true"> <mdb-icon fas icon="list-alt" size="2x" class="mr-1"></mdb-icon> Meus Pedidos</a>
       </li>
     </ul>
   </div>

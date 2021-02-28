@@ -4,7 +4,7 @@
     <mdb-card>
       <mdb-card-body>
         <mdb-card-title>
-          <h4>Imagem principal</h4>
+          <h4 class="edit">Imagem principal</h4>
         </mdb-card-title>
         <mdb-card-text>
           <img [src]="produto.imagem1" class="img-fluid" alt="">
@@ -12,7 +12,7 @@
       </mdb-card-body>
       <mdb-card-footer><small class="text-muted">
 
-        <label class="form-group" for="customFile" id="customFileLabel">
+        <label class="form-group edit" for="customFile" id="customFileLabel">
           Selecionar Arquivo
         </label>
       <div class="form-group">
@@ -25,8 +25,8 @@
           (change)="onChange($event)"
           />
       </div>
-      <button type="button" class="btn btn-primary" (click)="onUpload()" [disabled]="!files">
-          Upload
+      <button type="button" mdbBtn gradient="blue" (click)="onUpload()" [disabled]="!files">
+        <mdb-icon fas icon="file-upload" class="mr-1"></mdb-icon> Upload
         </button>
       <h5>
         Seleciona uma imagem para mudar a imagem principal de exibição do produto

@@ -29,8 +29,8 @@
           <td>{{pedido.nomeProduto}}</td>
           <td>{{pedido.tipoNegocio}}</td>
           <td>{{pedido.descricao}}</td>
-          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataEntrega}}</td>
-          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataDevolucao}}</td>
+          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataEntrega | date: 'dd-MM-yyyy'}}</td>
+          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataDevolucao | date: 'dd-MM-yyyy'}}</td>
           <td>{{pedido.email}}</td>
           <td>{{pedido.rua}}</td>
           <td>{{pedido.numero}}</td>

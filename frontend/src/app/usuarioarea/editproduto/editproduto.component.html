@@ -1,6 +1,6 @@
 <div class="container">
   <div class="fadeIn">
-    <h1 class="fadeIn">
+    <h1 class="fadeIn edit">
 
       Edite seu produto aqui
     </h1>
@@ -9,15 +9,15 @@
       <form class="row g-3" *ngFor="let produto of produtos">
 
         <div class="col-md-6">
-            <label class="form-group"> Nome Do produto</label>
+            <label class="form-group edit"> Nome Do produto</label>
             <input [(ngModel)]="produto.nomeProduto" name="nomeProduto" type="text" class="form-control">
 
-            <label class="form-group">Valor</label>
+            <label class="form-group edit">Valor</label>
             <input [(ngModel)]="produto.valor" name="valor" type="text" class="form-control"
             currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" placeholder="R$ ">
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 edit">
           <label for="floatingTextarea2">Descrição</label>
           <textarea minlength="10" maxlength="200" [(ngModel)]="produto.descricao"  name="descricao" class="form-control" placeholder="Altere aqui a descrição do produto ou serviço"
           id="floatingTextarea2" style="height: 200px; width: 557px;"></textarea>
@@ -27,15 +27,15 @@
           <mdb-card>
             <mdb-card-body>
               <mdb-card-title>
-                <h4>Imagem principal</h4>
+                <h4 class="edit">Imagem principal</h4>
               </mdb-card-title>
               <mdb-card-text>
                 <img [src]="produto.imagem1" class="img-fluid" alt="">
               </mdb-card-text>
             </mdb-card-body>
-            <mdb-card-footer><small class="text-muted"><h6>
-              R$: {{produto.valor}}<br><br>
-              <a [routerLink]="['editimagem', produto.idProduto]"><mdb-icon far icon="image" size="2x"></mdb-icon>Inserir ou alterar imagem</a>
+            <mdb-card-footer><small class="text-muted"><h6 class="edit">
+
+              <a class="edit" [routerLink]="['editimagem', produto.idProduto]"><mdb-icon far icon="image" size="2x" class="mr-1"></mdb-icon>Inserir ou alterar imagem</a>
             </h6></small>
           </mdb-card-footer>
           </mdb-card>
@@ -43,15 +43,15 @@
           <mdb-card>
             <mdb-card-body>
               <mdb-card-title>
-                <h4>Segunda imagem</h4>
+                <h4 class="edit">Segunda imagem</h4>
               </mdb-card-title>
               <mdb-card-text>
                 <img [src]="produto.imagem2" class="img-fluid" alt="">
               </mdb-card-text>
             </mdb-card-body>
-            <mdb-card-footer><small class="text-muted"><h6>
-              R$: {{produto.valor}}<br><br>
-              <a [routerLink]="['editimagem', produto.idProduto]"><mdb-icon far icon="image" size="2x"></mdb-icon>Inserir ou alterar imagem</a>
+            <mdb-card-footer><small class="text-muted"><h6 class="edit">
+
+
             </h6></small>
           </mdb-card-footer>
           </mdb-card>
@@ -59,15 +59,15 @@
           <mdb-card>
             <mdb-card-body>
               <mdb-card-title>
-                <h4>Terceira imagem</h4>
+                <h4 class="edit">Terceira imagem</h4>
               </mdb-card-title>
               <mdb-card-text>
                 <img [src]="produto.imagem3" class="img-fluid" alt="">
               </mdb-card-text>
             </mdb-card-body>
-            <mdb-card-footer><small class="text-muted"><h6>
-              R$: {{produto.valor}}<br><br>
-              <a [routerLink]="['editimagem', produto.idProduto]"><mdb-icon far icon="image" size="2x"></mdb-icon>Inserir ou alterar imagem</a>
+            <mdb-card-footer><small class="text-muted"><h6 class="edit">
+
+
             </h6></small>
           </mdb-card-footer>
           </mdb-card>
@@ -75,7 +75,7 @@
         <div >
             <mdb-card-body>
                 <mdb-card-title>
-                    <button type="button" mdbBtn color="primary"  class="relative waves-light mt-3" (click)="basicModal.show()"  mdbWavesEffect>Deletar produto</button>
+                    <button type="button" mdbBtn color="danger"  class="relative waves-light mt-3" (click)="basicModal.show()"  mdbWavesEffect><mdb-icon fas icon="trash" class="mr-1"></mdb-icon>Deletar produto</button>
                     <!--span>É preciso estar logado para enviar uma avaliação</span-->
                     <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
@@ -87,8 +87,8 @@
 
 
                           </div>
-                          <h4>Deseja mesmo deletar esse produto?</h4>
-                          <p>{{produto.idProduto}}</p>
+                          <h4 class="text-danger">Deseja mesmo deletar esse produto?</h4>
+
                           <div class="modal-footer">
                             <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Cancelar</button>
                             <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)="deletaProduto(produto.idProduto)" >Sim</button>
@@ -104,7 +104,7 @@
         </div>
 
         <div>
-            <button type="submit" mdbBtn color="primary"  class="relative waves-light mt-3"  (click)="atualizaProduto(produto)">Atualizar Dados do produto</button>
+            <button type="submit" mdbBtn gradient="blue"  class="relative waves-light mt-3"  (click)="atualizaProduto(produto)"><mdb-icon fas icon="caret-square-up" class="mr-1"></mdb-icon>Atualizar Dados do produto</button>
         </div>
         <br>
 

@@ -2,13 +2,16 @@
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark cyan" [containerInside]="false">
 
   <!-- Navbar brand -->
-  <mdb-navbar-brand *ngIf="!autenticado">
-    <img src="assets\imagens\logoNav1.png" width="90" height="25">
-  </mdb-navbar-brand>
+  <mdb-navbar-brand *ngIf="!autenticado"><a class="nav-link waves-light " mdbWavesEffect >
+    <img class="mr-1" src="assets\imagens\logoNav1.png" width="90" height="25">
 
-  <mdb-navbar-brand *ngIf="autenticado"><a class="navbar-brand" routerLink="/feed">
-      <img src="assets\imagens\logoNav1.png" width="90" height="25">
-      Feed</a>
+    </a>
+</mdb-navbar-brand>
+
+  <mdb-navbar-brand *ngIf="autenticado"><a class="nav-link waves-light " mdbWavesEffect >
+      <img class="mr-1" src="assets\imagens\logoNav1.png" width="90" height="25">
+
+      </a>
   </mdb-navbar-brand>
 
   <!-- Collapsible content -->
@@ -19,6 +22,11 @@
       <li class="nav-item active">
         <a class="nav-link waves-light" mdbWavesEffect routerLink="/landing">
           <mdb-icon fas icon="home"></mdb-icon> Página Inicial
+        </a>
+      </li>
+      <li *ngIf="autenticado" class="nav-item  ml-0">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/feed">
+          <mdb-icon fas icon="newspaper"></mdb-icon> Feed
         </a>
       </li>
     </ul>

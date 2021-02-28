@@ -10,3 +10,7 @@ h6{
 hr{
   border-top: 2px solid rgb(156, 156, 156);
 }
+
+.edit{
+  color:rgba(4, 4, 161, 0.438);
+}

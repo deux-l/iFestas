@@ -4,3 +4,7 @@ h1{
 h3{
   padding-left: 12px;
 }
+
+a:hover{
+  color:slateblue
+}

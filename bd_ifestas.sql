@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Fev-2021 às 22:50
+-- Tempo de geração: 28-Fev-2021 às 19:58
 -- Versão do servidor: 10.4.11-MariaDB
 -- versão do PHP: 7.4.1
 
@@ -100,21 +100,13 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`idPedido`, `idProduto`, `idUsuario`, `nomeUsuario`, `nomeProduto`, `tipoNegocio`, `descricao`, `nivelAcesso`, `dataEntrega`, `dataDevolucao`, `email`, `rua`, `numero`, `bairro`, `cidade`, `celular`, `valor`, `tipoCartao`, `nomeCartao`, `numeroCartao`, `validade`, `codigoSeguranca`, `idFornecedor`) VALUES
-(5, 44, 33, 'Cristian Daniel ', 'Bolo', 'venda', 'Bolo de laranja', 2, 'undefined', 'undefined', 'cristian@email.com', '0', 363, '0', '0', '912345678', 34.99, 'credito', 'cnjcnj', '3,23,', '543', 123, 0),
-(17, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-22', '2021-02-23', 'cristian@email.com', '0', 363, '0', '0', '912345678', 39.00, 'credito', 'dffdhdh', '35434', '31', 13, 0),
-(18, 47, 33, 'Cristian Daniel ', 'Bolo de chocolate', '', 'Bolo de chocolate com recheio de coco', 2, '2021-02-23T03:55:42.', '2021-02-23T03:55:42.', 'cristian@email.com', '0', 363, '0', '0', '912345678', 39.00, 'credito', 'hfddf', '1', '21', 2121, 0),
-(19, 47, 33, 'Cristian Daniel ', 'Bolo de chocolate', '', 'Bolo de chocolate com recheio de coco', 2, '2021-02-23T03:57:40.', '2021-02-23T03:57:40.', 'cristian@email.com', '0', 363, '0', '0', '912345678', 39.00, 'tipoCartao', 'gjjgj', '51465', '5214', 5641, 0),
-(20, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-24', '2021-02-25', 'cristian@email.com', '0', 363, '0', '0', '912345678', 39.00, 'credito', 'ghghfsd', '333', '3131', 1331, 0),
-(21, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-23T23:39:54.', '2021-02-23T23:39:54.', 'cristian@email.com', '0', 363, '0', '0', '912345678', 39.00, 'credito', 'cristian daniel', '1165655', '05/20', 123, 33),
-(22, 47, 2, 'Sasuke Uchiha', 'Bolo de chocolate', 'venda', 'Bolo de chocolate com recheio de coco', 3, '2021-02-23T23:40:52.', '2021-02-23T23:40:52.', 'sasuke@email.com', '0', 123, '0', '0', '912345678', 33.45, 'credito', 'sasuke uchiha', '3,54353', '05/22', 123, 33),
-(23, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-24T02:29:17.', '2021-02-24T02:29:17.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 39.00, 'credito', 'cristian daniel', '25156465', '05/02', 123, 33),
-(24, 47, 33, 'Cristian Daniel ', 'Bolo de chocolate', '', 'Bolo de chocolate com recheio de coco', 2, '2021-02-24T02:32:22.', '2021-02-24T02:32:22.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 33.45, 'tipoCartao', 'stark uchiha', '5151', '05/22', 123, 33),
-(25, 47, 33, 'Cristian Daniel ', 'Bolo de chocolate', '', 'Bolo de chocolate com recheio de coco', 2, '2021-02-24T02:35:09.', '2021-02-24T02:35:09.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 31.78, 'debito', 'stark uchiha', '152165', '05/22', 123, 33),
-(26, 44, 33, 'Cristian Daniel ', 'Bolo', 'venda', 'Bolo de laranja', 2, '2021-02-24T02:37:21.', '2021-02-24T02:37:21.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 33.24, 'debito', 'daniel pedreira', '156165', '05/22', 123, 33),
-(27, 46, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de coco', 2, '2021-02-25', '2021-02-26', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 37.05, 'credito', 'cristian daniel', '11561456', '05/22', 123, 33),
-(28, 44, 33, 'Cristian Daniel ', 'Bolo', 'venda', 'Bolo de laranja', 2, '2021-02-24T02:39:33.', '2021-02-24T02:39:33.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 33.24, 'credito', 'cristian daniel', '651465', '05/23', 123, 33),
-(29, 48, 33, 'Cristian Daniel ', 'Bolo ', 'aluguel', 'Bolo de doce de leite', 2, '2021-02-27', '2021-03-01', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 38.00, 'debito', 'daniel cristian', '65541+654', '05/25', 123, 33),
-(30, 44, 33, 'Cristian Daniel ', 'Bolo de fubá', 'venda', 'Bolo de fubá com laranja', 2, '2021-02-24T17:13:13.', '2021-02-24T17:13:13.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 33.24, 'credito', 'cristian daniel', '4156464654654465', '0522', 123, 33);
+(31, 52, 33, 'Cristian Daniel ', 'Pula Pula', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-02-28', '2021-03-01', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel', '1234567891011213', '0522', 123, 33),
+(32, 47, 33, 'Cristian Daniel ', 'Bolo de chocolate', 'venda', 'Bolo de chocolate com recheio de coco e granulados de chocolate\ngrande', 2, '2021-02-27T21:01:05.', '2021-02-27T21:01:05.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 79.28, 'debito', 'cristian daniel', '1213456678910111', '0522', 123, 33),
+(34, 52, 33, 'Cristian Daniel ', 'Pula Pula', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-03-03', '2021-03-04', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel', '1234567891011121', '0222', 123, 33),
+(35, 55, 33, 'Cristian Daniel ', 'Máquina de algodão doce', 'aluguel', 'Alugo máquina de algodão doce\nR$ 40,00 a diária ', 2, '2021-03-03', '2021-03-07', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 38.00, 'debito', 'cristian daniel', '1234567891233448', '2522', 123, 33),
+(36, 52, 33, 'Cristian Daniel ', 'Pula Pula', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-03-05', '2021-03-08', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel', '1234564898961132', '0222', 123, 33),
+(37, 52, 33, 'Cristian Daniel ', 'Pula Pula', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-03-10', '2021-03-13', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel', '1211564654564564', '0522', 123, 33),
+(38, 52, 2, 'Sasuke Uchiha', 'Pula Pula', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 3, '2021-03-28', '2021-04-05', 'sasuke@email.com', 'rua b', 123, 'Parque Rosário', 'Nova Iguaçu', '912345678', 50.00, 'credito', 'sasuke uchiha', '1616514654564654', '0522', 123, 33);
 
 -- --------------------------------------------------------
 
@@ -261,7 +253,7 @@ ALTER TABLE `avaliacoes`
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de tabela `produto`

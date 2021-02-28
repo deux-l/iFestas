@@ -231,7 +231,7 @@ app.put('/imagem/:idproduto', multipartMiddleware, (req, res) => {
 				where idProduto=${+idProduto}` , res);
 });
 
-//método de atualizar os dados do produto por idProduto (precisa alterar)
+//método de atualizar os dados do produto por idProduto 
 app.put('/produto/:idproduto', (req, res) => {
 	var idProduto = parseInt(req.params.idproduto);
 	var nomeProduto = req.body.nomeProduto;
@@ -240,7 +240,7 @@ app.put('/produto/:idproduto', (req, res) => {
 	execSqlQuery(`update produto set nomeProduto='${nomeProduto}', valor='${valor}', descricao='${descricao}' where idProduto=${+idProduto}` , res);
 });
 
-//método de apagar produto por idProduto (precisa alterar)
+//método de apagar produto por idProduto 
 app.delete('/produto/:idproduto', (req, res) => {
     var idProduto = parseInt(req.params.idproduto);
 	execSqlQuery(`delete from produto where idProduto=${+idProduto}` , res);

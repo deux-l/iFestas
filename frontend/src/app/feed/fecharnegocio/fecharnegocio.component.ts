@@ -18,11 +18,19 @@ export class FecharnegocioComponent implements OnInit {
 
   pedido: Pedido;
   verificaPedido: Pedido;
+  verificaPedidos: Pedido[]= [];
+  dados: Pedido[] = [];
   disponibilidade: boolean = false;
+  igual: boolean = true;
+  match: boolean = false;
   produto: Produto;
   usuario: Usuario;
   inscricao: Subscription;
   email: String = '';
+  hoje: Date = new Date();
+  agora: Date = new Date();
+  dataEntregaIgual: Date = new Date();
+  dataDevolucaoIgual: Date = new Date();
   private id: String = '';
 
   constructor(private imagemService: ImagemService,
@@ -43,10 +51,12 @@ export class FecharnegocioComponent implements OnInit {
     this.inscricao = this.route.params.subscribe(
       (params: any) => {
         this.id = params['id'];
+
     })
 
     //this.buscarProduto();
     this.buscarUsuario();
+
     //this.verificaData()
 
   }
@@ -64,7 +74,7 @@ export class FecharnegocioComponent implements OnInit {
 
       this.imagemService.buscarImagens(this.id).subscribe(res => {
         this.produto = res[0];
-        
+
 
         if (this.usuario.nivelAcesso == 2) {
           this.pedido.valor = this.produto.valor - (this.produto.valor * 0.05)
@@ -89,53 +99,121 @@ export class FecharnegocioComponent implements OnInit {
   }*/
 
   verificaData(){
-    this.feedService.verificaData(this.id).subscribe(res => {
-      this.verificaPedido = res[0];
-      var dataEntrega = new Date(`'${this.verificaPedido.dataEntrega}'`);
-      var dataDevolucao = new Date(`'${this.verificaPedido.dataDevolucao}'`)
-       var pedidoEntrega = new Date(`'${this.pedido.dataEntrega}'`);
+    this.feedService.verificaData(this.id).subscribe(async res => {
+      this.verificaPedidos = res;
+      console.log(this.verificaPedidos)
+      var pedidoEntrega = new Date(`'${this.pedido.dataEntrega}'`);
       var pedidoDevolucao = new Date(`'${this.pedido.dataDevolucao}'`)
-      var hoje = new Date();
-      //this.pedido.dataEntrega
-      //this.pedido.dataDevolucao
-      //var date = new Date('2021-2-25')
-
-      /*console.log(dataDevolucao)
-      console.log( this.pedido.dataEntrega)
-      if (   dataDevolucao < this.pedido.dataEntrega) {
-        alert('é menor')
-      } else {
-        alert('é maior')
-      }*/
-      //console.log( dataEntrega);
-      //console.log( dataDevolucao);
+      /*var dataEntrega = new Date(`'${this.verificaPedidos[2].dataEntrega}'`);
+      var dataDevolucao = new Date(`'${this.verificaPedidos[2].dataDevolucao}'`)
       console.log(dataEntrega)
-      console.log( pedidoEntrega)
-      console.log(hoje)
-      if(!this.verificaPedido.dataEntrega && !this.verificaPedido.dataDevolucao){
-        alert('Data indisponível')
-        this.disponibilidade = false;
+      console.log(dataDevolucao)*/
 
-      }else if(pedidoEntrega <= dataEntrega && dataDevolucao <= pedidoDevolucao) {
-        alert('Data indisponível')
-        this.disponibilidade = false;
+      if (pedidoEntrega.getTime() < this.hoje.getTime() && pedidoDevolucao.getTime() < this.hoje.getTime() ||  pedidoDevolucao.getTime() <= pedidoEntrega.getTime()
+        || pedidoEntrega.getTime() < this.hoje.getTime() && pedidoDevolucao.getTime() > pedidoEntrega.getTime()) {
 
-      } else if(pedidoEntrega < hoje) {
-        alert('Data indisponível')
         this.disponibilidade = false;
-
-      } else if(pedidoEntrega > pedidoDevolucao){
         alert('Data indisponível')
-        this.disponibilidade = false;
 
-      } else if(pedidoDevolucao < hoje){
-        alert('Data indisponível')
-        this.disponibilidade = false;
+       await location.reload()
 
-      }else {
-        alert('Data disponível')
-        this.disponibilidade = true;
-      }
+        }else{
+
+          this.verificaPedidos.forEach(element => {
+
+            var dataEntrega = new Date(`'${element.dataEntrega}'`);
+            var dataDevolucao = new Date(`'${element.dataDevolucao}'`)
+
+            if (pedidoEntrega.getTime() == dataEntrega.getTime()  && pedidoDevolucao.getTime() == dataDevolucao.getTime()) {
+               this.igual = false;
+
+            }
+
+          });
+
+          for (let index = 0; index < this.verificaPedidos.length || this.disponibilidade == false; index++) {
+            var dataEntrega = new Date(`'${this.verificaPedidos[index].dataEntrega}'`);
+            var dataDevolucao = new Date(`'${this.verificaPedidos[index].dataDevolucao}'`)
+            console.log(dataDevolucao);
+            console.log(pedidoDevolucao)
+            if ((pedidoEntrega.getTime() < dataEntrega.getTime() && pedidoDevolucao.getTime() < dataEntrega.getTime()) || (pedidoEntrega.getTime() > dataDevolucao.getTime() && pedidoDevolucao.getTime() > pedidoEntrega.getTime()
+                || dataEntrega.getTime() == null && dataDevolucao.getTime() == null)){
+
+              this.disponibilidade = true;
+
+            }else{
+              this.disponibilidade = false;
+              alert('Data indisponível');
+              location.reload()
+
+            }
+
+          }
+
+
+          //this.igual = true;
+          if (this.disponibilidade && this.igual) {
+            this.match = true;
+          } else {
+            this.match = false;
+          }
+
+          console.log( this.disponibilidade)
+          console.log( this.igual)
+
+          this.disponibilidade = false;
+          this.igual = true;
+          this.verificaPedidos= [];
+
+        }
+
+
+
+
+
+          /*for (let index = 0; index < this.verificaPedidos.length || this.disponibilidade == false; index++) {
+            var dataEntrega = new Date(`'${this.verificaPedidos[index].dataEntrega}'`);
+            var dataDevolucao = new Date(`'${this.verificaPedidos[index].dataDevolucao}'`)
+            console.log(dataDevolucao);
+            console.log(pedidoDevolucao)
+            if ((pedidoEntrega.getTime() < dataEntrega.getTime() && pedidoDevolucao.getTime() < dataEntrega.getTime()) || (pedidoEntrega.getTime() > dataDevolucao.getTime() && pedidoDevolucao.getTime() > pedidoEntrega.getTime())){
+
+              this.disponibilidade = true;
+
+            }else{
+              this.disponibilidade = false;
+            }
+
+          }*/
+
+
+
+
+      /*console.log(pedidoEntrega.getTime())
+      console.log(dataEntrega.getTime())
+      console.log(pedidoDevolucao.getTime())
+      console.log(dataDevolucao.getTime())*/
+
+     /*
+      for (let index = 0; index < this.verificaPedidos.length; index++) {
+          var dataEntrega = new Date(`'${this.verificaPedidos[index].dataEntrega}'`);
+          var dataDevolucao = new Date(`'${this.verificaPedidos[index].dataDevolucao}'`)
+
+        if (pedidoEntrega.getDate() == dataEntrega.getDate() && pedidoDevolucao.getDate() == dataDevolucao.getDate()) {
+          //alert('Data indisponível');
+         this.igual = false
+        }else{
+
+        }
+
+
+      }*/
+
+
+      //console.log(this.disponibilidade)
+
+
+
 
       /*if (this.verificaPedido.dataEntrega != undefined && this.verificaPedido.dataDevolucao != undefined) {
 
@@ -152,6 +230,8 @@ export class FecharnegocioComponent implements OnInit {
       }
       //console.log(this.verificaPedido);*/
     })
+
+
   }
 
   public verificaValidTouched(campo: any){

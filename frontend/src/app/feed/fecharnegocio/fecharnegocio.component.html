@@ -28,7 +28,7 @@
           <div class="col-md-4">
             <label class="form-group">Valor:</label>
             <input [ngModel]="pedido.valor | currency:'BRL'"  name="valor" type="text" class="form-control" disabled>
-            <span *ngIf="usuario.nivelAcesso == 2" class="desconto">Desconto de colaborador</span>
+            <span *ngIf="usuario.nivelAcesso == 2" class="desconto">Desconto 5% de colaborador</span>
           </div>
 
         </div>
@@ -37,18 +37,27 @@
 
           <div class="md-form col-md-3" *ngIf="produto.tipoNegocio == 'aluguel'">
             <input [(ngModel)]="pedido.dataEntrega" name="dataEntrega" type="date" id="input" class="form-control" mdbInput>
-            <label for="input">Data de Entrega</label>
+            <label class="form-group ml-3">Data de Entrega</label>
           </div>
 
           <div class="md-form col-md-3" *ngIf="produto.tipoNegocio == 'aluguel'">
             <input [(ngModel)]="pedido.dataDevolucao" name="dataDevolucao" type="date" id="input" class="form-control" mdbInput>
-            <label for="input">Data de devolução</label>
+            <label class="form-group ml-3">Data de devolução</label>
           </div>
-          <span *ngIf="produto.tipoNegocio == 'aluguel' && !disponibilidade">Por favor escolha <br> uma data disponível </span>
-          <span *ngIf="produto.tipoNegocio == 'aluguel' && disponibilidade">Data disponível </span>
-          <div class="col-md-4" *ngIf="produto.tipoNegocio == 'aluguel'">
-          <input  type="submit" value="Verificar disponibilidade"  class="form-group" (click)="verificaData()" >
-          </div>
+
+          <span class="indisponivel" *ngIf="produto.tipoNegocio == 'aluguel' && !match ">Por favor escolha <br> uma data disponível </span>
+          <span class="desconto" *ngIf="produto.tipoNegocio == 'aluguel' && match">Data disponível </span>
+
+
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-8" *ngIf="produto.tipoNegocio == 'aluguel'">
+            <input  mdbBtn type="button" gradient="blue" mdbWavesEffect value="Verificar disponibilidade" (click)="verificaData()" >
+
+            </div>
 
         </div>
 
@@ -111,7 +120,8 @@
 
           <div class="col-md-12 col-lg-12">
             <h3>Dados do cartão:</h3>
-            <label for="">Tipo do cartão:</label>
+
+            <mdb-icon fab icon="cc-mastercard" size="4x"></mdb-icon> <mdb-icon fab icon="cc-visa" class="ml-2" size="4x"></mdb-icon>
             <div class="form-check">
 
               <input [(ngModel)]="pedido.tipoCartao" class="form-check-input" type="radio" name="tipoCartao" data-toggle="tooltip"
@@ -166,8 +176,16 @@
 
 
 
-        <div class="col-lg-12 col-sm-4 mt-5">
-          <button type="submit" class="btn btn-primary btn-md btn-block" [disabled]="!f.valid" (click)="salvarPedido()">Finalizar</button>
+        <div *ngIf="!f.valid && match == false" class="col-lg-12 col-sm-4 mt-5">
+          <button type="submit" class="btn btn-primary btn-md btn-block" disabled>Finalizar</button>
+        </div>
+
+        <div *ngIf="!f.valid && match == true" class="col-lg-12 col-sm-4 mt-5">
+          <button type="submit" class="btn btn-primary btn-md btn-block" disabled>Finalizar</button>
+        </div>
+
+        <div *ngIf="f.valid && match == true" class="col-lg-12 col-sm-4 mt-5">
+          <button type="submit" class="btn btn-primary btn-md btn-block" (click)="salvarPedido()">Finalizar</button>
         </div>
       </form>
     </div>
