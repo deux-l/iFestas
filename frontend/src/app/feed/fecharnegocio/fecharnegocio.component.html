@@ -176,16 +176,25 @@
 
 
 
-        <div *ngIf="!f.valid && match == false" class="col-lg-12 col-sm-4 mt-5">
+        <div *ngIf="!f.valid && match == false && produto.tipoNegocio == 'aluguel'" class="col-lg-12 col-sm-4 mt-5">
           <button type="submit" class="btn btn-primary btn-md btn-block" disabled>Finalizar</button>
         </div>
 
-        <div *ngIf="!f.valid && match == true" class="col-lg-12 col-sm-4 mt-5">
+        <div *ngIf="!f.valid && match == true && produto.tipoNegocio == 'aluguel'" class="col-lg-12 col-sm-4 mt-5">
           <button type="submit" class="btn btn-primary btn-md btn-block" disabled>Finalizar</button>
         </div>
 
-        <div *ngIf="f.valid && match == true" class="col-lg-12 col-sm-4 mt-5">
+        <div *ngIf="f.valid && match == false && produto.tipoNegocio == 'aluguel'" class="col-lg-12 col-sm-4 mt-5">
+          <button type="submit" class="btn btn-primary btn-md btn-block" disabled>Finalizar</button>
+        </div>
+
+        <div *ngIf="f.valid && match == true && produto.tipoNegocio == 'aluguel'" class="col-lg-12 col-sm-4 mt-5">
           <button type="submit" class="btn btn-primary btn-md btn-block" (click)="salvarPedido()">Finalizar</button>
+        </div>
+
+
+        <div *ngIf="produto.tipoNegocio == 'venda'" class="col-lg-12 col-sm-4 mt-5">
+          <button type="submit" class="btn btn-primary btn-md btn-block" [disabled]="!f.valid" (click)="salvarPedido()">Finalizar</button>
         </div>
       </form>
     </div>

@@ -8,6 +8,7 @@ import { Pedido } from './../../model/pedido';
 import { Usuario } from 'src/app/model/usuario';
 import { UsuarioareaService } from 'src/app/services/usuarioarea.service';
 import { ImagemService } from 'src/app/services/imagem.service';
+import { CadusuarioService } from '../../services/cadusuario.service';
 
 @Component({
   selector: 'app-fecharnegocio',
@@ -25,6 +26,7 @@ export class FecharnegocioComponent implements OnInit {
   match: boolean = false;
   produto: Produto;
   usuario: Usuario;
+  vendedor: Usuario;
   inscricao: Subscription;
   email: String = '';
   hoje: Date = new Date();
@@ -36,6 +38,7 @@ export class FecharnegocioComponent implements OnInit {
   constructor(private imagemService: ImagemService,
               private usuarioareaService: UsuarioareaService,
               private feedService: FeedService,
+              private cadusuarioService: CadusuarioService,
               private route: ActivatedRoute,
               private router: Router) {
     this.inscricao = new Subscription();
@@ -43,6 +46,7 @@ export class FecharnegocioComponent implements OnInit {
     this.verificaPedido = new Pedido();
     this.produto   = new Produto();
     this.usuario = new Usuario();
+    this.vendedor = new Usuario();
 
   }
 
@@ -56,6 +60,7 @@ export class FecharnegocioComponent implements OnInit {
 
     //this.buscarProduto();
     this.buscarUsuario();
+    //this.buscarVendedor();
 
     //this.verificaData()
 
@@ -81,6 +86,15 @@ export class FecharnegocioComponent implements OnInit {
         } else {
           this.pedido.valor = this.produto.valor
         }
+
+
+        //var idUsuario = this.produto.idUsuario;
+
+          this.cadusuarioService.buscaVendedor(this.produto.idUsuario).subscribe(res =>{
+          this.vendedor = res[0];
+
+          this.pedido.nomeVendedor = this.vendedor.nome;
+          });
       });
 
 
@@ -263,12 +277,13 @@ export class FecharnegocioComponent implements OnInit {
     //this.pedido.valor = this.produto.valor;
     this.pedido.idFornecedor = this.produto.idUsuario;
 
+
     //this.pedido.
     this.feedService.salvarPedido(this.pedido).subscribe(res => {
       if (res) {
         this.router.navigate(['feed'])
       }
-      console.log(res);
+      
     })
   }
 

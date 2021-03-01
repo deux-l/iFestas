@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { Usuario } from 'src/app/model/usuario';
 import { NivelAcesso } from '../model/nivelAcesso';
+import { Produto } from '../model/produto';
 
 const URL = 'http://localhost:3007/usuario';
 
@@ -19,5 +20,9 @@ export class CadusuarioService {
 }
   public findAll(){
     return this.http.get<NivelAcesso[]>(`${URL}`)
+  }
+
+  public buscaVendedor(idUsuario: any){
+    return this.http.get<Usuario[]>(`${URL}/${idUsuario}`)
   }
 }

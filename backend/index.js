@@ -77,6 +77,12 @@ app.get('/logar/:email', (req, res) => {
     execSqlQuery(`select * from usuario where email='${email}'`, res);
 });
 
+// método buscar usuário por id do usuário
+app.get('/usuario/:idusuario', (req, res) => {
+    var idUsuario = parseInt(req.params.idusuario); 
+    execSqlQuery(`select * from usuario where idUsuario='${idUsuario}'`, res);
+});
+
 //método de atualizar usuário
 app.put('/logar/:email', (req, res) => {
     var idUsuario = parseInt(req.body.idUsuario); 
@@ -143,13 +149,14 @@ app.post('/feed', (req, res) => {
 	var validade 	= req.body.validade;
 	var codigoSeguranca 	= req.body.codigoSeguranca;
 	var idFornecedor = req.body.idFornecedor;
+	var nomeVendedor = req.body.nomeVendedor;
 
 	
 execSqlQuery(`insert into pedido (idProduto, idUsuario, nomeUsuario, nomeProduto, tipoNegocio, descricao, nivelAcesso, dataEntrega, dataDevolucao, email, 
-			  rua, numero, bairro, cidade, celular, valor, tipoCartao, nomeCartao, numeroCartao, validade, codigoSeguranca, idFornecedor)
+			  rua, numero, bairro, cidade, celular, valor, tipoCartao, nomeCartao, numeroCartao, validade, codigoSeguranca, idFornecedor, nomeVendedor)
   			  values ('${idProduto}','${idUsuario}','${nomeUsuario}','${nomeProduto}','${tipoNegocio}','${descricao}',
 					  '${nivelAcesso}','${dataEntrega}','${dataDevolucao}','${email}','${rua}','${numero}','${bairro}','${cidade}','${celular}',
-				      '${valor}','${tipoCartao}','${nomeCartao}','${numeroCartao}','${validade}','${codigoSeguranca}','${idFornecedor}')`, res);
+				      '${valor}','${tipoCartao}','${nomeCartao}','${numeroCartao}','${validade}','${codigoSeguranca}','${idFornecedor}','${nomeVendedor}')`, res);
 				
 });
 
