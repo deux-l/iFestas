@@ -94,6 +94,8 @@ export class FecharnegocioComponent implements OnInit {
           this.vendedor = res[0];
 
           this.pedido.nomeVendedor = this.vendedor.nome;
+          this.pedido.imagem       = this.produto.imagem1;
+
           });
       });
 
@@ -283,7 +285,7 @@ export class FecharnegocioComponent implements OnInit {
       if (res) {
         this.router.navigate(['feed'])
       }
-      
+
     })
   }
 

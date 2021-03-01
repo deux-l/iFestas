@@ -1,10 +1,76 @@
-<div>
 
-  <div class="col-lg-6 col-md-6">
-    <h4>Meus pedidos:</h4>
+<div class="container">
+  <h4 class="text-secondary">Meus pedidos:</h4>
+  <div class="col-lg-10 col-md-12 col-8 table-responsive" *ngFor="let pedido of pedidos">
 
+  <div class="card spring-warmth-gradient">
+
+<div class="row g-3">
+
+    <div class="col-md-2 col-6 mt-3 ml-3" >
+      <img [src]="pedido.imagem" height="100px" width="100px" >
+    </div>
+
+    <div class="col-md-6 col-6 mt-4" >
+      <p> Nome: {{pedido.nomeUsuario}} </p>
+      <p> Produto: {{pedido.nomeProduto}} </p>
+      <p> Valor: {{pedido.valor | currency:'BRL'}} </p>
+    </div>
+
+
+
+
+    <div class="col-md-12">
+      <hr>
+      <table mdbTable mdbTableCol>
+        <thead class="grey lighten-4 black-text">
+          <tr>
+
+            <th scope="col"> Vendedor: </th>
+            <th scope="col"> Tipo da transação: </th>
+            <th scope="col"> Descrição do produto: </th>
+            <th *ngIf="pedido.tipoNegocio == 'aluguel'" scope="col"> Data de entrega: </th>
+            <th *ngIf="pedido.tipoNegocio == 'aluguel'" scope="col"> Data de devolução: </th>
+            <th scope="col"> Email: </th>
+            <th scope="col"> Rua: </th>
+            <th scope="col"> Numero: </th>
+            <th scope="col"> Bairro: </th>
+            <th scope="col"> Cidade: </th>
+            <th scope="col"> Celular: </th>
+            <th scope="col"> Forma de pagamento: </th>
+            <th scope="col"> Número do cartão: </th>
+          </tr>
+        </thead>
+        <tbody>
+          <td>{{pedido.nomeVendedor}}</td>
+          <td>{{pedido.tipoNegocio}}</td>
+          <td>{{pedido.descricao}}</td>
+          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataEntrega   | date: 'dd-MM-yyyy'}}</td>
+          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataDevolucao | date: 'dd-MM-yyyy'}}</td>
+          <td>{{pedido.email}}</td>
+          <td>{{pedido.rua}}</td>
+          <td>{{pedido.numero}}</td>
+          <td>{{pedido.bairro}}</td>
+          <td>{{pedido.cidade}}</td>
+          <td>{{pedido.celular}}</td>
+          <td>{{pedido.tipoCartao}}</td>
+          <td>{{pedido.numeroCartao}}</td>
+        </tbody>
+
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!--
     <table mdbTable mdbTableCol *ngFor="let pedido of pedidos">
-      <thead class="grey lighten-1 black-text" >
+      <thead class="grey lighten-1 black-text">
         <tr>
           <th scope="col"> Nome: </th>
           <th scope="col"> Produto: </th>
@@ -29,8 +95,8 @@
           <td>{{pedido.nomeProduto}}</td>
           <td>{{pedido.tipoNegocio}}</td>
           <td>{{pedido.descricao}}</td>
-          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataEntrega | date: 'dd-MM-yyyy'}}</td>
-          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataDevolucao | date: 'dd-MM-yyyy'}}</td>
+          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataEntrega}}</td>
+          <td *ngIf="pedido.tipoNegocio == 'aluguel'">{{pedido.dataDevolucao}}</td>
           <td>{{pedido.email}}</td>
           <td>{{pedido.rua}}</td>
           <td>{{pedido.numero}}</td>
@@ -43,7 +109,7 @@
         </tr>
       </tbody>
     </table>
-
+ -->
   </div>
 
 

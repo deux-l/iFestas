@@ -131,6 +131,11 @@ app.post('/feed', (req, res) => {
 	var idUsuario = parseInt(req.body.idUsuario); 	
 	var nomeUsuario 	= req.body.nomeUsuario;
 	var nomeProduto 	= req.body.nomeProduto;
+	var imagem 			= req.body.imagem;
+	var er 				= /[""\\]/gi;
+	imagem				= imagem.replace(er, "");
+	imagem				= imagem.replace(/assetsimagens/g,"");
+	imagem 				= `assets\\\\imagens\\\\${imagem}`;
 	var tipoNegocio 	= req.body.tipoNegocio;
 	var descricao   = req.body.descricao;
 	var nivelAcesso 	= req.body.nivelAcesso;
@@ -152,9 +157,9 @@ app.post('/feed', (req, res) => {
 	var nomeVendedor = req.body.nomeVendedor;
 
 	
-execSqlQuery(`insert into pedido (idProduto, idUsuario, nomeUsuario, nomeProduto, tipoNegocio, descricao, nivelAcesso, dataEntrega, dataDevolucao, email, 
+execSqlQuery(`insert into pedido (idProduto, idUsuario, nomeUsuario, nomeProduto, imagem, tipoNegocio, descricao, nivelAcesso, dataEntrega, dataDevolucao, email, 
 			  rua, numero, bairro, cidade, celular, valor, tipoCartao, nomeCartao, numeroCartao, validade, codigoSeguranca, idFornecedor, nomeVendedor)
-  			  values ('${idProduto}','${idUsuario}','${nomeUsuario}','${nomeProduto}','${tipoNegocio}','${descricao}',
+  			  values ('${idProduto}','${idUsuario}','${nomeUsuario}','${nomeProduto}','${imagem}','${tipoNegocio}','${descricao}',
 					  '${nivelAcesso}','${dataEntrega}','${dataDevolucao}','${email}','${rua}','${numero}','${bairro}','${cidade}','${celular}',
 				      '${valor}','${tipoCartao}','${nomeCartao}','${numeroCartao}','${validade}','${codigoSeguranca}','${idFornecedor}','${nomeVendedor}')`, res);
 				

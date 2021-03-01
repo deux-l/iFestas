@@ -5,6 +5,7 @@ export class Pedido{
   idUsuario: number | undefined;
   nomeUsuario: String | undefined;
   nomeProduto: String | undefined;
+  imagem:      String | undefined;
   tipoNegocio: String | undefined;
   descricao: String | undefined
   nivelAcesso: number | undefined;
@@ -25,7 +26,7 @@ export class Pedido{
   idFornecedor: number | undefined;
   nomeVendedor: String | undefined;
 
-  constructor(idPedido ?: number, idProduto ?: number, idUsuario ?: number, nomeUsuario ?: String, nomeProduto ?: String,
+  constructor(idPedido ?: number, idProduto ?: number, idUsuario ?: number, nomeUsuario ?: String, nomeProduto ?: String, imagem ?: String,
               tipoNegocio ?: String, descricao ?: String, nivelAcesso ?: number, email ?: String, rua ?: String, numero ?: number, bairro ?: String,
               cidade ?: String, celular ?: String, valor ?: number, dataEntrega ?: String, dataDevolucao ?: String, tipoCartao ?: String,
               nomeCartao ?: String, validade ?: String, codigoSeguranca ?: number, idFornecedor ?: number, nomeVendedor ?: String){
@@ -35,6 +36,7 @@ export class Pedido{
                 this.idUsuario = idUsuario;
                 this.nomeUsuario = nomeUsuario;
                 this.nomeProduto = nomeProduto;
+                this.imagem      = imagem;
                 this.tipoNegocio = tipoNegocio;
                 this.descricao = descricao;
                 this.nivelAcesso = nivelAcesso;

@@ -1,0 +1,33 @@
+body {
+  color: #000;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: #8C9EFF;
+  background-repeat: no-repeat
+}
+
+.card {
+
+  background-color: #fde3f2;
+  padding-bottom: 20px;
+  margin-top: 90px;
+  margin-bottom: 90px;
+  border-radius: 10px;
+  height: 400px;
+  width: 150%;
+}
+
+.top {
+  padding-top: 40px;
+  padding-left: 13% !important;
+  padding-right: 13% !important
+}
+p{
+  font-weight: 600;
+  font-size: small;
+  position: relative;
+}
+th{
+  font-weight: 600;
+  font-size: small;
+}

@@ -46,7 +46,7 @@ export class MeuspedidosComponent implements OnInit {
     this.email= texto
     this.usuarioareaService.buscaUsuario(this.email).subscribe(res => {
       this.usuario = res[0];
-      
+
 
     })
 
