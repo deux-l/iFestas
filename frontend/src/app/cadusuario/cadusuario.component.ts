@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Usuario } from '../model/usuario';
 import { CadusuarioService } from '../services/cadusuario.service';
+
+
 
 @Component({
   selector: 'app-cadusuario',
@@ -13,7 +16,8 @@ export class CadusuarioComponent implements OnInit {
   usuario: Usuario;
   senha: String = '';
 
-  constructor(private cadusuarioService: CadusuarioService) {
+  constructor(private cadusuarioService: CadusuarioService,
+              private route: Router) {
     this.usuario = new Usuario();
    }
 
@@ -27,9 +31,11 @@ export class CadusuarioComponent implements OnInit {
 
       this.cadusuarioService.gravarUsuario(this.usuario).subscribe(res =>{
         console.log('Aluno gravado com sucesso');
+        this.route.navigate(['/login']);
 
         console.log(res)
         this.usuario = new Usuario();
+        this.senha = '';
 
       })
 

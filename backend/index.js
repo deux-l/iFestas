@@ -208,7 +208,7 @@ app.get('/avaliacoes/:idproduto', (req, res) => {
 });
 
 //metodo atualizar imagens na tabela produto
-const multipartMiddleware = multipart({ uploadDir: 'C:/Users/crist/projetoangular/projetoifestas/frontend/src/assets/imagens' });
+const multipartMiddleware = multipart({ uploadDir: 'C:/Users/16121742019.4/Nova pasta404/frontend/src/assets/imagens' });
 app.put('/imagem/:idproduto', multipartMiddleware, (req, res) => {	
   const files = req.files;
   var idProduto = parseInt(req.params.idproduto);
@@ -221,17 +221,17 @@ app.put('/imagem/:idproduto', multipartMiddleware, (req, res) => {
   //var resultado = imagem1.replace(//g, " ");
   var er = /[""\\]/gi
   imagem1 = imagem1.replace(er, "")	
-  imagem1 = imagem1.replace(/C:Userscristprojetoangularprojetoifestasfrontendsrcassetsimagens/g,"")
+  imagem1 = imagem1.replace(/C:Users16121742019.4Nova pasta404frontendsrcassetsimagens/g,"")
   imagem1 = `assets\\\\imagens\\\\${imagem1}`
 
   //var er = /[""\\]/gi
   imagem2 = imagem2.replace(er, "")	
-  imagem2 = imagem2.replace(/C:Userscristprojetoangularprojetoifestasfrontendsrcassetsimagens/g,"")
+  imagem2 = imagem2.replace(/C:Users16121742019.4Nova pasta404frontendsrcassetsimagens/g,"")
   imagem2 = `assets\\\\imagens\\\\${imagem2}`
   
   //var er = /[""\\]/gi
   imagem3 = imagem3.replace(er, "")	
-  imagem3 = imagem3.replace(/C:Userscristprojetoangularprojetoifestasfrontendsrcassetsimagens/g,"")
+  imagem3 = imagem3.replace(/C:Users16121742019.4Nova pasta404frontendsrcassetsimagens/g,"")
   imagem3 = `assets\\\\imagens\\\\${imagem3}`
 
   //res.json({ message: files });

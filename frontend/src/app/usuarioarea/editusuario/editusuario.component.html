@@ -1,12 +1,12 @@
 <div class="container">
   <div class="fadeIn">
-    <h1 class="fadeIn edit">
+    <h2 class="fadeIn edit">
 
-      Edite seus dados aqui!
+      Edite seus dados aqui:
 
-    </h1>
+    </h2>
 
-    <form class="row g-3"  >
+    <form class="row g-3 mt-3"  >
       <div class="col-md-6 edit">
         <label class="form-group"> Nome Completo</label>
         <input type="text" name="nome" [(ngModel)]="usuario.nome"  class="form-control">
@@ -54,12 +54,12 @@
         <input name="email" [(ngModel)]="usuario.email" type="Text" class="form-control">
       </div>
 
-      <div class="col-md-6 col-6 edit">
+      <div class="col-md-6 col-7 edit">
         <label class="form-group">Digite sua senha atual</label>
         <input name="senha" [(ngModel)]="senha" type="password" class="form-control">
       </div>
 
-      <div class="col-md-6 col-6 edit">
+      <div class="col-md-6 col-7 col-md-6 edit">
         <label class="form-group">Digite uma nova senha ou confirme a senha atual</label>
         <input name="senha" [(ngModel)]="novaSenha" type="password" class="form-control">
         <p class="text-danger">*Senha deve ter no mínimo 6 digitos</p>
