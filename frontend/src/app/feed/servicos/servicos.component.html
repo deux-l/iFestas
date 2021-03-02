@@ -1,32 +1,33 @@
+<div class="container">
 
+  <div class="row">
 
-
-
-       <div class="row">
-
-          <div class="col-lg-4 col-md-6 mb-4 my-5 ml-5" *ngFor="let produto of produtos">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" [src]="produto.imagem1" alt=""></a>
-              <div class="card-body">
-                <h3 class="card-title">
-                  <p>{{produto.nomeProduto}}</p>
-                </h3>
-                <h6>
-                  <p>R$: {{produto.valor}}</p>
-                </h6>
-
-              </div>
-              <div class="card-footer">
-                <p class="text-secondary">{{produto.tipoNegocio}}</p>
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>{{''}}
-                <a [routerLink]="['/feed/produtodetalhe', produto.idProduto]"><button type="button" mdbBtn color="secondary" mdbWavesEffect>
-                  <mdb-icon fas icon="info-circle" class="mr-1"></mdb-icon>Detalhes</button> </a>
-
-              </div>
-            </div>
-          </div>
+    <div class="col-lg-4 col-md-6 mb-4 my-5 ml-0" *ngFor="let produto of produtos">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" [src]="produto.imagem1" alt=""></a>
+        <div class="card-body">
+          <h3 class="card-title">
+            <p>{{produto.nomeProduto}}</p>
+          </h3>
+          <h6>
+            <p>R$: {{produto.valor}}</p>
+          </h6>
 
         </div>
+        <div class="card-footer">
+          <p class="text-secondary">{{produto.tipoNegocio}}</p>
+          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>{{''}}
+          <a [routerLink]="['/feed/produtodetalhe', produto.idProduto]"><button type="button" mdbBtn color="secondary" mdbWavesEffect>
+            <mdb-icon fas icon="info-circle" class="mr-1"></mdb-icon>Detalhes</button> </a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
 
 
 

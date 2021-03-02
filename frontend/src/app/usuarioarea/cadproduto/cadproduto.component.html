@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
   <div class="fadeIn">
     <h2 class="fadeIn edit">
       Cadastro de produto ou serviço:
@@ -43,11 +43,15 @@
       <p>{{produto.tipoNegocio}}</p>
 
       <div class="row">
-        <div class="col-md-6 edit">
+        <div class="col-lg-6 col-md-4 edit">
           <mdb-icon fas icon="dollar-sign"></mdb-icon>
           <label class="form-group">Valor</label>
           <input type="text"  name="valor" class="form-control" currencyMask [(ngModel)]="produto.valor" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
           placeholder="R$ "required>
+        </div>
+
+        <div class="col-lg-6 col-md-4 mt-4">
+          <button type="submit" mdbBtn gradient="purple" (click)="gravarProduto()"><mdb-icon fas icon="check"></mdb-icon> Cadastrar</button>
         </div>
       </div>
 
@@ -75,9 +79,7 @@
 
 
 
-      <div class="col-12 col-sm-4 mt-5">
-        <button type="submit" mdbBtn gradient="purple" (click)="gravarProduto()"><mdb-icon fas icon="check"></mdb-icon> Cadastrar</button>
-      </div>
+
     </form>
   </div>
   </div>
