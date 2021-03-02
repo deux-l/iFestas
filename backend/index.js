@@ -194,6 +194,12 @@ app.get('/produto/:idUsuario', (req, res) => {
 	execSqlQuery(`select * from produto where idUsuario='${idUsuario}'`, res);
 });
 
+// método selecionar todos os produtos por categoria
+app.get('/categoria/:categoria', (req, res) => {
+	var categoria = req.params.categoria;
+	execSqlQuery(`select * from produto where categoria='${categoria}'`, res);
+});
+
 
 // método buscar produto por idProduto
 app.get('/imagem/:idproduto', (req, res) => {

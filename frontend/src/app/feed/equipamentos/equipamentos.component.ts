@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+
+import { Produto } from '../../model/produto';
+import { CategoriaService } from '../../services/categoria.service';
+
 @Component({
   selector: 'app-equipamentos',
   templateUrl: './equipamentos.component.html',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EquipamentosComponent implements OnInit {
 
-  constructor() { }
+  private equipamentos: String = 'equipamentos';
+  produtos: Produto[] = [];
+
+
+  constructor(private categoriaService: CategoriaService) { }
 
   ngOnInit(): void {
+    this.buscarPorCategoria();
+
+  }
+  buscarPorCategoria(){
+    this.categoriaService.buscarPorCategoria(this.equipamentos).subscribe(res => {
+      this.produtos = res;
+      console.log(res);
+    });
   }
 
 }
