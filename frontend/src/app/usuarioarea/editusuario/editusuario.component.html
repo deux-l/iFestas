@@ -1,4 +1,4 @@
-<div class="" >
+<div class="container" >
   <div class="fadeIn">
     <h2 class="fadeIn edit">
 
@@ -6,7 +6,7 @@
 
     </h2>
 
-    <form class="" >
+    <form class="container" >
       <div class="row">
 
         <div class="col-lg-6 col-md-6 edit">
@@ -65,7 +65,7 @@
 
       <div class="row">
 
-        <div class="col-lg-8 col-md-8 edit">
+        <div class="col-lg-12 col-md-12 edit">
           <label class="form-group">Email</label>
           <input name="email" [(ngModel)]="usuario.email" type="Text" class="form-control">
         </div>
@@ -75,12 +75,12 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-5 col-md-5 my-2 edit">
+        <div class="col-lg-5 col-md-5 my-1 edit">
           <label class="form-group">Digite sua senha atual</label>
           <input name="senha" [(ngModel)]="senha" type="password" class="form-control">
         </div>
 
-        <div class="col-md-7 col-md-7 my-2 edit">
+        <div class="col-md-7 col-md-7 my-1 edit">
           <label class="form-group">Digite uma nova senha ou confirme a atual</label>
           <input name="senha" [(ngModel)]="novaSenha" type="password" class="form-control">
           <p class="text-danger">*Senha deve ter no mínimo 6 digitos</p>
@@ -89,9 +89,9 @@
 
       </div>
 
-      <div class="row">
+      <div class="row justify-content-md-center">
 
-        <div class="col-6 col-sm-4 mt-5 ml-5">
+        <div class="col-12">
           <button type="submit" mdbBtn gradient="purple" (click)="atualizaUsuario()"><mdb-icon fas icon="user-edit" class="mr-1"></mdb-icon>Atualizar</button>
         </div>
 

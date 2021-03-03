@@ -9,118 +9,134 @@
 
         <div class="row">
 
-          <div class="col-lg-5 col-md-5">
+          <div class="col-lg-8 col-md-8">
             <label class="form-group edit"> Nome Do produto</label>
             <input [(ngModel)]="produto.nomeProduto" name="nomeProduto" type="text" class="form-control">
           </div>
 
-          <div class="col-lg-3 col-md-3">
+          <div class="col-lg-4 col-md-4">
             <label class="form-group edit">Valor</label>
-            <input [(ngModel)]="produto.valor" name="valor" type="text" class="form-control"
-            currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" placeholder="R$ ">
+            <input [(ngModel)]="produto.valor" name="valor" type="text" class="form-control" currencyMask
+              [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" placeholder="R$ ">
           </div>
 
         </div>
 
         <div class="row">
 
-          <div class="col-lg-7 col-md-7 edit">
+          <div class="col-lg-12 col-md-12 edit">
             <label for="floatingTextarea2">Descrição</label>
-            <textarea minlength="10" maxlength="250" [(ngModel)]="produto.descricao"  name="descricao" class="form-control" placeholder="Altere aqui a descrição do produto ou serviço"
-            id="floatingTextarea2" style="height: 250px; width: 457px;"></textarea>
+            <textarea minlength="10" maxlength="250" [(ngModel)]="produto.descricao" name="descricao"
+              class="form-control" placeholder="Altere aqui a descrição do produto ou serviço" id="floatingTextarea2"
+              style="height: 250px; width: 457px;"></textarea>
           </div>
 
         </div>
 
         <div class="row">
 
-          <div class="col-lg-4 col-md-4 card-deck">
-            <mdb-card >
+          <div class="col col-lg-4">
+            <mdb-card>
               <mdb-card-body>
                 <mdb-card-title>
-                  <h4 class="edit">Imagem principal</h4>
+                  <h6 class="edit">Imagem principal</h6>
                 </mdb-card-title>
                 <mdb-card-text>
-                  <img class="card-img-top" [src]="produto.imagem1" alt="" height="200" width="200">
+                  <img class="card-img-top" [src]="produto.imagem1" alt="" height="80" width="80">
                 </mdb-card-text>
               </mdb-card-body>
-              <mdb-card-footer><small class="text-muted"><h6 class="edit">
-
-
-                <a class="edit" [routerLink]="['editimagem', produto.idProduto]"><mdb-icon far icon="image" size="2x" class="mr-1"></mdb-icon>Inserir ou alterar imagem</a>
-              </h6></small>
-            </mdb-card-footer>
+              <mdb-card-footer><small class="text-muted">
+                  <a class="edit" [routerLink]="['editimagem', produto.idProduto]">
+                    <mdb-icon far icon="image" size="1x" class="mr-1"></mdb-icon>Inserir ou alterar imagem
+                  </a>
+                </small>
+              </mdb-card-footer>
             </mdb-card>
           </div>
-            <div class="col-lg-4 col-md-4 card-deck">
 
-              <mdb-card >
-                <mdb-card-body>
-                  <mdb-card-title>
-                    <h4 class="edit">Segunda imagem</h4>
-                  </mdb-card-title>
-                  <mdb-card-text>
-                    <img class="card-img-top" [src]="produto.imagem2" alt="" height="200" width="200">
-                  </mdb-card-text>
-                </mdb-card-body>
+          <div class="col col-lg-4">
 
-                <mdb-card-footer><small class="text-muted"><h6 class="edit">
-                </h6></small>
+            <mdb-card>
+              <mdb-card-body>
+                <mdb-card-title>
+                  <h6 class="edit">Segunda imagem</h6>
+                </mdb-card-title>
+                <mdb-card-text>
+                  <img class="card-img-top" [src]="produto.imagem2" alt="" height="80" width="80">
+                </mdb-card-text>
+              </mdb-card-body>
+
+              <mdb-card-footer><small class="text-muted">
+                  
+                    <a class="edit" [routerLink]="['editimagem', produto.idProduto]">
+                      <mdb-icon far icon="image" size="1x" class="mr-1"></mdb-icon>Inserir ou alterar imagem
+                    </a>
+                 
+                </small>
               </mdb-card-footer>
-              </mdb-card>
+            </mdb-card>
 
-            </div>
+          </div>
 
-            <div class="col-lg-4 col-md-4 card-deck">
+          <div class="col col-lg-4">
 
-              <mdb-card >
-                <mdb-card-body>
-                  <mdb-card-title>
-                    <h4 class="edit">Terceira imagem</h4>
-                  </mdb-card-title>
-                  <mdb-card-text>
-                    <img class="card-img-top" [src]="produto.imagem3" alt="" height="200" width="200">
-                  </mdb-card-text>
-                </mdb-card-body>
-                <mdb-card-footer><small class="text-muted"><h6 class="edit">
-
-
-                </h6></small>
+            <mdb-card>
+              <mdb-card-body>
+                <mdb-card-title>
+                  <h6 class="edit">Terceira imagem</h6>
+                </mdb-card-title>
+                <mdb-card-text>
+                  <img class="card-img-top" [src]="produto.imagem3" alt="" height="80" width="80">
+                </mdb-card-text>
+              </mdb-card-body>
+              <mdb-card-footer><small class="text-muted">
+                  
+                    <a class="edit" [routerLink]="['editimagem', produto.idProduto]">
+                      <mdb-icon far icon="image" size="1x" class="mr-1"></mdb-icon>Inserir ou alterar imagem
+                    </a>
+                 
+                </small>
               </mdb-card-footer>
-              </mdb-card>
+            </mdb-card>
 
-            </div>
+          </div>
 
         </div>
 
 
-        <div class="row">
+        <div class="row justify-content-md-center">
 
           <div class="col-lg-4 col-md-4 ">
 
             <mdb-card-body>
               <mdb-card-title>
-                  <button type="button" mdbBtn color="danger"  class="relative waves-light mt-3" (click)="basicModal.show()"  mdbWavesEffect><mdb-icon fas icon="trash" class="mr-1"></mdb-icon>Deletar produto</button>
-                  <!--span>É preciso estar logado para enviar uma avaliação</span-->
-                  <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
-                            <span aria-hidden="true">×</span>
-                          </button>
+                <button type="button" mdbBtn color="danger" class="relative waves-light mt-3"
+                  (click)="basicModal.show()" mdbWavesEffect>
+                  <mdb-icon fas icon="trash" class="mr-1"></mdb-icon>Deletar produto
+                </button>
+                <!--span>É preciso estar logado para enviar uma avaliação</span-->
+                <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog"
+                  aria-labelledby="myBasicModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                          <span aria-hidden="true">×</span>
+                        </button>
 
 
-                        </div>
-                        <h4 class="text-danger">Deseja mesmo deletar esse produto?</h4>
+                      </div>
+                      <h4 class="text-danger">Deseja mesmo deletar esse produto?</h4>
 
-                        <div class="modal-footer">
-                          <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Cancelar</button>
-                          <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect (click)="deletaProduto(produto.idProduto)" >Sim</button>
-                        </div>
+                      <div class="modal-footer">
+                        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
+                          (click)="basicModal.hide()" mdbWavesEffect>Cancelar</button>
+                        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect
+                          (click)="deletaProduto(produto.idProduto)">Sim</button>
                       </div>
                     </div>
                   </div>
+                </div>
 
               </mdb-card-title>
               <mdb-card-text> </mdb-card-text>
@@ -131,7 +147,10 @@
           <div class="col-lg-6 col-md-6">
 
 
-              <button type="submit" mdbBtn gradient="blue"  class="relative waves-light mt-3"  (click)="atualizaProduto(produto)"><mdb-icon fas icon="caret-square-up" class="mr-1"></mdb-icon>Atualizar Dados do produto</button>
+            <button type="submit" mdbBtn gradient="blue" class="relative waves-light mt-3"
+              (click)="atualizaProduto(produto)">
+              <mdb-icon fas icon="caret-square-up" class="mr-1"></mdb-icon>Atualizar Dados do produto
+            </button>
 
 
 
@@ -175,7 +194,3 @@
   </div>
 </div>
 </div-->
-
-
-
-
