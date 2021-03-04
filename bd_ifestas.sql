@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Mar-2021 às 23:36
--- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.1
+-- Generation Time: 04-Mar-2021 às 15:43
+-- Versão do servidor: 10.1.39-MariaDB
+-- versão do PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `bd_ifestas`
+-- Database: `bd_ifestas`
 --
 
 -- --------------------------------------------------------
@@ -109,7 +109,7 @@ INSERT INTO `pedido` (`idPedido`, `idProduto`, `idUsuario`, `nomeUsuario`, `nome
 (36, 52, 33, 'Cristian Daniel ', 'Pula Pula', '', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-03-05', '2021-03-08', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel', '1234564898961132', '0222', 123, 33, ''),
 (37, 52, 33, 'Cristian Daniel ', 'Pula Pula', '', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-03-10', '2021-03-13', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel', '1211564654564564', '0522', 123, 33, ''),
 (38, 52, 2, 'Sasuke Uchiha', 'Pula Pula', '', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 3, '2021-03-28', '2021-04-05', 'sasuke@email.com', 'rua b', 123, 'Parque Rosário', 'Nova Iguaçu', '912345678', 50.00, 'credito', 'sasuke uchiha', '1616514654564654', '0522', 123, 33, ''),
-(43, 46, 33, 'Cristian Daniel ', 'Bolo de chocolate', '', 'venda', 'Bolo de chocolate com recheio de coco médio ', 2, '2021-03-01T21:24:39.', '2021-03-01T21:24:39.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 42.75, 'credito', 'cristian daniel', '2151536516516516', '0530', 123, 33, 'Cristian Daniel '),
+(43, 46, 33, 'Cristian Daniel ', 'Bolo de chocolate', 'assets\\imagens\\assetsimagensvNRXNieOWkYbDd6PmG8t33lF.jpg', 'venda', 'Bolo de chocolate com recheio de coco médio ', 2, '2021-03-01T21:24:39.', '2021-03-01T21:24:39.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 42.75, 'credito', 'cristian daniel', '2151536516516516', '0530', 123, 33, 'Cristian Daniel '),
 (49, 54, 33, 'Cristian Daniel ', 'Batedeira Arno', 'assets\\imagens\\PrBf4l4LQm65agnr4h9W4ar9.jpg', 'venda', 'Batedeira planetaria arno\n8 velocidades', 2, '2021-03-01T21:39:56.', '2021-03-01T21:39:56.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 237.50, 'credito', 'cristian daniel', '1321355465465465', '0532', 123, 33, 'Cristian Daniel '),
 (50, 46, 33, 'Cristian Daniel ', 'Bolo de chocolate', 'assets\\imagens\\vNRXNieOWkYbDd6PmG8t33lF.jpg', 'venda', 'Bolo de chocolate com recheio de coco médio ', 2, '2021-03-01T21:40:41.', '2021-03-01T21:40:41.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 42.75, 'credito', 'cristian daniel', '3214165465465465', '0534', 123, 33, 'Cristian Daniel '),
 (51, 52, 33, 'Cristian Daniel ', 'Pula Pula', 'assets\\imagens\\DbKwBGcRFcE45DUxAbybcVxY.jpg', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-08-22', '2021-08-23', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel ', '7897987987989879', '0540', 123, 33, 'Cristian Daniel '),
@@ -151,12 +151,15 @@ INSERT INTO `produto` (`idProduto`, `nomeProduto`, `valor`, `descricao`, `catego
 (59, 'Barraca de batata para festas', 100.00, 'Preparo batatas fritas para sua festa! Valor para até 5 horas de festa', 'servicos', 'aluguel', 'assets\\imagens\\WaoDk84wW0GaktQVNbNHvyri.jpg', 'assets\\imagens\\CwAJVgGP32VcWCuZ9vqTNjz_.jpg', 'assets\\imagens\\tHmdmio7FAuzp7Fj1SQ9Q5Re.jpg', 37),
 (60, 'Mini pizzas 50', 30.00, '50 unidades de mini pizzas congeladas ou frescas', 'comidas', 'venda', 'assets\\imagens\\hJ7kM_nTqe9gCfnmKAiX2GH1.jpg', 'assets\\imagens\\KG_rSxDZwY3ywaioyLjoff9d.png', 'assets\\imagens\\f1Bf19QhuIQpplerTCTp49oT.jpg', 37),
 (61, 'Docinho gourmet 50', 30.00, '50 unidades de docinhos gourmet de variados sabores', 'comidas', 'venda', 'assets\\imagens\\GGKn_vmu3p4lCU2TQfuBo87F.png', 'assets\\imagens\\rZJSZKqMlMVn8STLiE6aCvei.jpg', 'assets\\imagens\\ZjaAaY-FDtYxlRNKMSN1K0zT.png', 35),
-(62, 'Docinhos cento', 60.00, '100 unidades de docinhos para festa de sabores variados a combinar (brigadeiro, brigadeiro rosa, beijinho, chocolate branco, cajuzinho)', 'comidas', 'venda', 'assets\\imagens\\tulhkX8rwFQkNo822-6Llb63.png', 'assets\\imagens\\VDZzTpC7-vE8BSk_kEATO4iK.jpg', 'assets\\imagens\\H67DoDnGcV2-EtqW2BO2fD0K.jpg', 35),
+(62, 'Docinhos cento', 60.00, '100 unidades de docinhos para festa de sabores variados a combinar (brigadeiro, brigadeiro rosa, beijinho, chocolate branco, cajuzinho)', 'undefined', 'undefined', 'assets\\imagens\\tulhkX8rwFQkNo822-6Llb63.png', 'assets\\imagens\\VDZzTpC7-vE8BSk_kEATO4iK.jpg', 'assets\\imagens\\H67DoDnGcV2-EtqW2BO2fD0K.jpg', 35),
 (63, 'Trufas', 40.00, '50 unidades de trufas recheadas com brigadeiro, beijinho, mousse maracujá, mousse morango, mousse limão, doce de leite)', 'comidas', 'venda', 'assets\\imagens\\kpQFhWjczC3r8zLqG3MN6Hle.jpg', 'assets\\imagens\\-qYK_yRdkbVJOpqRO-xRbalj.jpg', 'assets\\imagens\\w9H7WGH9Q2VRcfnEMB39v9Cg.jpg', 35),
 (64, 'Brigadeiro de colher cento', 50.00, 'Brigadeiro de copo 100 unidades. Sabores disponíveis:\nBrigadeiro; Beijinho; Morango; ', 'comidas', 'venda', 'assets\\imagens\\FxNkwQONlYmx53vKWqHUsvxn.jpg', 'assets\\imagens\\2wcZ9bM3Gk-Z1Rp4tnJstOd_.jpg', 'assets\\imagens\\_nrDcLRWU_iF2sVaCJynn6jM.jpg', 37),
 (65, 'Pirulitos de chocolate simples', 35.00, 'Pirulitos de chocolate com decorações simples 30 unidades', 'comidas', 'venda', 'assets\\imagens\\jKzb04VzMNIxjKc5vS5CQ1DA.jpg', 'assets\\imagens\\cj4eCMU5CHz-B977BOjZa0Xb.jpg', 'assets\\imagens\\Rgp6dZxUBHaZIJRQq0zJPPyW.jpg', 37),
 (66, 'Buffet casamento básico', 1000.00, 'Buffet casamento para até 50 convidados', 'servicos', 'venda', 'assets\\imagens\\yR0qCLhOW9pRnX2jfrCZSVxM.jpg', 'assets\\imagens\\CukLcbndk6g07vS_aa_xDSY1.jpg', 'assets\\imagens\\lPsJ1nNZszps7Fp-crucfsIH.jpg', 36),
-(67, 'Buffet casamento médio', 2000.00, 'Buffet casamento para até 100 pessoas', 'servicos', 'venda', 'assets\\imagens\\S7wU0BuCWWlYMJZ-VFklQp1a.jpg', 'assets\\imagens\\avUSl6fDHccFLbwbt1EQM3tG.jpg', 'assets\\imagens\\OcF1lkfyyN3xUs6zzPE7Z2Al.jpg', 36);
+(67, 'Buffet casamento médio', 2000.00, 'Buffet casamento para até 100 pessoas', 'servicos', 'venda', 'assets\\imagens\\S7wU0BuCWWlYMJZ-VFklQp1a.jpg', 'assets\\imagens\\avUSl6fDHccFLbwbt1EQM3tG.jpg', 'assets\\imagens\\OcF1lkfyyN3xUs6zzPE7Z2Al.jpg', 36),
+(68, 'Bolo casamento simples', 250.00, 'Bolo de casamento 1 andar simples', 'comidas', 'venda', 'assets\\imagens\\CpT1JNipXlaA3RgwVhWY0tA7.jpg', 'assets\\imagens\\Rkwl3X5woIcOoW-r7iqSehuQ.jpg', 'assets\\imagens\\RyR1_7bnVODAWE56vSg7Y6E5.jpg', 35),
+(69, 'Bolo casamento ', 320.00, 'Bolo de casamento 2 andares', 'comidas', 'venda', 'assets\\imagens\\z4BeYcKcC9MBf7r_4C8X4Z0c.jpg', 'assets\\imagens\\lR0hsOW6RjY7OVBGpEnWlpWk.jpg', 'assets\\imagens\\OW6L-3oNDXNDOWMQfqk4Tqo7.jpg', 35),
+(70, 'Bolo salgado', 80.00, 'Bolo salgado com 30 cm', 'comidas', 'venda', 'assets\\imagens\\_RX6OPf4RMYIku0cUMjaKbQ8.jfif', 'assets\\imagens\\owLdi0mKaxg317Ty_qt7MaLA.jpg', 'assets\\imagens\\J85GjybUbgOQykeUi2ok3CgQ.jpg', 35);
 
 -- --------------------------------------------------------
 
@@ -213,17 +216,19 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`idUsuario`, `nome`, `cpf`, `nascimento`, `celular`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `email`, `senha`, `nivelAcesso`) VALUES
 (2, 'Sasuke Uchiha', '12345678910', '23/08/1990', '912345678', 'rua b', '123', '26.010-422', 'Parque Rosário', 'Nova Iguaçu', 'sasuke@email.com', '123', 3),
+(19, 'Patricia Querino De Meireles Silva', '12312312312', '1989-12-25', '21912345678', 'Rua a', '363', '26123123', 'Areia Branca', 'Belford Roxo', 'patricia@email.com', '123456', 2),
+(32, 'Elizabeth Cassia ', '14545446546', '1968-02-14', '21912345678', 'Rua a', '363', '26135035', 'Areia Branca', 'Belford Roxo', 'beth@email.com', '123456', 2),
 (33, 'Cristian Daniel ', '12345678910', '23/08/1990', '912345678', 'rua a', '363', '26.135.040', 'Areia Branca', 'Belford Roxo', 'cristian@email.com', '123', 2),
 (35, 'Daniele Andrade', '88727787887', '11091998', '21397463611', 'Estrada do colegio', '25', '26015000', 'Centro', 'Nova Iguaçu', 'dani@email.com', '123456', 2),
 (36, 'Carlos Eduardo', '12345678910', '10051970', '21548748585', 'Rua dos carecas', '24', '15545145', 'Fumantes', 'Queimados', 'carlos@email.com', '123456', 2),
 (37, 'Pedro Gomes', '25252525511', '03041990', '21784947984', 'Rua abcde', '104', '15151511', 'Helio', 'Mesquita', 'pedro@email.com', '123456', 2);
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `avaliacoes`
+-- Indexes for table `avaliacoes`
 --
 ALTER TABLE `avaliacoes`
   ADD PRIMARY KEY (`idAvaliacao`),
@@ -231,7 +236,7 @@ ALTER TABLE `avaliacoes`
   ADD KEY `fk_avaliacoes_idProduto` (`idProduto`);
 
 --
--- Índices para tabela `pedido`
+-- Indexes for table `pedido`
 --
 ALTER TABLE `pedido`
   ADD PRIMARY KEY (`idPedido`),
@@ -239,62 +244,62 @@ ALTER TABLE `pedido`
   ADD KEY `fk_pedido_idUsuario` (`idUsuario`);
 
 --
--- Índices para tabela `produto`
+-- Indexes for table `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`idProduto`),
   ADD KEY `fk_idUsuario` (`idUsuario`);
 
 --
--- Índices para tabela `reserva`
+-- Indexes for table `reserva`
 --
 ALTER TABLE `reserva`
   ADD PRIMARY KEY (`idReserva`),
   ADD KEY `fk_reserva_idProduto` (`idProduto`);
 
 --
--- Índices para tabela `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`idUsuario`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `avaliacoes`
+-- AUTO_INCREMENT for table `avaliacoes`
 --
 ALTER TABLE `avaliacoes`
-  MODIFY `idAvaliacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idAvaliacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT de tabela `pedido`
+-- AUTO_INCREMENT for table `pedido`
 --
 ALTER TABLE `pedido`
   MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
--- AUTO_INCREMENT de tabela `produto`
+-- AUTO_INCREMENT for table `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
--- AUTO_INCREMENT de tabela `reserva`
+-- AUTO_INCREMENT for table `reserva`
 --
 ALTER TABLE `reserva`
   MODIFY `idReserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- Restrições para despejos de tabelas
+-- Constraints for dumped tables
 --
 
 --

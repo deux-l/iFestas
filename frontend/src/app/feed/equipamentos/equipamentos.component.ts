@@ -24,7 +24,7 @@ export class EquipamentosComponent implements OnInit {
   buscarPorCategoria(){
     this.categoriaService.buscarPorCategoria(this.equipamentos).subscribe(res => {
       this.produtos = res;
-      console.log(res);
+      
     });
   }
 

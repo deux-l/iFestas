@@ -21,7 +21,7 @@ export class ComidasComponent implements OnInit {
   buscarPorCategoria(){
     this.categoriaService.buscarPorCategoria(this.comidas).subscribe(res => {
       this.produtos = res;
-      console.log(res);
+      
     });
   }
 }

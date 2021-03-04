@@ -145,10 +145,18 @@
 
       </div>
 
-      <div class="col-md-12">
-        <a routerLink="/termos" target="_blank">Termos de Uso</a>
+      <div class="col-md-6" required>
+        <div>
+          <input  type="checkbox" id="checkboxNoLabel" ngModel name="aceito" value="" required>
+
+            Aceito os termos
+
+        </div>
       </div>
 
+      <div class="col-md-6">
+        <a routerLink="/termos" target="_blank">Termos de Uso</a>
+      </div>
 
       <button class="col-12" type="submit" mdbBtn color="primary" [disabled]="!f.valid" (click)="gravarUsuario()">
         <mdb-icon fas icon="check" class="prefix"></mdb-icon>

@@ -9,13 +9,16 @@
 
   </div>
 
+  <div>
+    <h5 class="text-info">
+      <mdb-icon far icon="user-circle" size="2x"></mdb-icon>
+      {{exibiNome()}}
+    </h5>
+  </div>
+
   <div class="row">
     <div class="col-lg-4 col-md-4">
-     
-      <h5 class="text-info">
-        <mdb-icon far icon="user-circle" size="2x"></mdb-icon> 
-        {{exibiNome()}}
-      </h5>
+
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" [routerLink]="['editusuario', usuario.email]">

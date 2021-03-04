@@ -22,7 +22,7 @@ export class BrinquedosComponent implements OnInit {
   buscarPorCategoria(){
     this.categoriaService.buscarPorCategoria(this.brinquedos).subscribe(res => {
       this.produtos = res;
-      console.log(res);
+      
     });
   }
 
