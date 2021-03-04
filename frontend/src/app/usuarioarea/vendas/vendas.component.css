@@ -2,6 +2,10 @@ h2{
     font-family: 'Fredoka One', cursive;
   }
 
+  .edit{
+    color:rgba(4, 4, 161, 0.438);
+  }
+
 .table{
   width: 300%;
 }

@@ -1,4 +1,5 @@
-
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 
 <div class="container">
   <h1 class="text-info mt-2"> Minha área de usuário </h1>
@@ -10,9 +11,11 @@
 
   <div class="row">
     <div class="col-lg-4 col-md-4">
-      <h4 class="text-info">
-        <mdb-icon far icon="user-circle" size="2x"></mdb-icon> {{exibiNome()}}
-      </h4>
+     
+      <h5 class="text-info">
+        <mdb-icon far icon="user-circle" size="2x"></mdb-icon> 
+        {{exibiNome()}}
+      </h5>
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" [routerLink]="['editusuario', usuario.email]">

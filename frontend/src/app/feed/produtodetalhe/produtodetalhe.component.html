@@ -1,14 +1,43 @@
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-md-center">
 
-    <div class=" col-lg-4 col-md-4">
+    <!-- <div class=" col-lg-4 col-md-4">
       <div class="card-deck my-4">
-        <img class="card-img-fluid" width="300" height="300" [src]="produto.imagem1" alt="">
+        <img class="card-img-fluid" width="230" height="230" [src]="produto.imagem1" alt="">
       </div>
-    </div>
+    </div> -->
 
-    <div class="col-lg-4 col-md-4 mb-4">
-      <div class="card   my-4">
+      <div class="col-lg-3 mt-4">
+        <div class="carrossel">
+          <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+            <mdb-carousel-item>
+              <div class="view w-100">
+                <img class="d-block w-100" [src]="produto.imagem3" alt="First slide">
+                <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+              </div>
+  
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+              <div class="view w-100">
+                <img class="d-block w-100" [src]="produto.imagem2" alt="Second slide">
+                <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+              </div>
+  
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+              <div class="view w-100">
+                <img class="d-block w-100" [src]="produto.imagem1" alt="Third slide">
+                <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+              </div>
+  
+            </mdb-carousel-item>
+          </mdb-carousel>
+        </div>
+      </div>
+
+
+    <div class="col-lg-9 col-md-9 mb-1">
+      <div class="card my-3">
         <div class="card-body">
           <h4 class="card-title text-secondary">
             {{produto.nomeProduto}}
@@ -18,7 +47,7 @@
         </div>
         <div class="card-footer">
           <a [routerLink]="['fecharnegocio', produto.idProduto]">
-             <button mdbBtn type="button" gradient="blue" mdbWavesEffect><mdb-icon far icon="handshake" size="2x"></mdb-icon> Fechar negócio</button>
+             <button mdbBtn type="button" gradient="blue" mdbWavesEffect><mdb-icon far icon="handshake" size="1x"></mdb-icon> Fechar negócio</button>
           </a>
 
         </div>
@@ -29,44 +58,12 @@
   </div>
 
 
-  <div class="row">
+  
 
-    <div class="col-lg-10">
-      <div class="carrossel my-4">
-        <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
-          <mdb-carousel-item>
-            <div class="view w-100">
-              <img class="d-block w-100" [src]="produto.imagem3" alt="First slide">
-              <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
-            </div>
-
-          </mdb-carousel-item>
-          <mdb-carousel-item>
-            <div class="view w-100">
-              <img class="d-block w-100" [src]="produto.imagem2" alt="Second slide">
-              <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
-            </div>
-
-          </mdb-carousel-item>
-          <mdb-carousel-item>
-            <div class="view w-100">
-              <img class="d-block w-100" [src]="produto.imagem1" alt="Third slide">
-              <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
-            </div>
-
-          </mdb-carousel-item>
-        </mdb-carousel>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="row">
-    <div class="col-lg-10">
-      <mdb-card style="width: 50rem">
+  <div class="row justify-content-md-center">
+    
+      <mdb-card class="col-lg-6 mr-1 justify-content-md-center">
         <mdb-card-body>
-          <mdb-card-title>
-
               <button mdbBtn type="button" gradient="purple" class="relative waves-light" (click)="basicModal.show()"  mdbWavesEffect>Avalie</button>
               <!--span>É preciso estar logado para enviar uma avaliação</span-->
               <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
@@ -95,7 +92,6 @@
                         <label for="estrela_cinco"><i class="fa"></i></label>
                         <input [(ngModel)]="avaliar.nota" type="radio" id="estrela_cinco" name="estrela" value="5"><br><br>
 
-
                       </div>
                     </div>
                     <div class="modal-body">
@@ -112,24 +108,21 @@
               <h2 class="font-weight-bold mb-3">Avaliações</h2>
               <h5 *ngIf="media == 0">{{temAvaliacao}}</h5>
               <h3 *ngIf="media > 0">{{media}}</h3>
-          </mdb-card-title>
           <mdb-card-text class="mb-0">Média das notas </mdb-card-text>
         </mdb-card-body>
+
+      </mdb-card>
+
+      <mdb-card class="col-lg-5">
         <ul class="list-group list-group-flush" *ngFor="let avaliar of avaliacoes">
           <li class="list-group-item">
-            <h3>{{avaliar.nomeUsuario}}</h3>
-            <h5>Nota: {{avaliar.nota}}/5</h5>
-            <h6>{{avaliar.avaliacao}}</h6>
+            <p><strong>Usuario: </strong>{{avaliar.nomeUsuario}}</p>
+            <p><strong>Nota: </strong>Nota: {{avaliar.nota}}/5</p>
+            <p>{{avaliar.avaliacao}}</p>
           </li>
-
         </ul>
-        <mdb-card-body>
-
-
-
-        </mdb-card-body>
       </mdb-card>
-    </div>
+   
 
   </div>
 

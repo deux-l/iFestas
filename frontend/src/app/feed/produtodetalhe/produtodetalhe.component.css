@@ -6,7 +6,9 @@
 }.estrelas  input[type=radio]:checked  ~ label i.fa:before{
 	color: #CCC;
 }
-
+img {
+	border-radius: 5px;
+}
 span{
   color: red;
 }
