@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Mar-2021 às 15:43
+-- Generation Time: 05-Mar-2021 às 13:14
 -- Versão do servidor: 10.1.39-MariaDB
 -- versão do PHP: 7.3.5
 
@@ -109,7 +109,7 @@ INSERT INTO `pedido` (`idPedido`, `idProduto`, `idUsuario`, `nomeUsuario`, `nome
 (36, 52, 33, 'Cristian Daniel ', 'Pula Pula', '', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-03-05', '2021-03-08', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel', '1234564898961132', '0222', 123, 33, ''),
 (37, 52, 33, 'Cristian Daniel ', 'Pula Pula', '', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-03-10', '2021-03-13', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel', '1211564654564564', '0522', 123, 33, ''),
 (38, 52, 2, 'Sasuke Uchiha', 'Pula Pula', '', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 3, '2021-03-28', '2021-04-05', 'sasuke@email.com', 'rua b', 123, 'Parque Rosário', 'Nova Iguaçu', '912345678', 50.00, 'credito', 'sasuke uchiha', '1616514654564654', '0522', 123, 33, ''),
-(43, 46, 33, 'Cristian Daniel ', 'Bolo de chocolate', 'assets\\imagens\\assetsimagensvNRXNieOWkYbDd6PmG8t33lF.jpg', 'venda', 'Bolo de chocolate com recheio de coco médio ', 2, '2021-03-01T21:24:39.', '2021-03-01T21:24:39.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 42.75, 'credito', 'cristian daniel', '2151536516516516', '0530', 123, 33, 'Cristian Daniel '),
+(43, 46, 33, 'Cristian Daniel ', 'Bolo de chocolate', 'assets\\imagens\\vNRXNieOWkYbDd6PmG8t33lF.jpg', 'venda', 'Bolo de chocolate com recheio de coco médio ', 2, '2021-03-01T21:24:39.', '2021-03-01T21:24:39.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 42.75, 'credito', 'cristian daniel', '2151536516516516', '0530', 123, 33, 'Cristian Daniel '),
 (49, 54, 33, 'Cristian Daniel ', 'Batedeira Arno', 'assets\\imagens\\PrBf4l4LQm65agnr4h9W4ar9.jpg', 'venda', 'Batedeira planetaria arno\n8 velocidades', 2, '2021-03-01T21:39:56.', '2021-03-01T21:39:56.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 237.50, 'credito', 'cristian daniel', '1321355465465465', '0532', 123, 33, 'Cristian Daniel '),
 (50, 46, 33, 'Cristian Daniel ', 'Bolo de chocolate', 'assets\\imagens\\vNRXNieOWkYbDd6PmG8t33lF.jpg', 'venda', 'Bolo de chocolate com recheio de coco médio ', 2, '2021-03-01T21:40:41.', '2021-03-01T21:40:41.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 42.75, 'credito', 'cristian daniel', '3214165465465465', '0534', 123, 33, 'Cristian Daniel '),
 (51, 52, 33, 'Cristian Daniel ', 'Pula Pula', 'assets\\imagens\\DbKwBGcRFcE45DUxAbybcVxY.jpg', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-08-22', '2021-08-23', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel ', '7897987987989879', '0540', 123, 33, 'Cristian Daniel '),
