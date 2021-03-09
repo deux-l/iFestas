@@ -1,42 +1,38 @@
 <div class="container">
+
+
   <div class="row justify-content-md-center">
 
-    <!-- <div class=" col-lg-4 col-md-4">
-      <div class="card-deck my-4">
-        <img class="card-img-fluid" width="230" height="230" [src]="produto.imagem1" alt="">
-      </div>
-    </div> -->
-
-      <div class="col-lg-3 mt-4">
+      <div class="col-lg-3 col-sm-4 mt-4">
         <div class="carrossel">
           <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
             <mdb-carousel-item>
               <div class="view w-100">
-                <img class="d-block w-100" [src]="produto.imagem3" alt="First slide">
+                <img class="d-block w-100" [src]="produto.imagem3" alt="First slide" width="250" height="221">
                 <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
               </div>
-  
+
             </mdb-carousel-item>
             <mdb-carousel-item>
               <div class="view w-100">
-                <img class="d-block w-100" [src]="produto.imagem2" alt="Second slide">
+                <img class="d-block w-100" [src]="produto.imagem2" alt="Second slide" width="250" height="221">
                 <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
               </div>
-  
+
             </mdb-carousel-item>
             <mdb-carousel-item>
               <div class="view w-100">
-                <img class="d-block w-100" [src]="produto.imagem1" alt="Third slide">
+                <img class="d-block w-100" [src]="produto.imagem1" alt="Third slide" width="250" height="221">
                 <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
               </div>
-  
+
             </mdb-carousel-item>
           </mdb-carousel>
         </div>
       </div>
 
 
-    <div class="col-lg-9 col-md-9 mb-1">
+    <div class="col-lg-7 col-md-7 col-sm-8 mt-2">
       <div class="card my-3">
         <div class="card-body">
           <h4 class="card-title text-secondary">
@@ -47,7 +43,7 @@
         </div>
         <div class="card-footer">
           <a [routerLink]="['fecharnegocio', produto.idProduto]">
-             <button mdbBtn type="button" gradient="blue" mdbWavesEffect><mdb-icon far icon="handshake" size="1x"></mdb-icon> Fechar negócio</button>
+             <button mdbBtn type="button" size="md" gradient="blue" mdbWavesEffect><mdb-icon far icon="handshake" size="1x"></mdb-icon> Fechar negócio</button>
           </a>
 
         </div>
@@ -58,13 +54,11 @@
   </div>
 
 
-  
 
-  <div class="row justify-content-md-center">
-    
-      <mdb-card class="col-lg-6 mr-1 justify-content-md-center">
+
+  <div class="row justify-content-md-center mt-2">
+      <mdb-card class="col-lg-3 col-md-5 col-sm-4 justify-content-md-center">
         <mdb-card-body>
-              <button mdbBtn type="button" gradient="purple" class="relative waves-light" (click)="basicModal.show()"  mdbWavesEffect>Avalie</button>
               <!--span>É preciso estar logado para enviar uma avaliação</span-->
               <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -109,11 +103,11 @@
               <h5 *ngIf="media == 0">{{temAvaliacao}}</h5>
               <h3 *ngIf="media > 0">{{media}}</h3>
           <mdb-card-text class="mb-0">Média das notas </mdb-card-text>
+          <button mdbBtn type="button" size="md" gradient="purple" class="relative waves-light" (click)="basicModal.show()"  mdbWavesEffect>Avalie</button>
         </mdb-card-body>
 
       </mdb-card>
-
-      <mdb-card class="col-lg-5">
+      <mdb-card class="col-lg-7 col-md-7 col-sm-8">
         <ul class="list-group list-group-flush" *ngFor="let avaliar of avaliacoes">
           <li class="list-group-item">
             <p><strong>Usuario: </strong>{{avaliar.nomeUsuario}}</p>
@@ -122,73 +116,8 @@
           </li>
         </ul>
       </mdb-card>
-   
+
 
   </div>
 
-
-
 </div>
-
-
-
-<!----
-
-    <div class="md-form col-lg-4">
-      <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon>
-      <textarea ng-model="txtarea" minlength="10" maxlength="50" type="text" id="form8" class="md-textarea form-control" mdbInput ></textarea>
-      <label for="form8">Deixa aqui sua avaliação do produto ou serviço</label>
-    </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item Two</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="carrossel my-4">
-        <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
-          <mdb-carousel-item>
-            <div class="view w-100">
-              <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide">
-              <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
-            </div>
-            <div class="carousel-caption">
-              <h3 class="h3-responsive">Light mask</h3>
-              <p>First text</p>
-            </div>
-          </mdb-carousel-item>
-          <mdb-carousel-item>
-            <div class="view w-100">
-              <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide">
-              <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
-            </div>
-            <div class="carousel-caption">
-              <h3 class="h3-responsive">Strong mask</h3>
-              <p>Secondary text</p>
-            </div>
-          </mdb-carousel-item>
-          <mdb-carousel-item>
-            <div class="view w-100">
-              <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide">
-              <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
-            </div>
-            <div class="carousel-caption">
-              <h3 class="h3-responsive">Slight mask</h3>
-              <p>Third text</p>
-            </div>
-          </mdb-carousel-item>
-        </mdb-carousel>
-      </div>
--->

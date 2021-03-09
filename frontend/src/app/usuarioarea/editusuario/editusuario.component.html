@@ -19,7 +19,7 @@
 
        <div class="col-lg-6 col-md-6 edit">
           <label class="form-group">Data de Nascimento</label>
-          <input type="text" name="nascimento" [(ngModel)]="usuario.nascimento" class="form-control">
+          <input type="text" name="nascimento" [(ngModel)]="usuario.nascimento" class="form-control" mask="00/00/0000">
        </div>
 
       </div>
@@ -83,7 +83,7 @@
           <input name="senha" [(ngModel)]="senha" type="password" class="form-control">
         </div>
 
-        <div class="col-md-7 col-md-7 my-1 edit">
+        <div class="col-lg-7 col-md-7 my-1 edit">
           <label class="form-group">Digite uma nova senha ou confirme a atual</label>
           <input name="senha" [(ngModel)]="novaSenha" type="password" class="form-control">
           <p class="text-danger">*Senha deve ter no mínimo 6 digitos</p>
@@ -95,7 +95,7 @@
       <div class="row justify-content-md-center">
 
         <div class="col-12">
-          <button type="submit" mdbBtn gradient="purple" (click)="atualizaUsuario()"><mdb-icon fas icon="user-edit" class="mr-1"></mdb-icon>Atualizar</button>
+          <button type="submit" size="md" mdbBtn gradient="purple" (click)="atualizaUsuario()"><mdb-icon fas icon="user-edit" class="mr-1"></mdb-icon>Atualizar</button>
         </div>
 
       </div>

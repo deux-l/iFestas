@@ -2,9 +2,9 @@
   <div class="fadeIn">
     <h2 class="fadeIn edit">
       Edite seu produto aqui:
-     
+
     </h2>
-   
+
     <div class="mt-3">
       <form *ngFor="let produto of produtos">
 
@@ -111,7 +111,7 @@
 
             <mdb-card-body>
               <mdb-card-title>
-                <button type="button" mdbBtn color="danger" class="relative waves-light mt-3"
+                <button type="button" mdbBtn color="danger" size="md" class="relative waves-light mt-3"
                   (click)="basicModal.show()" mdbWavesEffect>
                   <mdb-icon fas icon="trash" class="mr-1"></mdb-icon>Deletar produto
                 </button>
@@ -148,21 +148,21 @@
           <div class="col-lg-6 col-md-6">
 
 
-            <button type="submit" mdbBtn gradient="blue" class="relative waves-light mt-3"
+            <button type="submit" size="md" mdbBtn gradient="blue" class="relative waves-light mt-3"
               (click)="atualizaProduto(produto)">
               <mdb-icon fas icon="caret-square-up" class="mr-1"></mdb-icon>Atualizar Dados do produto
             </button>
 
 
-          
+
           </div>
-         
+
 
         </div>
 
-       
+
         <hr>
-       
+
       </form>
 
     </div>

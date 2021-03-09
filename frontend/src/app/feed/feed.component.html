@@ -63,21 +63,20 @@
       <div class="row">
         <div class="col-md-3 mt-5" *ngFor="let produto of produtos">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" [src]="produto.imagem1" alt=""></a>
+            <a href="#"><img class="card-img-top" [src]="produto.imagem1" alt="" height="200" width="200"></a>
             <div class="card-body">
               <h3 class="card-title">
                 <p>{{produto.nomeProduto}}</p>
               </h3>
-              <h6>
-                <p>R$: {{produto.valor}}</p>
-              </h6>
-
+                <h6>
+                  <p>R$: {{produto.valor}}</p>
+                </h6>
             </div>
             <div class="card-footer">
               <p class="text-secondary">{{produto.tipoNegocio}}</p>
               <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>{{''}}
-              <a [routerLink]="['produtodetalhe', produto.idProduto]"><button type="button" mdbBtn color="secondary" mdbWavesEffect>
-                <mdb-icon fas icon="info-circle" class="mr-0"></mdb-icon>Detalhes</button> </a>
+              <a [routerLink]="['produtodetalhe', produto.idProduto]"><button type="button" size="md" mdbBtn color="secondary" mdbWavesEffect>
+                <mdb-icon fas icon="info-circle" class="mr-0"></mdb-icon> Detalhes</button> </a>
 
             </div>
           </div>
