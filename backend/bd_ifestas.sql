@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05-Mar-2021 às 13:14
+-- Generation Time: 10-Mar-2021 às 14:22
 -- Versão do servidor: 10.1.39-MariaDB
 -- versão do PHP: 7.3.5
 
@@ -108,12 +108,13 @@ INSERT INTO `pedido` (`idPedido`, `idProduto`, `idUsuario`, `nomeUsuario`, `nome
 (35, 55, 33, 'Cristian Daniel ', 'Máquina de algodão doce', '', 'aluguel', 'Alugo máquina de algodão doce\nR$ 40,00 a diária ', 2, '2021-03-03', '2021-03-07', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 38.00, 'debito', 'cristian daniel', '1234567891233448', '2522', 123, 33, ''),
 (36, 52, 33, 'Cristian Daniel ', 'Pula Pula', '', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-03-05', '2021-03-08', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel', '1234564898961132', '0222', 123, 33, ''),
 (37, 52, 33, 'Cristian Daniel ', 'Pula Pula', '', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-03-10', '2021-03-13', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel', '1211564654564564', '0522', 123, 33, ''),
-(38, 52, 2, 'Sasuke Uchiha', 'Pula Pula', '', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 3, '2021-03-28', '2021-04-05', 'sasuke@email.com', 'rua b', 123, 'Parque Rosário', 'Nova Iguaçu', '912345678', 50.00, 'credito', 'sasuke uchiha', '1616514654564654', '0522', 123, 33, ''),
 (43, 46, 33, 'Cristian Daniel ', 'Bolo de chocolate', 'assets\\imagens\\vNRXNieOWkYbDd6PmG8t33lF.jpg', 'venda', 'Bolo de chocolate com recheio de coco médio ', 2, '2021-03-01T21:24:39.', '2021-03-01T21:24:39.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 42.75, 'credito', 'cristian daniel', '2151536516516516', '0530', 123, 33, 'Cristian Daniel '),
 (49, 54, 33, 'Cristian Daniel ', 'Batedeira Arno', 'assets\\imagens\\PrBf4l4LQm65agnr4h9W4ar9.jpg', 'venda', 'Batedeira planetaria arno\n8 velocidades', 2, '2021-03-01T21:39:56.', '2021-03-01T21:39:56.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 237.50, 'credito', 'cristian daniel', '1321355465465465', '0532', 123, 33, 'Cristian Daniel '),
 (50, 46, 33, 'Cristian Daniel ', 'Bolo de chocolate', 'assets\\imagens\\vNRXNieOWkYbDd6PmG8t33lF.jpg', 'venda', 'Bolo de chocolate com recheio de coco médio ', 2, '2021-03-01T21:40:41.', '2021-03-01T21:40:41.', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 42.75, 'credito', 'cristian daniel', '3214165465465465', '0534', 123, 33, 'Cristian Daniel '),
 (51, 52, 33, 'Cristian Daniel ', 'Pula Pula', 'assets\\imagens\\DbKwBGcRFcE45DUxAbybcVxY.jpg', 'aluguel', 'Alugo pula pula de tamanho média\nR$ 50,00 a diária', 2, '2021-08-22', '2021-08-23', 'cristian@email.com', 'rua a', 363, 'Areia Branca', 'Belford Roxo', '912345678', 47.50, 'credito', 'cristian daniel ', '7897987987989879', '0540', 123, 33, 'Cristian Daniel '),
-(52, 55, 2, 'Sasuke Uchiha', 'Máquina de algodão doce', 'assets\\imagens\\cuHMquFgRL9uTx5rnE4loJ1B.jpg', 'aluguel', 'Alugo máquina de algodão doce\nR$ 40,00 a diária ', 3, '2021-12-24', '2021-12-25', 'sasuke@email.com', 'rua b', 123, 'Parque Rosário', 'Nova Iguaçu', '912345678', 40.00, 'credito', 'cristian daniel', '2132132132132132', '0545', 123, 33, 'Cristian Daniel ');
+(52, 55, 2, 'Sasuke Uchiha', 'Máquina de algodão doce', 'assets\\imagens\\cuHMquFgRL9uTx5rnE4loJ1B.jpg', 'aluguel', 'Alugo máquina de algodão doce\nR$ 40,00 a diária ', 3, '2021-12-24', '2021-12-25', 'sasuke@email.com', 'rua b', 123, 'Parque Rosário', 'Nova Iguaçu', '912345678', 40.00, 'credito', 'cristian daniel', '2132132132132132', '0545', 123, 33, 'Cristian Daniel '),
+(53, 70, 2, 'Sasuke Uchiha', 'Bolo salgado', 'assets\\imagens\\_RX6OPf4RMYIku0cUMjaKbQ8.jfif', 'venda', 'Bolo salgado com 30 cm', 3, '2021-03-10T12:03:11.', '2021-03-10T12:03:11.', 'sasuke@email.com', 'rua b', 123, 'Parque Rosário', 'Nova Iguaçu', '912345678', 80.00, 'credito', 'Sasuke Uchiha', '0254026799654455', '0624', 265, 35, 'Daniele Andrade'),
+(54, 61, 38, 'Paulo Silva', 'Docinho gourmet 50', 'assets\\imagens\\GGKn_vmu3p4lCU2TQfuBo87F.png', 'venda', '50 unidades de docinhos gourmet de variados sabores', 3, '2021-03-10T12:23:32.', '2021-03-10T12:23:32.', 'paulo@email.com', 'Frederico de Castro Pereira', 1077, 'Jardim Tropical', 'Nova Iguaçu', '21948484854', 30.00, 'debito', 'Paulo S Silva', '0263078787887787', '0624', 369, 35, 'Daniele Andrade');
 
 -- --------------------------------------------------------
 
@@ -159,7 +160,8 @@ INSERT INTO `produto` (`idProduto`, `nomeProduto`, `valor`, `descricao`, `catego
 (67, 'Buffet casamento médio', 2000.00, 'Buffet casamento para até 100 pessoas', 'servicos', 'venda', 'assets\\imagens\\S7wU0BuCWWlYMJZ-VFklQp1a.jpg', 'assets\\imagens\\avUSl6fDHccFLbwbt1EQM3tG.jpg', 'assets\\imagens\\OcF1lkfyyN3xUs6zzPE7Z2Al.jpg', 36),
 (68, 'Bolo casamento simples', 250.00, 'Bolo de casamento 1 andar simples', 'comidas', 'venda', 'assets\\imagens\\CpT1JNipXlaA3RgwVhWY0tA7.jpg', 'assets\\imagens\\Rkwl3X5woIcOoW-r7iqSehuQ.jpg', 'assets\\imagens\\RyR1_7bnVODAWE56vSg7Y6E5.jpg', 35),
 (69, 'Bolo casamento ', 320.00, 'Bolo de casamento 2 andares', 'comidas', 'venda', 'assets\\imagens\\z4BeYcKcC9MBf7r_4C8X4Z0c.jpg', 'assets\\imagens\\lR0hsOW6RjY7OVBGpEnWlpWk.jpg', 'assets\\imagens\\OW6L-3oNDXNDOWMQfqk4Tqo7.jpg', 35),
-(70, 'Bolo salgado', 80.00, 'Bolo salgado com 30 cm', 'comidas', 'venda', 'assets\\imagens\\_RX6OPf4RMYIku0cUMjaKbQ8.jfif', 'assets\\imagens\\owLdi0mKaxg317Ty_qt7MaLA.jpg', 'assets\\imagens\\J85GjybUbgOQykeUi2ok3CgQ.jpg', 35);
+(70, 'Bolo salgado', 80.00, 'Bolo salgado com 30 cm', 'comidas', 'venda', 'assets\\imagens\\_RX6OPf4RMYIku0cUMjaKbQ8.jfif', 'assets\\imagens\\owLdi0mKaxg317Ty_qt7MaLA.jpg', 'assets\\imagens\\J85GjybUbgOQykeUi2ok3CgQ.jpg', 35),
+(71, 'Futebol de sabão ', 100.00, 'Campo inflável para futebol de sabão grande até 4h de festas', 'brinquedos', 'aluguel', 'assets\\imagens\\c_y3MpdllxtzvA5E3xIRtx1E.jpg', 'assets\\imagens\\TY1SgTw6Yo3h16b-JLb-i2oL.jfif', 'assets\\imagens\\wW_gV_Z7QD1CoqyvtYqTduDD.jpg', 35);
 
 -- --------------------------------------------------------
 
@@ -221,7 +223,8 @@ INSERT INTO `usuario` (`idUsuario`, `nome`, `cpf`, `nascimento`, `celular`, `rua
 (33, 'Cristian Daniel ', '12345678910', '23/08/1990', '912345678', 'rua a', '363', '26.135.040', 'Areia Branca', 'Belford Roxo', 'cristian@email.com', '123', 2),
 (35, 'Daniele Andrade', '88727787887', '11091998', '21397463611', 'Estrada do colegio', '25', '26015000', 'Centro', 'Nova Iguaçu', 'dani@email.com', '123456', 2),
 (36, 'Carlos Eduardo', '12345678910', '10051970', '21548748585', 'Rua dos carecas', '24', '15545145', 'Fumantes', 'Queimados', 'carlos@email.com', '123456', 2),
-(37, 'Pedro Gomes', '25252525511', '03041990', '21784947984', 'Rua abcde', '104', '15151511', 'Helio', 'Mesquita', 'pedro@email.com', '123456', 2);
+(37, 'Pedro Gomes', '25252525511', '03041990', '21784947984', 'Rua abcde', '104', '15151511', 'Helio', 'Mesquita', 'pedro@email.com', '123456', 2),
+(38, 'Paulo Silva', '54564655445', '27071998', '21948484854', 'Frederico de Castro Pereira', '1077', '26015050', 'Jardim Tropical', 'Nova Iguaçu', 'paulo@email.com', '123456', 3);
 
 --
 -- Indexes for dumped tables
@@ -278,13 +281,13 @@ ALTER TABLE `avaliacoes`
 -- AUTO_INCREMENT for table `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `idProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `reserva`
@@ -296,7 +299,7 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- Constraints for dumped tables

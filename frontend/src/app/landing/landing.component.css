@@ -13,7 +13,7 @@ h2 {
   font-weight: 900;
   font-size: larger;
 }
-p {
+.p {
   font-size: medium;
 }
 .serviTitu {
@@ -24,3 +24,22 @@ p {
 .container{
   margin-top: 30px;
 }
+body{
+  background:#ddd;
+  }
+  .form-control-borderless {
+      border: none;
+  }
+  
+  .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+      border: none;
+      outline: none;
+      box-shadow: none;
+  }
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    margin-bottom: 2px;
+  }
