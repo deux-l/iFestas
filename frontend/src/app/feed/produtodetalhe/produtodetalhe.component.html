@@ -2,8 +2,7 @@
 
 
   <div class="row justify-content-md-center">
-
-      <div class="col-lg-3 col-sm-4 mt-4">
+      <div class="col-md-3 mt-4">
         <div class="carrossel">
           <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
             <mdb-carousel-item>
@@ -32,7 +31,7 @@
       </div>
 
 
-    <div class="col-lg-7 col-md-7 col-sm-8 mt-2">
+    <div class=" col-md-7 mt-2">
       <div class="card my-3">
         <div class="card-body">
           <h4 class="card-title text-secondary">
@@ -56,8 +55,8 @@
 
 
 
-  <div class="row justify-content-md-center mt-2">
-      <mdb-card class="col-lg-3 col-md-5 col-sm-4 justify-content-md-center">
+  <div class="row justify-content-md-center mt-5">
+      <mdb-card class="col-md-4">
         <mdb-card-body>
               <!--span>É preciso estar logado para enviar uma avaliação</span-->
               <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
@@ -107,7 +106,7 @@
         </mdb-card-body>
 
       </mdb-card>
-      <mdb-card class="col-lg-7 col-md-7 col-sm-8">
+      <mdb-card class="col-md-6">
         <ul class="list-group list-group-flush" *ngFor="let avaliar of avaliacoes">
           <li class="list-group-item">
             <p><strong>Usuario: </strong>{{avaliar.nomeUsuario}}</p>
