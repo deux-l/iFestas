@@ -26,7 +26,7 @@ function execSqlQuery(sqlQry, res) {
 		host: 'localhost',
 		user: 'root',
 		port: '3306',
-		password: '',
+		password: '123',
 		database: 'bd_ifestas'
 	})
 	connection.query(sqlQry, function (error, results, fields) {
