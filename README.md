@@ -1,4 +1,4 @@
-#  :cocktail: :birthday: :beers: iFestas :wine_glass: :tropical_drink: :cake:
+# :balloon: :birthday: :beers: iFestas :camera: :tropical_drink: :cake:
  
 Projeto gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 11.1.2.
 
@@ -9,7 +9,7 @@ Após isto, basta entrar nos diretorios e executar os comando "ng serve"(front) 
 
 Obs: Banco de dados encontra-se no diretorio "backend". Favor verificar credencias referentes ao acesso do banco localmente no arquivo "index.js".
 
-## Demostração: :eyes:
+## :eyes: Demostração: 
 
 ![](iFestasDemo.gif)
 
