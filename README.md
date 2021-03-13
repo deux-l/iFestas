@@ -1,4 +1,4 @@
-# :balloon: :birthday: :beers: iFestas :camera: :tropical_drink: :cake:
+# :balloon: :birthday: :beers: iFestas :tropical_drink: :camera: :cake:
  
 Projeto gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 11.1.2.
 
